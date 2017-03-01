@@ -31,7 +31,7 @@ function SetInstru1()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Instrucoes8";
+		auxScene = "Instrucoes8";
 	}
 	
 	if(mouse.x >= bottonM.x &&
@@ -42,6 +42,6 @@ function SetInstru1()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Menu";
+		auxScene = "Menu";
 	}
 }

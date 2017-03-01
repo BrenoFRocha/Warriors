@@ -239,7 +239,7 @@ function SetMenu()
 		AIP = null;
 		PT = null;
 		GT = null;
-		Scene = "CTeam";
+		auxScene = "CTeam";
 	}
 	
 	var bottonI = {x:canvas.width/2 - 125, y:450, w:250, h:50};
@@ -253,7 +253,7 @@ function SetMenu()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Instrucoes1";
+		auxScene = "Instrucoes1";
 	}
 	
 	var bottonC = {x:canvas.width/2 - 125, y:550, w:250, h:50};
@@ -278,7 +278,7 @@ function SetMenu()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Opcoes";
+		auxScene = "Opcoes";
 	}
 	
 	context.drawImage(BSM,BStopMotionM.x,BStopMotionM.y,BStopMotionM.w,BStopMotionM.h);
@@ -306,7 +306,7 @@ function SetMenu()
 			
 			fadeOut = true;
 			mouse.press = false;
-			Scene = "Jogo";
+			auxScene = "Jogo";
 		}
 	}
 }

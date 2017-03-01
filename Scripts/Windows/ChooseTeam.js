@@ -34,7 +34,7 @@ function SetTeam()
 		AIP = false;
 		GT = true;
 		PT = true;
-		Scene = "Jogo";
+		auxScene = "Jogo";
 	}
 
 	var SingleG = {x:850 , y: 450, w:141, h:38};
@@ -52,7 +52,7 @@ function SetTeam()
 		AIP = true;
 		GT = true;
 		PT = false;
-		Scene = "Jogo";
+		auxScene = "Jogo";
 	}
 	
 	var SingleP = {x:840 , y: 380, w:167, h:36};
@@ -70,6 +70,6 @@ function SetTeam()
 		AIP = false;
 		GT = false;
 		PT = true;
-		Scene = "Jogo";
+		auxScene = "Jogo";
 	}
 }

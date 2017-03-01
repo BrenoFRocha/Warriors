@@ -21,7 +21,7 @@ function SetCred()
 	mouse.y < canvas.height - 50)
 	{
 		fadeOut = true;
-		Scene = "Menu";
+		auxScene = "Menu";
 		mouse.press = false;
 	
 	}

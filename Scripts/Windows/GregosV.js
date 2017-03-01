@@ -17,6 +17,6 @@ function SetWinG()
 	{
 		fadeEnabled=true;
 		mouse.press = false;
-		Scene = "Menu"
+		auxScene = "Menu"
 	}	
 }

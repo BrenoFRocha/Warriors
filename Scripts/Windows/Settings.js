@@ -62,7 +62,7 @@ function SetSettings()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Menu";
+		auxScene = "Menu";
 	}
 	
 	if(mouse.x >= Lingua1.x &&

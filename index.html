@@ -48,7 +48,7 @@
 	
 
 	var Scene = "Jogo";
-	
+	var auxScene = Scene;
 	//Fade
 	var fadeAlpha=1;
 	var fadeState=1;
@@ -266,7 +266,7 @@
 	{
 		if(fadeIn)
 		{
-			var rmv = 0.1;
+			var rmv = 0.05;
 			if(fadeState==0)
 			{
 				if(fadeAlpha<1)
@@ -275,6 +275,7 @@
 				{
 					fadeAlpha = 1;
 					fadeState = 1;
+					Scene = auxScene;
 				}
 			} 
 			else
@@ -538,7 +539,7 @@
 			{//UPDATE
 				if(desbuga)
 				{
-					Scene = "Menu";
+					auxScene = "Menu";
 					desbuga = false;
 				}
 				if(desbuga == false && CC > 1)
@@ -621,7 +622,7 @@
 				{
 					fadeOut = true;
 					mouse.press = false;
-					Scene = "Menu";
+					auxScene = "Menu";
 				}
 				save++;
 				if(AIP && GNRLDP && REIDP && KntDP && ARCDP && LANCERDP && TORREDP == false)
@@ -989,14 +990,14 @@
 						WallP_life = 0;
 						GT = false;
 						PT = false;
-						Scene = "WinG";
+						auxScene = "WinG";
 					}
 					if(WallG_life <= 0)
 					{
 						WallG_life = 0;
 						GT = false;
 						PT = false;
-						Scene = "WinP";
+						auxScene = "WinP";
 					}
 					if(LancerG[0].dead && LancersGCChoosed == 0)
 					{
@@ -1347,14 +1348,14 @@
 						WallP_life = 0;
 						GT = false;
 						PT = false;
-						Scene = "WinG";
+						auxScene = "WinG";
 					}
 					if(WallG_life <= 0)
 					{
 						WallG_life = 0;
 						GT = false;
 						PT = false;
-						Scene = "WinP";
+						auxScene = "WinP";
 					}
 					if(LancerP[0].dead && LancersPCChoosed == 0)
 					{
@@ -1782,7 +1783,7 @@
 					
 					if(TORREDP && GNRLDP && REIDP && KntDP && LANCERDP && ARCDP)
 					{
-						Scene = "WinG";
+						auxScene = "WinG";
 						GT = false;
 						PT = false;
 					}
@@ -1824,7 +1825,7 @@
 					
 					if(TORREDG && GNRLDG && REIDG && KntDG && LANCERDG && ARCDG)
 					{
-						Scene = "WinP";
+						auxScene = "WinP";
 						PT = false;
 						GT = false;
 					}

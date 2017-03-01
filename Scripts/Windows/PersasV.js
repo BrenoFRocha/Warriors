@@ -22,6 +22,6 @@ function SetWinP()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Menu"
+		auxScene = "Menu"
 	}	
 }

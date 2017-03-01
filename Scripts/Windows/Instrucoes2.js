@@ -34,6 +34,6 @@ function SetInstru2()
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Menu";
+		auxScene = "Menu";
 	}
 }
