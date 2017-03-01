@@ -1,0 +1,2187 @@
+<html>
+<link rel="shortcut icon" href="Images/Icon2.jpg" type="image/jpg"/>
+<center>
+<head>
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Warriors</title>
+<body bgcolor="#000000" text="WHITE">
+<h1></h1>
+<canvas id="Oficina" width="1200" height="700" style="border:1px solid #000000;"> 
+</canvas>
+<script src = "Scripts/Windows/Menu.js"></script>
+<script src = "Scripts/Windows/ChooseTeam.js"></script>
+<script src = "Scripts/Windows/Creditos.js"></script>
+<script src = "Scripts/Windows/Instrucoes1.js"></script>
+<script src = "Scripts/Windows/Instrucoes2.js"></script>
+<script src = "Scripts/Windows/Instrucoes3.js"></script>
+<script src = "Scripts/Windows/Instrucoes4.js"></script>
+<script src = "Scripts/Windows/Instrucoes5.js"></script>
+<script src = "Scripts/Windows/Instrucoes6.js"></script>
+<script src = "Scripts/Windows/Instrucoes7.js"></script>
+<script src = "Scripts/Windows/Instrucoes8.js"></script>
+<script src = "Scripts/Windows/Settings.js"></script>
+<script src = "Scripts/Basic/Reload.js"></script>
+<script src = "Scripts/Basic/Archers.js"></script>
+<script src = "Scripts/Basic/Lancers.js"></script>
+<script src = "Scripts/Basic/Knights.js"></script>
+<script src = "Scripts/Basic/Towers.js"></script>
+<script src = "Scripts/Basic/Generais.js"></script>
+<script src = "Scripts/Basic/Kings.js"></script>
+<script src = "Scripts/Basic/Walls-Save-Info.js"></script>
+<script src = "Scripts/AI/AtackAI.js"></script>
+<script src = "Scripts/AI/KnightG.js"></script>
+<script src = "Scripts/AI/KnightP.js"></script>
+<script src = "Scripts/AI/LancerG.js"></script>
+<script src = "Scripts/AI/LancerP.js"></script>
+<script src = "Scripts/AI/GeneralG.js"></script>
+<script src = "Scripts/AI/GeneralP.js"></script>
+<script src = "Scripts/AI/KingG.js"></script>
+<script src = "Scripts/AI/KingP.js"></script>
+<script src = "Scripts/AI/ArcherG.js"></script>
+<script src = "Scripts/AI/ArcherP.js"></script>
+<script src = "Scripts/Windows/GregosV.js"></script>
+<script src = "Scripts/Windows/PersasV.js"></script>
+<script>
+	var canvas = document.getElementById("Oficina");
+	var context = canvas.getContext("2d");	
+	
+
+	var Scene = "Jogo";
+	
+	//Fade
+	var fadeAlpha=1;
+	var fadeState=1;
+	var fadeIn=true;
+	var fadeOut = true;
+	//IDIOMAS
+	var PTBR = true;
+	var ENUS = false;
+	
+	//Cenas
+	var NomesC = new Image();
+	NomesC.src = "Images/NomesC.png"
+	var Menu = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Fadeblack = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Fadered = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Jogo = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes1 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes2 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes3 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes4 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes5 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes6 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes7 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Instrucoes8 = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Creditos = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var CTeam = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var WinG = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var WinP = {x:0, y:0, w:canvas.width, h:canvas.height};
+	var Opcoes = {x:0, y:0, w:canvas.width, h:canvas.height};
+	
+	//LIGAR OU DESLIGAR A INTELIGENCIA ARTIFICIAL/ GT E PT = TRUE = MULTIPLAYER - COMPLETAMENTE FUNCIONAL / GT = TRUE E PT = FALSE = SINGLE PLAYER COM PLAYER UTILIZANDO TROPAS GREGAS - AINDA NÃO FUNCIONAL / PT = TRUE E GT = FALSE = SINGLE PLAYER COM PLAYER UTILIZANDO TROPAS PERSAS - FUNCIONAL
+	var GT = true;
+	var PT = false;
+	//Voltar
+	var Backon = false;
+	var SetGo3 = new Image();
+	SetGo3.src = "Images/set.png"
+	
+	//RandomAIG
+	var SourceCharG;
+	
+	//DeltaTime
+	var start2 = (new Date()).getTime();
+	var current2;	
+	var LoopCall = 0;
+	
+	var Keyboard = function()
+	{
+		this.keydown = function(e)
+		{
+			switch (e.keyCode)
+			{
+				case 116: 
+				e.preventDefault();
+				window.location = "../Warriors.html"
+				break;
+			}
+		}
+	}
+	
+	var keyboard = new Keyboard();
+	document.addEventListener("keydown", keyboard.keydown, true);
+	{//Variaveis
+			var Pass = new Image();
+			Pass.src = "Images/pass.png";
+		switch(Scene)
+		{
+			case "Jogo":
+			{//VARIAVEIS	
+					
+					var Campo_F = new Image();
+					Campo_F.src = "Images/Campo.png";
+					
+					var Tree = new Image();
+					Tree.src = "Images/tree.png";
+					
+					var TreePosition;
+					
+					
+					
+					var TreeA;	 
+					var TreeB;	 
+					var TreeC;	 
+					var TreeD;	 
+					var TreeE;
+					var TreeF;	
+					
+					
+					var atualiza1;
+					var atualiza2;
+					
+					var desbuga = true;
+					var ChanceR;
+					var CC = 0;
+					var resetMovP = false;
+					var resetMovG = false;
+					var ChooseG;
+					var ChooseP;
+					var resetChoosedAIG = false;
+					var resetChoosedAIP = false;
+					
+					var StopM = new Image();
+					var StopM_x = canvas.width-590;
+					var StopM_y = 0;
+					var StopM_w = 50;
+					var StopM_h = 50;
+					
+					//som
+					var firstsound = true;
+					var stop = false;
+					var stop1 = false;
+					var stop2 = false;
+					
+					{//Mapa
+						var Linha = 10;
+						var Coluna = 12;
+						var Map_x = [];
+						var Map_y = [];
+						var Map_w = 50;
+						var Map_h = 50;
+						var Map_c = "#000000";
+						
+						for (var c = 0; c < Coluna; c++)
+						{
+							Map_x[c] = 0 + c * 50
+							Map_y[c] = []
+						}
+						
+						for (var c = 0; c < Coluna; c++)
+						{
+							for (var line = 0; line < Linha; line++)
+							{
+								Map_y[c][line] = 100 + line * 50;
+							}
+						}				
+					}
+					
+					var GNRLDP = false;
+					var REIDP = false;
+					var KntDP = false;
+					var ARCDP = false;
+					var LANCERDP = false;
+					var TORREDP = false;
+					var GNRLDG = false;
+					var REIDG = false;
+					var KntDG = false;
+					var ARCDG = false;
+					var LANCERDG = false;
+					var TORREDG = false;
+
+					var Menu = new Image();
+					
+					var Menu_x = 780;
+					var Menu_y = 325;
+					var Menu_w = 250;
+					var Menu_h = 50;
+					/*for(var i = 0; i < 4; i++) 
+					{	
+						localStorage["Warriors.KntP.x"] = KntP[i].x 
+					}*/
+					var opacity = 22;
+					var Fade = new Image();
+					var FadeD_x = 0;
+					var FadeD_y = 0;
+					var FadeD_w = canvas.width;
+					var FadeD_h = canvas.height;
+					var TimeFB = true;
+					var vai = true;
+					var volta = false;
+					
+					
+					var AIG = null;
+					var AIP = null;
+										
+					var Vez_Gregos = false;
+					var Vez_Persas = false;	
+					
+					var turnfirst = Math.floor(randomRange(0, 1)) 
+					
+					var StringDano1 = "";
+					var StringDano2 = "";
+					var StringDano3 = "";
+					var StringDano4 = "";
+					var StringDano5 = "";
+					var StringDano6 = "";
+					var StringDano7 = "";
+					var StringDano8 = "";
+					var StringDano9 = "";
+					var StringDano10 = "";
+					var save = 0;
+					
+					var music1 = new Audio();
+					music1.src = "Audio/AudioDeBatalha1.mp3";
+					var music2 = new Audio();
+					music2.src = "Audio/AudioDeBatalha2.mp3";
+				}
+			break;
+			case "Menu":
+			var image1 = new Image();
+			image1.src = "Images/1.png";
+			var image2 = new Image();
+			image2.src = "Images/2.png";
+			var image3 = new Image();
+			image3.src = "Images/3.png";
+			var image4 = new Image();
+			image4.src = "Images/4.png";
+			var image5 = new Image();
+			image5.src = "Images/5.png";
+		
+			
+			break;
+		}
+	}
+	function fadeon()
+	{
+		if(fadeIn)
+		{
+			var rmv = 0.1;
+			if(fadeState==0)
+			{
+				if(fadeAlpha<1)
+					fadeAlpha += rmv;
+				else
+				{
+					fadeAlpha = 1;
+					fadeState = 1;
+				}
+			} 
+			else
+			{
+				if(fadeAlpha>0)
+					fadeAlpha -= rmv;
+				else
+				{
+					fadeAlpha = 0;
+					fadeState = 0;
+					fadeIn = false;
+				}
+			}
+		}
+		if(fadeAlpha<0)
+			fadeAlpha=0;
+		if(fadeAlpha>1)
+			fadeAlpha=1;
+		
+		context.globalAlpha = fadeAlpha;
+		context.fillStyle = "black";
+		context.fillRect(0,0,canvas.width,canvas.height);
+		context.globalAlpha=1;
+	}
+	{//Mouse
+		var mouse = new Object();
+		mouse.x = 0;
+		mouse.y = 0;
+		mouse.press = false;			
+	
+		function mouseDown(e)
+		{
+			mouse.x = e.offsetX;
+			mouse.y = e.offsetY;	
+			mouse.press = true;
+		}
+		function mouseUp(e)
+		{
+			mouse.press = false;
+		}			
+		canvas.addEventListener('mousedown', mouseDown, false);
+	}
+	function Sound()
+	{
+		if(desbuga == false && Scene == "Jogo")
+		{
+			if(firstsound)
+			{
+				firstsound = false;
+				stop1 = true;
+				stop = false;
+			}
+		}
+		if(Scene == "Jogo")
+		{
+			if(stop)
+			{
+				StopM.src = "Images/!som.png";
+			}
+			if(stop == false)
+			{
+				StopM.src = "Images/som.png";
+			}
+			if(mouse.x > StopM_x &&
+			mouse.x < StopM_x + StopM_w &&
+			mouse.y > StopM_y &&
+			mouse.y < StopM_y + StopM_h &&
+			mouse.press)
+			{
+				mouse.press = false;
+				if(stop)
+				{
+					stop = false;
+				}
+				else
+				{
+					stop = true;
+				}
+			}
+			if(stop1)
+			{
+				if(stop)
+				{
+					music1.pause("Music1Game");
+				}
+				else
+				{
+					music1.play("Music1Game");
+					if(music1.currentTime >= 157)
+					{
+						stop1 = false;
+						music1.pause("Music1Game");
+						music1.currentTime = 0;
+						stop2 = true;
+					}
+				}
+			}
+			if(stop2)
+			{
+				if(stop)
+				{
+					music2.pause("Music2Game");
+				}
+				else
+				{
+					music2.play("Music2Game");
+					if(music2.currentTime >= 179)
+					{
+						stop2 = false;
+						music2.pause("Music2Game");
+						music2.currentTime = 0;
+						stop1 = true;
+					}
+				}
+			}
+		}
+	}
+	function update()
+	{	
+		if(PTBR)
+		{
+			Menu.src = "Images/MenuPT.png";
+		}
+		else
+		{
+			Menu.src = "Images/MenuEN.png";
+		}
+		switch(Scene)
+		{
+			case "Menu":
+			if(fadeOut)
+			{
+				fadeIn = true;
+				fadeOut = false;
+			}
+			SetMenu();
+			context.drawImage(SetGo3,SettingsM.x,SettingsM.y,SettingsM.w,SettingsM.h);
+			break;
+			
+			case "CTeam":
+			SetTeam();
+			break;
+			
+			case "WinG":
+			WinGW1 = new Image();
+			if(PTBR)
+			{
+				WinGW1.src = "Images/Gregos_WINPT.png";
+			}
+			if(ENUS)
+			{
+				WinGW1.src = "Images/Gregos_WINEN.png";
+			}
+			NewG1 = new Image();
+			if(PTBR)
+			{
+				NewG1.src = "Images/Novo_JogoPT.png";
+			}
+			if(ENUS)
+			{
+				NewG1.src = "Images/Novo_JogoEN.png";
+			}
+			SetWinG();
+			Backon = false;
+			break;
+			
+			case "WinP":
+			WinPW1 = new Image();
+			if(PTBR)
+			{
+				WinPW1.src = "Images/Persas_WINPT.png";
+			}
+			if(ENUS)
+			{
+				WinPW1.src = "Images/Persas_WINEN.png";
+			}
+			NewG1 = new Image();
+			if(PTBR)
+			{
+				NewG1.src = "Images/Novo_JogoPT.png";
+			}
+			if(ENUS)
+			{
+				NewG1.src = "Images/Novo_JogoEN.png";
+			}
+			SetWinP();
+			Backon = false;
+			break;
+			
+			case "Opcoes":
+			SetSettings();
+			if(no_audio)
+			{
+				StopM.src = "Images/!som.png"
+			}
+			break;
+			
+			case "Instrucoes1":
+			SetInstru1();
+			break;
+			
+			case "Instrucoes2":
+			SetInstru2();
+			break;
+			
+			case "Instrucoes3":
+			SetInstru3();
+			break;
+			
+			case "Instrucoes4":
+			SetInstru4();
+			break;
+			
+			case "Instrucoes5":
+			SetInstru5();
+			break;
+			
+			case "Instrucoes6":
+			SetInstru6();
+			break;
+			
+			case "Instrucoes7":
+			SetInstru7();
+			break;
+			
+			case "Instrucoes8":
+			SetInstru8();
+			break;
+			
+			case "Creditos":
+			SetCred();
+			break;
+			
+			case "Jogo":
+			
+			
+					
+			//SaveGame();
+			if(no_audio == false)
+			{
+				Sound();
+			}
+			if(Vez_Gregos)
+			{
+				AtkK.src = "Images/Celula_B.png";
+				AtkT.src = "Images/Celula_B.png";
+				AtkC.src = "Images/Celula_B.png";
+				AtkA.src = "Images/Celula_B.png";
+				AtkL.src = "Images/Celula_B.png";
+				AtkG.src = "Images/Celula_B.png";
+			}
+			else if(Vez_Persas)
+			{
+				AtkK.src = "Images/Celula_A.png";
+				AtkT.src = "Images/Celula_A.png";
+				AtkC.src = "Images/Celula_A.png";
+				AtkA.src = "Images/Celula_A.png";
+				AtkL.src = "Images/Celula_A.png";
+				AtkG.src = "Images/Celula_A.png";
+			}
+			{//UPDATE
+				if(desbuga)
+				{
+					Scene = "Menu";
+					desbuga = false;
+				}
+				if(desbuga == false && CC > 1)
+				{
+					Backon = true;
+				}
+				if(CC < 3)
+				{
+					CC += 1;
+				}
+				updateLancers();
+				updateKings();
+				updateGnrls();
+				updateKnts();
+				updateTowers();
+				updateArchers();
+				
+				if(turnfirst == 0)
+				{
+					turnfirst = -1;
+					Vez_Persas = false;
+					Vez_Gregos = true;
+				}
+				if(turnfirst == 1)
+				{
+					turnfirst = -1;
+					Vez_Persas = true;
+					Vez_Gregos = false;
+				}
+				if(GT == true && PT == false)
+				{
+					IAP = true;
+					IAG = false;
+					UpdateArcherG();
+					UpdateKntG();
+					UpdateLancerG();
+					UpdateTowerG();
+					UpdateGnrlG();
+					UpdateKingG();
+					Reload();
+					
+				}
+				if(PT == true && GT == false)
+				{
+					IAG = true;
+					IAP = false;
+					UpdateArcherP();
+					UpdateKntP();
+					UpdateLancerP();
+					UpdateTowerP();
+					UpdateGnrlP();
+					UpdateKingP();
+					Reload();
+					//SaveGame();
+				}
+				if(GT == true && PT == true)
+				{
+					IAP = false;
+					IAG = false;
+					UpdateArcherP();
+					UpdateKntP();
+					UpdateLancerP();
+					UpdateTowerP();
+					UpdateGnrlP();
+					UpdateKingP();
+					UpdateArcherG();
+					UpdateKntG();
+					UpdateLancerG();
+					UpdateTowerG();
+					UpdateGnrlG();
+					UpdateKingG();
+					Reload();
+					//SaveGame();
+				}
+				if(mouse.press &&
+				mouse.x > Menu_x &&
+				mouse.x < Menu_x + Menu_w &&
+				mouse.y > Menu_y &&
+				mouse.y < Menu_y + Menu_h)
+				{
+					fadeOut = true;
+					mouse.press = false;
+					Scene = "Menu";
+				}
+				save++;
+				if(AIP && GNRLDP && REIDP && KntDP && ARCDP && LANCERDP && TORREDP == false)
+				{
+					for(var i = 0; i < 8; i ++)
+					{
+						ArcP[i] = new ArchersP(ArcP_x[i], 101, 48, 48, 15);
+					}
+					ARCDP = false;
+					if(PTBR)
+					{
+						newLine("Gregos não destruíram as torres! Novas tropas chegaram!");
+					}
+					else
+					{
+						newLine("Greeks not destroyed the towers! New troops arrived!");
+					}
+				}
+				if(AIG && GNRLDG && REIDG && KntDG && ARCDG && LANCERDG && TORREDG == false)
+				{
+					for(var i = 0; i < 8; i ++)
+					{
+						ArcG[i] = new ArchersG(ArcG_x[i], 101, 48, 48, 15);
+					}
+					ARCDG = false;
+					if(PTBR)
+					{
+						newLine("Persas não destruíram as torres! Novas tropas chegaram!");
+					}
+					else
+					{
+						newLine("Persians not destroyed the towers! New troops arrived!");
+					}
+				}
+			}
+			break;	
+		}
+	}
+	function draw()
+	{		
+		
+		switch(Scene)
+		{
+			case "Jogo":
+			{//draw
+				
+				if(PT && GT == false)
+				{
+					PT = true;
+					AIG = true;
+					AIP = false;
+				 
+				}
+				if(GT && PT == false)
+				{
+					GT = true;
+					AIP = true;
+					AIG = false;
+				}
+				
+				context.clearRect(0,0,canvas.width,canvas.height);
+				context.drawImage(Campo_F,0,0,601,700);
+				{//Árvores
+					if(TreePosition == null)
+					{
+						TreePosition = Math.floor(randomRange(0,3));
+					}
+					if(TreePosition == 0)
+					{
+						TreeA = {x:51, y:251, w:50, h:50};	 
+						TreeB = {x:551, y:451, w:50, h:50};	 
+						TreeC = {x:201, y:301, w:50, h:50};	 
+						TreeD = {x:101, y:401, w:50, h:50};	 
+						TreeE = {x:351, y:351, w:50, h:50};
+						TreeF = {x:401, y:201, w:50, h:50};	
+					}
+					if(TreePosition == 1)
+					{
+						TreeA = {x:101, y:251, w:50, h:50};	 
+						TreeB = {x:401, y:451, w:50, h:50};	 
+						TreeC = {x:401, y:251, w:50, h:50};	 
+						TreeD = {x:251, y:301, w:50, h:50};	 
+						TreeE = {x:151, y:401, w:50, h:50};
+						TreeF = {x:301, y:251, w:50, h:50};	
+					}
+					if(TreePosition == 2)
+					{
+						TreeA = {x:201, y:301, w:50, h:50};	 
+						TreeB = {x:101, y:351, w:50, h:50};	 
+						TreeC = {x:1, y:251, w:50, h:50};	 
+						TreeD = {x:151, y:451, w:50, h:50};	
+						TreeE = {x:451, y:351, w:50, h:50}; 
+						TreeF = {x:351, y:251, w:50, h:50};	
+					}
+					if(TreePosition == 3)
+					{
+						TreeA = {x:251, y:201, w:50, h:50};	 
+						TreeB = {x:301, y:451, w:50, h:50};	 
+						TreeC = {x:101, y:301, w:50, h:50};	 
+						TreeD = {x:201, y:401, w:50, h:50};	 
+						TreeE = {x:551, y:251, w:50, h:50};
+						TreeF = {x:501, y:401, w:50, h:50};	
+					}
+					context.drawImage(Tree,TreeA.x,TreeA.y,TreeA.w,TreeA.h)
+					context.drawImage(Tree,TreeB.x,TreeB.y,TreeB.w,TreeB.h)
+					context.drawImage(Tree,TreeC.x,TreeC.y,TreeC.w,TreeC.h)
+					context.drawImage(Tree,TreeD.x,TreeD.y,TreeD.w,TreeD.h)
+					context.drawImage(Tree,TreeE.x,TreeE.y,TreeE.w,TreeE.h)
+					context.drawImage(Tree,TreeF.x,TreeF.y,TreeF.w,TreeF.h)
+				}
+				
+				Mapa();
+				DrawsArchers();
+				DrawsLancers();
+				DrawsKnts();
+				DrawsTowers();
+				DrawGnrls();
+				DrawsKings();
+				
+				if(Vez_Gregos)
+				{
+					if(AIP)
+					{
+						if(resetMovG)
+						{
+							resetMovG = false;
+							Mov1GP = false;
+							Mov2GP = false;
+							Mov3GP = false;
+							Mov4GP = false;
+							MOVMGP1 = null;
+							MOVMGP2 = null;
+							MOVMGP3 = null;
+							MOVMGP4 = null;
+							POSMGP1 = 0;
+							POSMGP2 = 0;
+							POSMGP3 = 0;
+							POSMGP4 = 0;
+							MOVMCP1 = null;
+							MOVMCP2 = null;
+							ArcsPCChoosed = null;
+							POSMCP1 = 0;
+							POSMCP2 = 0;
+							Mov1CP = false;
+							Mov2CP = false;
+							Mov1AP = false;
+							Mov2AP = false;
+							Mov3AP = false;
+							MOVMAP1 = null;
+							MOVMAP2 = null;
+							MOVMAP3 = null;
+							POSMAP1 = 0;
+							POSMAP2 = 0;
+							POSMAP3 = 0;
+							Mov1LP = false;
+							Mov2LP = false;
+							Mov3LP = false;
+							Mov4LP = false;
+							Mov5LP = false;
+							Mov6LP = false;
+							MOVMLP1 = null;
+							MOVMLP2 = null;
+							MOVMLP3 = null;
+							MOVMLP4 = null;
+							MOVMLP5 = null;
+							MOVMLP6 = null;
+							POSMLP1 = 0;
+							POSMLP2 = 0;
+							POSMLP3 = 0;
+							POSMLP4 = 0;
+							POSMLP5 = 0;
+							POSMLP6 = 0;
+							Mov1KP = false;
+							Mov2KP = false;
+							Mov3KP = false;
+							Mov4KP = false;
+							Mov5KP = false;
+							Mov6KP = false;
+							MOVMKP1 = null;
+							MOVMKP2 = null;
+							MOVMKP3 = null;
+							MOVMKP4 = null;
+							MOVMKP5 = null;
+							MOVMKP6 = null;
+							POSMKP1 = 0;
+							POSMKP2 = 0;
+							POSMKP3 = 0;
+							POSMKP4 = 0;
+							POSMKP5 = 0;
+							POSMKP6 = 0;
+							KingsPCC = 0;
+							GnrlsPCC = 0;
+							LancersPCC = 0;
+							KntsPCC = 0;
+							ArcsPCC = 0;
+							KntPMove = false;
+							GnrlPMove = false;
+							KingPMove = false;
+							LancerPMove = false;
+							ArcPMove = false;
+							AtacadoG = -1;
+							PAChoosed = -1;
+							CountM = -1;
+							CountOnM = true;
+							AtackMP = true;
+							Click_AP = 0;
+							Click_LP = 0;  
+							Click_LG = 0;  
+							Click_TP = 0; 
+							Click_CP = 0;  
+							Click_KP = 0;
+							Click_CP = 0;
+							Click_AP = 0;
+							Click_GP = 0;  
+							Click_TP = 0; 
+							Click_GG = 0;  
+							Click_KP = 0;
+						}
+					}
+					resetChoosedAIP = true;
+					ChooseP = null;
+					context.drawImage(WallP,WallP_x,WallP_y,WallP_w,WallP_h);
+					
+					PossibilitiesC();
+					PossibilitiesA();
+					PossibilitiesK();
+					PossibilitiesL();
+					PossibilitiesG();
+					PossibilitiesT();
+					context.drawImage(WallG,WallG_x,WallG_y,WallG_w,WallG_h);
+				}
+				
+				else if(Vez_Persas)
+				{
+					if(AIG)
+					{
+						if(resetMovP)
+						{
+							resetMovP = false;
+							Mov1GG = false;
+							Mov2GG = false;
+							Mov3GG = false;
+							Mov4GG = false;
+							MOVMGG1 = null;
+							MOVMGG2 = null;
+							MOVMGG3 = null;
+							MOVMGG4 = null;
+							POSMGG1 = 0;
+							POSMGG2 = 0;
+							POSMGG3 = 0;
+							POSMGG4 = 0;
+							MOVMCG1 = null;
+							MOVMCG2 = null;
+							ArcsGCChoosed = null;
+							POSMCG1 = 0;
+							POSMCG2 = 0;
+							Mov1CG = false;
+							Mov2CG = false;
+							Mov1AG = false;
+							Mov2AG = false;
+							Mov3AG = false;
+							MOVMAG1 = null;
+							MOVMAG2 = null;
+							MOVMAG3 = null;
+							POSMAG1 = 0;
+							POSMAG2 = 0;
+							POSMAG3 = 0;
+							Mov1LG = false;
+							Mov2LG = false;
+							Mov3LG = false;
+							Mov4LG = false;
+							Mov5LG = false;
+							Mov6LG = false;
+							MOVMLG1 = null;
+							MOVMLG2 = null;
+							MOVMLG3 = null;
+							MOVMLG4 = null;
+							MOVMLG5 = null;
+							MOVMLG6 = null;
+							POSMLG1 = 0;
+							POSMLG2 = 0;
+							POSMLG3 = 0;
+							POSMLG4 = 0;
+							POSMLG5 = 0;
+							POSMLG6 = 0;
+							Mov1KG = false;
+							Mov2KG = false;
+							Mov3KG = false;
+							Mov4KG = false;
+							Mov5KG = false;
+							Mov6KG = false;
+							MOVMKG1 = null;
+							MOVMKG2 = null;
+							MOVMKG3 = null;
+							MOVMKG4 = null;
+							MOVMKG5 = null;
+							MOVMKG6 = null;
+							POSMKG1 = 0;
+							POSMKG2 = 0;
+							POSMKG3 = 0;
+							POSMKG4 = 0;
+							POSMKG5 = 0;
+							POSMKG6 = 0;
+							KingsGCC = 0;
+							GnrlsGCC = 0;
+							LancersGCC = 0;
+							KntsGCC = 0;
+							ArcsGCC = 0;
+							KntGMove = false;
+							GnrlGMove = false;
+							KingGMove = false;
+							LancerGMove = false;
+							ArcGMove = false;
+							AtacadoP = -1;
+							GAChoosed = -1;
+							CountM = -1;
+							CountOnM = true;
+							AtackMG = true;
+							Click_AP = 0;
+							Click_LP = 0;  
+							Click_LG = 0;  
+							Click_TP = 0; 
+							Click_CP = 0;  
+							Click_KP = 0;
+							Click_CP = 0;
+							Click_AP = 0;
+							Click_GP = 0;  
+							Click_TP = 0; 
+							Click_GG = 0;  
+							Click_KP = 0;
+						}
+						
+					}
+					resetChoosedAIG = true;
+					ChooseG = null;
+					context.drawImage(WallG,WallG_x,WallG_y,WallG_w,WallG_h)
+					PossibilitiesC();
+					PossibilitiesA();
+					PossibilitiesK();
+					PossibilitiesL();
+					PossibilitiesG();
+					PossibilitiesT();
+					context.drawImage(WallP,WallP_x,WallP_y,WallP_w,WallP_h)
+				}
+				
+				if(AIG)
+				{	
+					if(Vez_Gregos)
+					{
+						resetMovP = true;
+					}
+					if(resetChoosedAIG)
+					{
+						resetChoosedAIG = false;
+						AtacadoP = 0;
+					}
+					AtackAI();
+					PossibilitiesAIGG();
+					PossibilitiesAIKG();
+					PossibilitiesAILG();
+					PossibilitiesAIAG();
+					PossibilitiesAICG();
+					if(WallP_life <= 0)
+					{
+						WallP_life = 0;
+						GT = false;
+						PT = false;
+						Scene = "WinG";
+					}
+					if(WallG_life <= 0)
+					{
+						WallG_life = 0;
+						GT = false;
+						PT = false;
+						Scene = "WinP";
+					}
+					if(LancerG[0].dead && LancersGCChoosed == 0)
+					{
+						LancersGCChoosed = 1;
+					}
+					if(LancerG[1].dead && LancersGCChoosed == 1)
+					{
+						LancersGCChoosed = 2;
+					}
+					if(LancerG[2].dead && LancersGCChoosed == 2)
+					{
+						LancersGCChoosed = 3;
+					}
+					if(LancerG[3].dead && LancersGCChoosed == 3)
+					{
+						LancersGCChoosed = 4;
+					}
+					if(LancerG[4].dead && LancersGCChoosed == 4)
+					{
+						LancersGCChoosed = 5;
+					}
+					if(LancerG[5].dead && LancersGCChoosed == 5)
+					{
+						LancersGCChoosed = 6;
+					}
+					if(LancerG[6].dead && LancersGCChoosed == 6)
+					{
+						LancersGCChoosed = 7;
+					}
+					if(LancerG[7].dead && LancersGCChoosed == 7)
+					{
+						LancersGCChoosed = 0;
+					}
+					if(ArcG[0].dead && ArcsGCChoosed == 0)
+					{
+						ArcsGCChoosed = 1;
+					}
+					if(ArcG[1].dead && ArcsGCChoosed == 1)
+					{
+						ArcsGCChoosed = 2;
+					}
+					if(ArcG[2].dead && ArcsGCChoosed == 2)
+					{
+						ArcsGCChoosed = 3;
+					}
+					if(ArcG[3].dead && ArcsGCChoosed == 3)
+					{
+						ArcsGCChoosed = 4;
+					}
+					if(ArcG[4].dead && ArcsGCChoosed == 4)
+					{
+						ArcsGCChoosed = 5;
+					}
+					if(ArcG[5].dead && ArcsGCChoosed == 5)
+					{
+						ArcsGCChoosed = 6;
+					}
+					if(ArcG[6].dead && ArcsGCChoosed == 6)
+					{
+						ArcsGCChoosed = 7;
+					}
+					if(ArcG[7].dead && ArcsGCChoosed == 7)
+					{
+						ArcsGCChoosed = 0;
+					}
+					if(KntsGCChoosed == 0 && KntG[0].dead)
+					{
+						KntsGCChoosed = 1;
+					}
+					if(KntsGCChoosed == 1 && KntG[1].dead)
+					{
+						KntsGCChoosed = 2;
+					}
+					if(KntsGCChoosed == 2 && KntG[2].dead)
+					{
+						KntsGCChoosed = 3;
+					}
+					if(KntsGCChoosed == 3 && KntG[3].dead)
+					{
+						KntsGCChoosed = 0;
+					}
+					if(GNRLDG && ChooseG == 0)
+					{
+						ChooseG = 1;
+					}
+					if(REIDG && ChooseG == 1)
+					{
+						ChooseG = 2;
+					}
+					if(LANCERDG && ChooseG == 2)
+					{
+						ChooseG = 3;
+					}
+					if(ARCDG && ChooseG == 3)
+					{
+						ChooseG = 4;
+					}
+					if(KntDG && ChooseG == 4)
+					{
+						ChooseG = 0;
+					}
+					for(var i = 0; i < 4; i++)
+					{
+						if(i != KntsGCChoosed)
+						{
+							if(MOVMCG1 == false && MOVMCG2 == false && CountTime <= 0 && ARCDG && LANCERDG && GNRLDG && REIDG && KntG[i].dead)
+							{
+								context.fillStyle = "purple";
+								context.fillRect(620,380,100,50);
+								if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+								{
+									mouse.press = false;
+									if(Vez_Gregos)
+									{
+										Vez_Gregos = false;
+										Vez_Persas = true;
+									}
+									else
+									{
+										Vez_Gregos = true;
+										Vez_Persas = false;
+									}
+								}
+							}
+							else if(MOVMCG1 == false && MOVMCG2 == false && CountTime <= 0)
+							{
+								CountTime = 100;
+								MOVMCG1 = null;
+								MOVMCG2 = null;
+								POSMCG1 = 0;
+								POSMCG2 = 0;
+								
+								KntsGCC = 0;
+								Mov1CG = false;
+								Mov2CG = false;
+								KntsGCChoosed = Math.floor(randomRange(0,3));
+								CMC += 1;
+							}
+							if(CMC > 4)
+							{
+								CountTime = 100;
+								ChooseG = Math.floor(randomRange(0,4));
+								MOVMCG1 = null;
+								MOVMCG2 = null;
+								KntsGCC = 0;
+								CMC = 0;
+								POSMCG1 = 0;
+								POSMCG2 = 0;
+								Mov1CG = false;
+								Mov2CG = false;
+							}
+						}
+					}
+					
+					for(var i = 0; i < 8; i++)
+					{
+						if(i != ArcsGCChoosed)
+						{
+							if(MOVMAG1 == false && MOVMAG2 == false && MOVMAG3 == false && CountTime <= 0 && LANCERDG && GNRLDG && REIDG && KntDG && ArcG[i].dead)
+							{
+								context.fillStyle = "purple";
+								context.fillRect(620,380,100,50);
+								if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+								{
+									mouse.press = false;
+									if(Vez_Gregos)
+									{
+										Vez_Gregos = false;
+										Vez_Persas = true;
+									}
+									else
+									{
+										Vez_Gregos = true;
+										Vez_Persas = false;
+									}
+								}
+							}
+							else if(MOVMAG1 == false && MOVMAG2 == false && MOVMAG3 == false)
+							{
+								CMA += 1;
+								CountTime = 100;
+								ArcsGCChoosed = Math.floor(randomRange(0,7));
+							
+								MOVMAG1 = null;
+								MOVMAG2 = null;
+								MOVMAG3 = null;
+								Mov1AG = false;
+								Mov2AG = false;
+								Mov3AG = false;
+								POSMAG1 = 0;
+								POSMAG2 = 0;
+								POSMAG3 = 0;
+							}
+							if(CMA >= 8)
+							{
+								CountTime = 100;
+								ChooseG = Math.floor(randomRange(0,4));
+								ArcsGCC = 0;
+								
+								MOVMAG1 = null;
+								MOVMAG2 = null;
+								MOVMAG3 = null;
+								Mov1AG = false;
+								Mov2AG = false;
+								Mov3AG = false;
+								POSMAG1 = 0;
+								POSMAG2 = 0;
+								POSMAG3 = 0;
+								CMA = 0;
+							}
+						}
+					}
+				
+					for(var i = 0; i < 8; i++)
+					{
+						if(i != LancersGCChoosed)
+						{
+							if(MOVMLG1 == false && MOVMLG2 == false && MOVMLG3 == false && MOVMLG4 == false && MOVMLG5 == false && MOVMLG6 == false && CountTime <= 0 && KntDG && ARCDG && GNRLDG && REIDG && LancerG[i].dead)
+							{
+								context.fillStyle = "purple";
+								context.fillRect(620,380,100,50);
+								if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+								{
+									mouse.press = false;
+									if(Vez_Gregos)
+									{
+										Vez_Gregos = false;
+										Vez_Persas = true;
+									}
+									else
+									{
+										Vez_Gregos = true;
+										Vez_Persas = false;
+									}
+								}
+							}
+							else if(MOVMLG1 == false && MOVMLG2 == false && MOVMLG3 == false && MOVMLG4 == false && MOVMLG5 == false && MOVMLG6 == false)
+							{
+								CountTime = 100;
+								CML += 1;
+								MOVMLG1 = null;
+								MOVMLG2 = null;
+								MOVMLG3 = null;
+								MOVMLG4 = null;
+								MOVMLG5 = null;
+								MOVMLG6 = null;
+								LancersGCChoosed = Math.floor(randomRange(0,7));
+								Mov1LG = false;
+								Mov2LG = false;
+								Mov3LG = false;
+								Mov4LG = false;
+								Mov5LG = false;
+								Mov6LG = false;
+								POSMLG1 = 0;
+								POSMLG2 = 0;
+								POSMLG3 = 0;
+								POSMLG4 = 0;
+								POSMLG5 = 0;
+								POSMLG6 = 0;
+							}
+							if(CML >= 8)
+							{
+								CountTime = 100;
+								ChooseG = Math.floor(randomRange(0,4));
+								LancersGCC = 0;
+								MOVMLG1 = null;
+								MOVMLG2 = null;
+								MOVMLG3 = null;
+								MOVMLG4 = null;
+								MOVMLG5 = null;
+								MOVMLG6 = null;
+								Mov1LG = false;
+								Mov2LG = false;
+								Mov3LG = false;
+								Mov4LG = false;
+								Mov5LG = false;
+								Mov6LG = false;
+								POSMLG1 = 0;
+								POSMLG2 = 0;
+								POSMLG3 = 0;
+								POSMLG4 = 0;
+								POSMLG5 = 0;
+								POSMLG6 = 0;
+								CML = 0;
+							}
+						}
+					}
+					
+					if(MOVMGG1 == false && MOVMGG2 == false && MOVMGG3 == false && MOVMGG4 == false && CountTime <= 0 && LANCERDG && KntDG && REIDG && ARCDG)
+					{
+						context.fillStyle = "purple";
+						context.fillRect(620,380,100,50);
+						if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+						{
+							mouse.press = false;
+							if(Vez_Gregos)
+							{
+								Vez_Gregos = false;
+								Vez_Persas = true;
+							}
+							else
+							{
+								Vez_Gregos = true;
+								Vez_Persas = false;
+							}
+						}
+					}
+					
+					else if(MOVMGG1 == false && MOVMGG2 == false && MOVMGG3 == false && MOVMGG4 == false)
+					{
+						CountTime = 100;
+						GnrlsGCC = 0;
+						Mov1GG = false;
+						Mov2GG = false;
+						Mov3GG = false;
+						Mov4GG = false;
+						ChooseG = Math.floor(randomRange(0,4));
+						MOVMGG1 = null;
+						MOVMGG2 = null;
+						MOVMGG3 = null;
+						MOVMGG4 = null;
+						POSMGG1 = 0;
+						POSMGG2 = 0;
+						POSMGG3 = 0;
+						POSMGG4 = 0;
+					}
+			
+				}
+				else if(AIP)
+				{	
+					if(Vez_Persas)
+					{
+						resetMovG = true;
+					}
+					if(resetChoosedAIP)
+					{
+						resetChoosedAIP = false;
+						AtacadoG = 0;
+					}
+					AtackAI();
+					PossibilitiesAIGP();
+					PossibilitiesAIKP();
+					PossibilitiesAILP();
+					PossibilitiesAIAP();
+					PossibilitiesAICP();
+					if(WallP_life <= 0)
+					{
+						WallP_life = 0;
+						GT = false;
+						PT = false;
+						Scene = "WinG";
+					}
+					if(WallG_life <= 0)
+					{
+						WallG_life = 0;
+						GT = false;
+						PT = false;
+						Scene = "WinP";
+					}
+					if(LancerP[0].dead && LancersPCChoosed == 0)
+					{
+						LancersPCChoosed = 1;
+					}
+					if(LancerP[1].dead && LancersPCChoosed == 1)
+					{
+						LancersPCChoosed = 2;
+					}
+					if(LancerP[2].dead && LancersPCChoosed == 2)
+					{
+						LancersPCChoosed = 3;
+					}
+					if(LancerP[3].dead && LancersPCChoosed == 3)
+					{
+						LancersPCChoosed = 4;
+					}
+					if(LancerP[4].dead && LancersPCChoosed == 4)
+					{
+						LancersPCChoosed = 5;
+					}
+					if(LancerP[5].dead && LancersPCChoosed == 5)
+					{
+						LancersPCChoosed = 6;
+					}
+					if(LancerP[6].dead && LancersPCChoosed == 6)
+					{
+						LancersPCChoosed = 7;
+					}
+					if(LancerP[7].dead && LancersPCChoosed == 7)
+					{
+						LancersPCChoosed = 0;
+					}
+					if(ArcP[0].dead && ArcsPCChoosed == 0)
+					{
+						ArcsPCChoosed = 1;
+					}
+					if(ArcP[1].dead && ArcsPCChoosed == 1)
+					{
+						ArcsPCChoosed = 2;
+					}
+					if(ArcP[2].dead && ArcsPCChoosed == 2)
+					{
+						ArcsPCChoosed = 3;
+					}
+					if(ArcP[3].dead && ArcsPCChoosed == 3)
+					{
+						ArcsPCChoosed = 4;
+					}
+					if(ArcP[4].dead && ArcsPCChoosed == 4)
+					{
+						ArcsPCChoosed = 5;
+					}
+					if(ArcP[5].dead && ArcsPCChoosed == 5)
+					{
+						ArcsPCChoosed = 6;
+					}
+					if(ArcP[6].dead && ArcsPCChoosed == 6)
+					{
+						ArcsPCChoosed = 7;
+					}
+					if(ArcP[7].dead && ArcsPCChoosed == 7)
+					{
+						ArcsPCChoosed = 0;
+					}
+					if(KntsPCChoosed == 0 && KntG[0].dead)
+					{
+						KntsPCChoosed = 1;
+					}
+					if(KntsPCChoosed == 1 && KntG[1].dead)
+					{
+						KntsPCChoosed = 2;
+					}
+					if(KntsPCChoosed == 2 && KntG[2].dead)
+					{
+						KntsPCChoosed = 3;
+					}
+					if(KntsPCChoosed == 3 && KntG[3].dead)
+					{
+						KntsPCChoosed = 0;
+					}
+					if(GNRLDP && ChooseP == 0)
+					{
+						ChooseP = 1;
+					}
+					if(REIDP && ChooseP == 1)
+					{
+						ChooseP = 2;
+					}
+					
+					if(LANCERDP && ChooseP == 2)
+					{
+						ChooseP = 3;
+					}
+					if(ARCDP && ChooseP == 3)
+					{
+						ChooseP = 4;
+					}
+					if(KntDP && ChooseP == 4)
+					{
+						ChooseP = 0;
+					}
+					for(var i = 0; i < 4; i++)
+					{
+						if(i != KntsPCChoosed)
+						{
+							if(MOVMCP1 == false && MOVMCP2 == false && CountTime <= 0 && ARCDP && LANCERDP && GNRLDP && REIDP && KntG[i].dead)
+							{
+								context.fillStyle = "purple";
+								context.fillRect(620,380,100,50);
+								if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+								{
+									mouse.press = false;
+									if(Vez_Gregos)
+									{
+										Vez_Gregos = false;
+										Vez_Persas = true;
+									}
+									else
+									{
+										Vez_Gregos = true;
+										Vez_Persas = false;
+									}
+								}
+							}
+							else if(MOVMCP1 == false && MOVMCP2 == false && CountTime <= 0)
+							{
+								CountTime = 100;
+								MOVMCP1 = null;
+								MOVMCP2 = null;
+								POSMCP1 = 0;
+								POSMCP2 = 0;
+								
+								KntsPCC = 0;
+								Mov1CP = false;
+								Mov2CP = false;
+								KntsPCChoosed = Math.floor(randomRange(0,3));
+								CMC += 1;
+							}
+							if(CMC > 4)
+							{
+								CountTime = 100;
+								ChooseP = Math.floor(randomRange(0,4));
+								MOVMCP1 = null;
+								MOVMCP2 = null;
+								KntsPCC = 0;
+								CMC = 0;
+								POSMCP1 = 0;
+								POSMCP2 = 0;
+								Mov1CP = false;
+								Mov2CP = false;
+							}
+						}
+					}
+					for(var i = 0; i < 8; i++)
+					{
+						if(i != ArcsPCChoosed)
+						{
+							if(MOVMAP1 == false && MOVMAP2 == false && MOVMAP3 == false && CountTime <= 0 && LANCERDP && GNRLDP && REIDP && KntDP && ArcP[i].dead)
+							{
+								context.fillStyle = "purple";
+								context.fillRect(620,380,100,50);
+								if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+								{
+									mouse.press = false;
+									if(Vez_Gregos)
+									{
+										Vez_Gregos = false;
+										Vez_Persas = true;
+									}
+									else
+									{
+										Vez_Gregos = true;
+										Vez_Persas = false;
+									}
+								}
+							}
+							else if(MOVMAP1 == false && MOVMAP2 == false && MOVMAP3 == false)
+							{
+								CMA += 1;
+								CountTime = 100;
+								ArcsPCChoosed = Math.floor(randomRange(0,7));
+							
+								MOVMAP1 = null;
+								MOVMAP2 = null;
+								MOVMAP3 = null;
+								Mov1AP = false;
+								Mov2AP = false;
+								Mov3AP = false;
+								POSMAP1 = 0;
+								POSMAP2 = 0;
+								POSMAP3 = 0;
+							}
+							if(CMA >= 8)
+							{
+								CountTime = 100;
+								ChooseP = Math.floor(randomRange(0,4));
+								ArcsPCC = 0;
+								
+								MOVMAP1 = null;
+								MOVMAP2 = null;
+								MOVMAP3 = null;
+								Mov1AP = false;
+								Mov2AP = false;
+								Mov3AP = false;
+								POSMAP1 = 0;
+								POSMAP2 = 0;
+								POSMAP3 = 0;
+								CMA = 0;
+							}
+						}
+					}
+				
+					for(var i = 0; i < 8; i++)
+					{
+						if(i != LancersPCChoosed)
+						{
+							if(MOVMLP1 == false && MOVMLP2 == false && MOVMLP3 == false && MOVMLP4 == false && MOVMLP5 == false && MOVMLP6 == false && CountTime <= 0 && KntDP && ARCDP && GNRLDP && REIDP && LancerP[i].dead)
+							{
+								context.fillStyle = "purple";
+								context.fillRect(620,380,100,50);
+								if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+								{
+									mouse.press = false;
+									if(Vez_Gregos)
+									{
+										Vez_Gregos = false;
+										Vez_Persas = true;
+									}
+									else
+									{
+										Vez_Gregos = true;
+										Vez_Persas = false;
+									}
+								}
+							}
+							else if(MOVMLP1 == false && MOVMLP2 == false && MOVMLP3 == false && MOVMLP4 == false && MOVMLP5 == false && MOVMLP6 == false)
+							{
+								CountTime = 100;
+								CML += 1;
+								MOVMLP1 = null;
+								MOVMLP2 = null;
+								MOVMLP3 = null;
+								MOVMLP4 = null;
+								MOVMLP5 = null;
+								MOVMLP6 = null;
+								LancersPCChoosed = Math.floor(randomRange(0,7));
+								Mov1LG = false;
+								Mov2LG = false;
+								Mov3LG = false;
+								Mov4LG = false;
+								Mov5LG = false;
+								Mov6LG = false;
+								POSMLP1 = 0;
+								POSMLP2 = 0;
+								POSMLP3 = 0;
+								POSMLP4 = 0;
+								POSMLP5 = 0;
+								POSMLP6 = 0;
+							}
+							if(CML >= 8)
+							{
+								CountTime = 100;
+								ChooseP = Math.floor(randomRange(0,4));
+								LancersPCC = 0;
+								MOVMLP1 = null;
+								MOVMLP2 = null;
+								MOVMLP3 = null;
+								MOVMLP4 = null;
+								MOVMLP5 = null;
+								MOVMLP6 = null;
+								Mov1LG = false;
+								Mov2LG = false;
+								Mov3LG = false;
+								Mov4LG = false;
+								Mov5LG = false;
+								Mov6LG = false;
+								POSMLP1 = 0;
+								POSMLP2 = 0;
+								POSMLP3 = 0;
+								POSMLP4 = 0;
+								POSMLP5 = 0;
+								POSMLP6 = 0;
+								CML = 0;
+							}
+						}
+					}
+					
+					if(MOVMGP1 == false && MOVMGP2 == false && MOVMGP3 == false && MOVMGP4 == false && CountTime <= 0 && LANCERDP && KntDP && REIDP && ARCDP)
+					{
+						context.fillStyle = "purple";
+						context.fillRect(620,380,100,50);
+						if(mouse.press && mouse.x > 620 && mouse.x < 720 && mouse.y > 380 && mouse.y < 430)
+						{
+							mouse.press = false;
+							if(Vez_Gregos)
+							{
+								Vez_Gregos = false;
+								Vez_Persas = true;
+							}
+							else
+							{
+								Vez_Gregos = true;
+								Vez_Persas = false;
+							}
+						}
+					}
+					
+					else if(MOVMGP1 == false && MOVMGP2 == false && MOVMGP3 == false && MOVMGP4 == false)
+					{
+						CountTime = 100;
+						GnrlsPCC = 0;
+						Mov1GP = false;
+						Mov2GP = false;
+						Mov3GP = false;
+						Mov4GP = false;
+						ChooseP = Math.floor(randomRange(0,4));
+						MOVMGP1 = null;
+						MOVMGP2 = null;
+						MOVMGP3 = null;
+						MOVMGP4 = null;
+						POSMGP1 = 0;
+						POSMGP2 = 0;
+						POSMGP3 = 0;
+						POSMGP4 = 0;
+					}
+				}
+				
+				
+				{//Draws ded info
+					context.fillStyle = "#B0B0B0";
+					context.fillRect(601,0,601,700);
+					Text(605, 684, StringDano1);
+					Text(605, 654, StringDano2);
+					Text(605, 624, StringDano3);
+					Text(605, 594, StringDano4);
+					Text(605, 564, StringDano5);
+					Text(605, 534, StringDano6);
+					Text(605, 504, StringDano7);
+					Text(605, 474, StringDano8);
+					Text(605, 444, StringDano9);
+					Text(605, 414, StringDano10);
+					
+					//context.drawImage(Save,Save_x,Save_y,Save_w,Save_h)
+					context.drawImage(Ataque,Ataque_x,Ataque_y,Ataque_w,Ataque_h);
+					context.drawImage(Movimentacao,Movimentacao_x,Movimentacao_y,Movimentacao_w,Movimentacao_h);
+					context.drawImage(Unidade,Unidade_x,Unidade_y,Unidade_w,Unidade_h);
+					context.drawImage(Vida,Vida_x,Vida_y,Vida_w,Vida_h)
+					context.drawImage(Ataque,Ataque_x + 325,Ataque_y,Ataque_w,Ataque_h);
+					context.drawImage(Movimentacao,Movimentacao_x + 325,Movimentacao_y,Movimentacao_w,Movimentacao_h);
+					context.drawImage(Unidade,Unidade_x + 325,Unidade_y,Unidade_w,Unidade_h);
+					context.drawImage(Vida,Vida_x + 325,Vida_y,Vida_w,Vida_h)
+					DrawInfos();
+					DieKnts();
+					DieLancers();
+					DieArchers();
+					DieTowers();
+					DieGnrls();
+					DieKings();
+					context.drawImage(Menu,Menu_x,Menu_y,Menu_w,Menu_h);
+				}
+				
+				if(Vez_Persas)
+				{
+					context.fillStyle = "#000000";
+					context.font = "50px Times New Roman";
+					if(PTBR)
+					{
+						context.fillText("Vez dos Persas", 750, 50);		
+					}
+					else
+					{
+						context.fillText("Persian's Turn", 750, 50);		
+					}
+				}
+				else if(Vez_Gregos)
+				{
+					context.fillStyle = "#000000";
+					context.font = "50px Times New Roman";
+					if(PTBR)
+					{
+						context.fillText("Vez dos Gregos", 750, 50);		
+					}
+					else
+					{
+						context.fillText("Greek's Turn", 750, 50);	
+					}
+				}
+				
+				{//Mortes
+				
+					if(TorP[0].dead && TorP[1].dead)
+					{
+						TORREDP = true
+					}
+					
+					
+					if(ArcP[0].dead && ArcP[1].dead && ArcP[2].dead && ArcP[3].dead && ArcP[4].dead && ArcP[5].dead && ArcP[6].dead && ArcP[7].dead)
+					{
+						ARCDP = true
+					}
+					
+					
+					if(LancerP[0].dead && LancerP[1].dead && LancerP[2].dead && LancerP[3].dead && LancerP[4].dead && LancerP[5].dead && LancerP[6].dead && LancerP[7].dead)
+					{
+						LANCERDP = true
+					}
+					
+					
+					if(KntP[0].dead && KntP[1].dead && KntP[2].dead && KntP[3].dead)
+					{
+						KntDP = true
+					}
+				
+				
+					if(GnrlP[0].dead)				
+					{
+						GNRLDP = true;
+					}
+					
+					if(KingP[0].dead)
+					{
+						REIDP = true
+					}
+					
+					if(TORREDP && GNRLDP && REIDP && KntDP && LANCERDP && ARCDP)
+					{
+						Scene = "WinG";
+						GT = false;
+						PT = false;
+					}
+				
+					
+					if(TorG[0].dead && TorG[1].dead)
+					{
+						TORREDG = true
+					}
+					
+					
+					if(ArcG[0].dead && ArcG[1].dead && ArcG[2].dead && ArcG[3].dead && ArcG[4].dead && ArcG[5].dead && ArcG[6].dead && ArcG[7].dead)
+					{
+						ARCDG = true
+					}
+					
+					
+					if(LancerG[0].dead && LancerG[1].dead && LancerG[2].dead && LancerG[3].dead && LancerG[4].dead && LancerG[5].dead && LancerG[6].dead && LancerG[7].dead)
+					{
+						LANCERDG = true
+					}
+					
+					
+					if(KntG[0].dead && KntG[1].dead && KntG[2].dead && KntG[3].dead)
+					{
+						KntDG = true
+					}
+				
+				
+					if(GnrlG[0].dead)				
+					{
+						GNRLDG = true;
+					}
+					
+					if(KingG[0].dead)
+					{
+						REIDG = true
+					}
+					
+					if(TORREDG && GNRLDG && REIDG && KntDG && LANCERDG && ARCDG)
+					{
+						Scene = "WinP";
+						PT = false;
+						GT = false;
+					}
+				}
+						
+				context.drawImage(StopM,StopM_x,StopM_y,StopM_w,StopM_h);
+
+				if(GT && PT)
+				{
+					
+					context.drawImage(Pass,560,325,250,50);
+					if(mouse.press && mouse.x > 560 && mouse.x < 810 && mouse.y > 325 && mouse.y < 375)
+					{
+						mouse.press = false;
+						if(Vez_Gregos)
+						{
+							Vez_Gregos = false;
+							Vez_Persas = true;
+						}
+						else
+						{
+							Vez_Gregos = true;
+							Vez_Persas = false;
+						}
+					}
+				}
+			}
+			{//Fade
+				if(fadeOut)
+				{
+					fadeIn = true;
+					fadeOut = false;
+				}
+			}
+			break;
+		}
+	}
+	function Stroke(Map_x,Map_y,Map_w,Map_h,Map_c)
+	{
+		context.strokeStyle = Map_c;
+		context.strokeRect(Map_x,Map_y,Map_w,Map_h);
+	}		
+	function Mapa()
+	{
+		for (var c = 0; c < Coluna; c++)	
+		{
+			for (var line = 0; line < Linha; line++)
+			{
+				Stroke(Map_x[c],Map_y[c][line],Map_w,Map_h,Map_c);
+			}
+		}
+	}
+	function randomAIG()
+	{
+		SourceCharG = Math.floor(randomRange(0,99));
+		if(SourceCharG <= 75)
+		{
+			if(ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
+			ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < GnrlG[0].y &&
+			ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < KingG[0].y)
+			{
+				ChooseG = 3;
+			}
+			else if(LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
+			LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < GnrlG[0].y &&
+			LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < KingG[0].y)
+			{
+				ChooseG = 2
+			}
+			else if(KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
+			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
+			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < GnrlG[0].y &&
+			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < KingG[0].y)
+			{
+				ChooseG = 4;
+			}
+			else if(GnrlG[0].y < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
+			GnrlG[0].y < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
+			GnrlG[0].y < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			GnrlG[0].y < KingG[0].y)
+			{
+				ChooseG = 0;
+			}
+			else if(KingG[0].y < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
+			KingG[0].y < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
+			KingG[0].y < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			KingG[0].y < GnrlG[0].y)
+			{
+				ChooseG = 1;
+			}
+			else
+			{
+				SourceCharG = 85;
+			}
+		}
+		if(SourceCharG > 75)
+		{
+			ChanceR = Math.floor(randomRange(0,99));
+			if(ChanceR < 5)
+			{
+				ChooseG = 1;
+			}
+			else if(ChanceR > 5 && ChanceR < 15)
+			{
+				ChooseG = 0;
+			}
+			else if(ChanceR > 15 && ChanceR < 35)
+			{
+				ChooseG = 4;
+			}
+			else if(ChanceR > 35 && ChanceR < 70)
+			{
+				ChooseG = 2;
+			}
+			else
+			{
+				ChooseG = 3;
+			}
+		}
+	}	
+	function randomAIP()
+	{
+		SourceCharP = Math.floor(randomRange(0,99));
+		if(SourceCharP <= 75)
+		{
+			if(ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
+			ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < GnrlP[0].y &&
+			ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < KingP[0].y)
+			{
+				ChooseP = 3;
+			}
+			else if(LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
+			LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
+			LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < GnrlP[0].y &&
+			LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < KingP[0].y)
+			{
+				ChooseP = 2
+			}
+			else if(KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
+			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < GnrlP[0].y &&
+			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < KingP[0].y)
+			{
+				ChooseP = 4;
+			}
+			else if(GnrlP[0].y < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
+			GnrlP[0].y < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			GnrlP[0].y < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
+			GnrlP[0].y < KingP[0].y)
+			{
+				ChooseP = 0;
+			}
+			else if(KingP[0].y < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
+			KingP[0].y < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			KingP[0].y < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
+			KingP[0].y < GnrlP[0].y)
+			{
+				ChooseP = 1;
+			}
+			else 
+			{
+				SourceCharP = 85;
+			}
+		}
+		if(SourceCharP > 75)
+		{
+			ChanceR = Math.floor(randomRange(0,99));
+			if(ChanceR < 5)
+			{
+				ChooseP = 1;
+			}
+			else if(ChanceR > 5 && ChanceR < 15)
+			{
+				ChooseP = 0;
+			}
+			else if(ChanceR > 15 && ChanceR < 35)
+			{
+				ChooseP = 4;
+			}
+			else if(ChanceR > 35 && ChanceR < 70)
+			{
+				ChooseP = 2;
+			}
+			else
+			{
+				ChooseP = 3;
+			}
+		}
+	}	
+	function randomRange (min, max) 
+	{
+		return (Math.random() * (max - min + 1)) + min;
+	}
+	function Text(x,y,text)
+	{
+		context.fillStyle = "#000000";
+		context.font = "25px Myriad Pro";
+		context.fillText(text, x, y);		
+	}
+	function TextLife(text,x,y)
+	{
+		context.fillStyle = "#000000";
+		context.font = "40px Old English Text MT";
+		context.fillText(text, x, y);		
+	}
+	function TextLifeG(text,x,y)
+	{
+		context.fillStyle = "#000000";
+		context.font = "40px Old English Text MT";
+		context.fillText(text, x, y);		
+	}
+	function newLine(x)
+	{ 
+		StringDano10 = StringDano9;
+		StringDano9 = StringDano8;
+		StringDano8 = StringDano7;
+		StringDano7 = StringDano6;
+		StringDano6 = StringDano5;
+		StringDano5 = StringDano4;
+		StringDano4 = StringDano3;
+		StringDano3 = StringDano2;
+		StringDano2 = StringDano1;
+		StringDano1 = x;
+	}
+	function DrawsLancers()
+	{
+		for(var i = 0; i < LancerP.length; i++)
+		{
+			if(!LancerP[i].dead)				
+			{
+				LancerP[i].draw(context);
+			}
+		}
+		for(var i = 0; i < LancerG.length; i++)
+		{
+			if(!LancerG[i].dead)				
+			{
+				LancerG[i].draw(context);
+			}
+		}		
+	}		
+	function DrawsArchers()
+	{
+		for(var i = 0; i < ArcP.length; i++)
+		{
+			if(!ArcP[i].dead)				
+			{
+				ArcP[i].draw(context);
+			}
+		}
+		for(var i = 0; i < ArcG.length; i++)
+		{
+			if(!ArcG[i].dead)				
+			{
+				ArcG[i].draw(context);
+			}
+		}				
+	}
+	function DrawsKnts()
+	{
+		for(var i = 0; i < KntP.length; i++)
+		{
+			if(!KntP[i].dead)				
+			{
+				KntP[i].draw(context);
+			}
+		}
+		for(var i = 0; i < KntG.length; i++)
+		{
+			if(!KntG[i].dead)				
+			{
+				KntG[i].draw(context);
+			}
+		} 
+	}		
+	function DrawsTowers()
+	{
+		for(var i = 0; i < TorP.length; i++)
+		{
+			if(!TorP[i].dead)				
+			{
+				TorP[i].draw(context);
+			}
+		}
+		for(var i = 0; i < TorG.length; i++)
+		{
+			if(!TorG[i].dead)				
+			{
+				TorG[i].draw(context);
+			}
+		}		
+	}		
+	function DrawGnrls()
+	{
+		for(var i = 0; i < GnrlP.length; i++)
+		{
+			if(!GnrlP[i].dead)				
+			{
+				GnrlP[i].draw(context);
+			}
+		}
+		for(var i = 0; i < GnrlG.length; i++)
+		{
+			if(!GnrlG[i].dead)				
+			{
+				GnrlG[i].draw(context);
+			}
+		}		
+	}		
+	function DrawsKings()
+	{
+		for(var i = 0; i < KingP.length; i++)
+		{
+			if(!KingP[i].dead)				
+			{
+				KingP[i].draw(context);
+			}
+		}
+		for(var i = 0; i < KingG.length; i++)
+		{
+			if(!KingG[i].dead)				
+			{
+				KingG[i].draw(context);
+			}
+		}		
+	}
+	function Countertimer()
+	{
+		current2 = (new Date()).getTime();
+		elapsed = current2 - start2;
+		start2 = current2;
+		var delta = elapsed / 1000;			
+		return delta;
+	}
+	function loop()
+	{
+		update();
+		draw();
+		fadeon();
+	}
+	function RealLoop()
+	{
+		LoopCall += Countertimer() * 60;
+		if(LoopCall>1)
+		{
+			if(document.hasFocus())
+			{
+				loop();
+			}
+			LoopCall -= 1;
+		}
+		setTimeout(RealLoop, 1);
+	}
+	RealLoop();
+</script>
+</body>
+</html>
