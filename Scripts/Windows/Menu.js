@@ -12,8 +12,6 @@ var BJ = new Image();
 BJ.src = "Images/newgame.png";
 var BA = new Image();
 BA.src = "Images/about.png";
-var BSM = new Image();
-BSM.src = "Images/stopmotion.png";
 var Back = new Image();
 Back.src = "Images/back.png";
 var BH = new Image();
@@ -24,8 +22,7 @@ var anima = 0;
 var anima1 = false;
 var anima2 = false;
 
-var SettingsM = {x: 1100, y: 25, w:75,h:75};
-var BStopMotionM = {x:920, y: 650 , w: 250, h: 50}
+var SettingsM = {x: 950, y: 25, w: 225, h: 75};
 function SetMenu()
 {
 	if(fadeOut)
@@ -281,18 +278,8 @@ function SetMenu()
 		auxScene = "Opcoes";
 	}
 	
-	context.drawImage(BSM,BStopMotionM.x,BStopMotionM.y,BStopMotionM.w,BStopMotionM.h);
 	
-	if(mouse.x >= BStopMotionM.x &&
-	mouse.x <= BStopMotionM.x + BStopMotionM.w &&
-	mouse.y >= BStopMotionM.y &&
-	mouse.y <= BStopMotionM.y + BStopMotionM.h &&
-	mouse.press)
-	{
-		fadeOut = true;
-		mouse.press = false;
-		window.location = "../Warriors.html";
-	}
+
 	if(Backon)
 	{
 		context.drawImage(Back,bottonB.x,bottonB.y,bottonB.w,bottonB.h);
