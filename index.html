@@ -10,7 +10,6 @@
 <canvas id="Oficina" width="800" height="600" style="border:1px solid #000000;"> 
 </canvas>
 <script src = "Scripts/Windows/ChooseTeam.js"></script>
-<script src = "Scripts/Windows/Creditos.js"></script>
 <script src = "Scripts/Windows/Instrucoes1.js"></script>
 <script src = "Scripts/Windows/Instrucoes2.js"></script>
 <script src = "Scripts/Windows/Instrucoes3.js"></script>
@@ -86,6 +85,9 @@
 	back_image.src = "Images/back.png";
 	var X_button_image = new Image();
 	X_button_image.src = "Images/X_button.png";
+	var C_exit_button = {x:80, y:90, w: 64, h: 64};
+	var exit_button_image = new Image();
+	exit_button_image.src = "Images/exit_button.png";
 	var M_settings_image = new Image();
 	M_settings_image.src = "Images/Settings_Button.png";
 	var M_background_image = new Image();
@@ -93,7 +95,8 @@
 	var M_button_NG_image = new Image();
 	var M_button_I_image = new Image();
 	var M_button_C_image = new Image();
-	
+	var C_background_image = new Image();
+
 	
 	//RandomAIG
 	var SourceCharG;
@@ -589,18 +592,16 @@
 			}
 			context.drawImage(M_button_C_image,M_button_C.x,M_button_C.y,M_button_C.w,M_button_C.h);
 			
-			/*if(mouse.x >= bottonC.x &&
-			mouse.x <= bottonC.x + bottonC.w &&
-			mouse.y >= bottonC.y &&
-			mouse.y <= bottonC.y + bottonC.h &&
+			if(mouse.x >= M_button_C.x &&
+			mouse.x <= M_button_C.x + M_button_C.w &&
+			mouse.y >= M_button_C.y &&
+			mouse.y <= M_button_C.y + M_button_C.h &&
 			mouse.press)
 			{
 				fadeOut = true;
+				auxScene = "Credits";
 				mouse.press = false;
-				Scene = "Creditos";
-			}*/
-			
-			
+			}
 
 			if(Backon)
 			{
@@ -700,7 +701,7 @@
 			context.drawImage(o_backgroung_image, O_background.x, O_background.y, O_background.w, O_background.h);
 			
 			//Language
-			var Flag = {x:O_background.x + O_background.w/2 - 26, y: O_background.y + O_background.h/2 + 50, w:52, h:52};
+			var Flag = {x:O_background.x + O_background.w/2 - 26, y: O_background.y + O_background.h/2 + 70, w:52, h:52};
 			var flag_image = new Image();
 			if(PTBR)
 			{
@@ -731,7 +732,7 @@
 			}
 
 			//Audio
-			var O_Audio = {x:O_background.x + O_background.w/2 - 21, y: O_background.y + O_background.h/2 + 140 , w: 42 , h:42};
+			var O_Audio = {x:O_background.x + O_background.w/2 - 21, y: O_background.y + O_background.h/2 + 165 , w: 42 , h:42};
 			var audio_image = new Image();
 			if(audio)
 			{
@@ -760,7 +761,7 @@
 			}
 
 			//Back Button
-			var O_X_button = {x:O_background.x + O_background.w - 75, y:O_background.y + 50, w:25, h:25};
+			var O_X_button = {x:O_background.x + O_background.w - 45, y:O_background.y + 25, w:25, h:25};
 			context.drawImage(X_button_image, O_X_button.x, O_X_button.y, O_X_button.w, O_X_button.h);
 			if(mouse.x >= O_X_button.x &&
 			mouse.x <= O_X_button.x + O_X_button.w &&
@@ -814,8 +815,32 @@
 			SetInstru8();
 			break;
 			
-			case "Creditos":
-			SetCred();
+			case "Credits":
+			if(fadeOut)
+			{
+				fadeIn = true;
+				fadeOut = false;
+			}
+			if(PTBR)
+			{
+				C_background_image.src = "Images/credits.png";
+			}
+			else
+			{
+				C_background_image.src = "Images/creditos.png";
+			}
+			context.drawImage(C_background_image,0,0);
+			context.drawImage(exit_button_image, C_exit_button.x, C_exit_button.y, C_exit_button.w, C_exit_button.h);
+			if(mouse.x >= C_exit_button.x &&
+			mouse.x <= C_exit_button.x + C_exit_button.w &&
+			mouse.y >= C_exit_button.y &&
+			mouse.y <= C_exit_button.y + C_exit_button.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				auxScene = "Menu";
+			}
 			break;
 			
 			case "Jogo":
