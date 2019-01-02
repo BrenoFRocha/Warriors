@@ -496,7 +496,7 @@
 			context.drawImage(o_backgroung_image, O_background.x, O_background.y, O_background.w, O_background.h);
 			
 			//Language
-			var Flag = {x:O_background.x + O_background.w/2 - 32, y: O_background.y + O_background.h/2 - 16, w:64, h:64};
+			var Flag = {x:O_background.x + O_background.w/2 - 26, y: O_background.y + O_background.h/2 + 50, w:52, h:52};
 			var flag_image = new Image();
 			if(PTBR)
 			{
@@ -507,10 +507,10 @@
 				flag_image.src = "Images/br-flag.png"
 			}
 			context.drawImage(flag_image, Flag.x, Flag.y, Flag.w, Flag.h);
-			if(mouse.x >= Flag.x + 10 &&
-			mouse.x <= Flag.x + Flag.w - 10 &&
-			mouse.y >= Flag.y + 10 &&
-			mouse.y <= Flag.y + Flag.h - 10 &&
+			if(mouse.x >= Flag.x + 7.5 &&
+			mouse.x <= Flag.x + Flag.w - 7.5 &&
+			mouse.y >= Flag.y + 7.5 &&
+			mouse.y <= Flag.y + Flag.h - 7.5 &&
 			mouse.press)
 			{
 				mouse.press = false;
@@ -527,7 +527,7 @@
 			}
 
 			//Audio
-			var O_Audio = {x:O_background.x + O_background.w/2 - 28, y: O_background.y + O_background.h/2 + 125 , w: 56 , h:56};
+			var O_Audio = {x:O_background.x + O_background.w/2 - 21, y: O_background.y + O_background.h/2 + 140 , w: 42 , h:42};
 			var audio_image = new Image();
 			if(audio)
 			{
@@ -556,7 +556,7 @@
 			}
 
 			//Back Button
-			var O_X_button = {x:O_background.x + O_background.w - 50, y:O_background.y + 25, w:25, h:25};
+			var O_X_button = {x:O_background.x + O_background.w - 75, y:O_background.y + 50, w:25, h:25};
 			context.drawImage(X_button_image, O_X_button.x, O_X_button.y, O_X_button.w, O_X_button.h);
 			if(mouse.x >= O_X_button.x &&
 			mouse.x <= O_X_button.x + O_X_button.w &&
@@ -567,11 +567,11 @@
 				mouse.press = false;
 				Scene = "Menu";
 			}
-			
 			if(audio)
 			{
 				StopM.src = "Images/!som.png"
 			}
+
 			break;
 			
 			case "Instrucoes1":
