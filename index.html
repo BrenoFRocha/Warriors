@@ -7,7 +7,7 @@
 <title>Warriors</title>
 <body bgcolor="#000000" text="WHITE">
 <h1></h1>
-<canvas id="Oficina" width="1200" height="700" style="border:1px solid #000000;"> 
+<canvas id="Oficina" width="800" height="600" style="border:1px solid #000000;"> 
 </canvas>
 <script src = "Scripts/Windows/Menu.js"></script>
 <script src = "Scripts/Windows/ChooseTeam.js"></script>
@@ -20,7 +20,6 @@
 <script src = "Scripts/Windows/Instrucoes6.js"></script>
 <script src = "Scripts/Windows/Instrucoes7.js"></script>
 <script src = "Scripts/Windows/Instrucoes8.js"></script>
-<script src = "Scripts/Windows/Settings.js"></script>
 <script src = "Scripts/Basic/Reload.js"></script>
 <script src = "Scripts/Basic/Archers.js"></script>
 <script src = "Scripts/Basic/Lancers.js"></script>
@@ -49,6 +48,7 @@
 
 	var Scene = "Jogo";
 	var auxScene = Scene;
+	var audio = true;
 	//Fade
 	var fadeAlpha=1;
 	var fadeState=1;
@@ -77,15 +77,19 @@
 	var CTeam = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var WinG = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var WinP = {x:0, y:0, w:canvas.width, h:canvas.height};
-	var Opcoes = {x:0, y:0, w:canvas.width, h:canvas.height};
 	
 	//LIGAR OU DESLIGAR A INTELIGENCIA ARTIFICIAL/ GT E PT = TRUE = MULTIPLAYER - COMPLETAMENTE FUNCIONAL / GT = TRUE E PT = FALSE = SINGLE PLAYER COM PLAYER UTILIZANDO TROPAS GREGAS - AINDA NÃO FUNCIONAL / PT = TRUE E GT = FALSE = SINGLE PLAYER COM PLAYER UTILIZANDO TROPAS PERSAS - FUNCIONAL
 	var GT = true;
 	var PT = false;
 	//Voltar
 	var Backon = false;
+	var back_image = new Image();
+	back_image.src = "Images/back.png";
+	var X_button_image = new Image();
+	X_button_image.src = "Images/X_button.png";
 	var SetGo3 = new Image();
-	SetGo3.src = "Images/set.png"
+	SetGo3.src = "Images/set.png";
+	
 	
 	//RandomAIG
 	var SourceCharG;
@@ -412,7 +416,18 @@
 				fadeOut = false;
 			}
 			SetMenu();
-			context.drawImage(SetGo3,SettingsM.x,SettingsM.y,SettingsM.w,SettingsM.h);
+			
+			if(mouse.x >= canvas.width - Settings_Size.w &&
+			mouse.x <= canvas.width - Settings_Size.w + Settings_Size.w &&
+			mouse.y >= canvas.height - Settings_Size.h &&
+			mouse.y <= canvas.height - Settings_Size.h + Settings_Size.h &&
+			mouse.press)
+			{
+				mouse.press = false;
+				Scene = "Options";
+			}
+			
+			context.drawImage(SetGo3,canvas.width - Settings_Size.w, canvas.height - Settings_Size.h, Settings_Size.w, Settings_Size.h);
 			break;
 			
 			case "CTeam":
@@ -465,9 +480,95 @@
 			Backon = false;
 			break;
 			
-			case "Opcoes":
-			SetSettings();
-			if(no_audio)
+			case "Options":
+
+			//Background
+			var O_background = {x:canvas.width/2 - canvas.width/4, y:canvas.height/2 - (canvas.height - canvas.height/5)/2, w: canvas.width/2, h: canvas.height - canvas.height/5};
+			var o_backgroung_image = new Image();
+			if(PTBR)
+			{
+				o_backgroung_image.src = "Images/options.png";
+			}
+			else
+			{
+				o_backgroung_image.src = "Images/opcoes.png";
+			}
+			context.drawImage(o_backgroung_image, O_background.x, O_background.y, O_background.w, O_background.h);
+			
+			//Language
+			var Flag = {x:O_background.x + O_background.w/2 - 32, y: O_background.y + O_background.h/2 - 16, w:64, h:64};
+			var flag_image = new Image();
+			if(PTBR)
+			{
+				flag_image.src = "Images/usa-flag.png"
+			}
+			else
+			{
+				flag_image.src = "Images/br-flag.png"
+			}
+			context.drawImage(flag_image, Flag.x, Flag.y, Flag.w, Flag.h);
+			if(mouse.x >= Flag.x + 10 &&
+			mouse.x <= Flag.x + Flag.w - 10 &&
+			mouse.y >= Flag.y + 10 &&
+			mouse.y <= Flag.y + Flag.h - 10 &&
+			mouse.press)
+			{
+				mouse.press = false;
+				if(PTBR)
+				{
+					PTBR = false;
+					ENUS = true;
+				}
+				else
+				{
+					ENUS = false;
+					PTBR = true;
+				}
+			}
+
+			//Audio
+			var O_Audio = {x:O_background.x + O_background.w/2 - 28, y: O_background.y + O_background.h/2 + 125 , w: 56 , h:56};
+			var audio_image = new Image();
+			if(audio)
+			{
+				audio_image.src = "Images/play_sound.png";
+			}
+			else
+			{
+				audio_image.src = "Images/pause_sound.png";
+			}
+			context.drawImage(audio_image,O_Audio.x,O_Audio.y,O_Audio.w,O_Audio.h);
+			if(mouse.x >= O_Audio.x &&
+			mouse.x <= O_Audio.x + O_Audio.w &&
+			mouse.y >= O_Audio.y &&
+			mouse.y <= O_Audio.y + O_Audio.h &&
+			mouse.press)
+			{
+				mouse.press = false;
+				if(audio)
+				{
+					audio = false;
+				}
+				else
+				{
+					audio = true;					
+				}
+			}
+
+			//Back Button
+			var O_X_button = {x:O_background.x + O_background.w - 50, y:O_background.y + 25, w:25, h:25};
+			context.drawImage(X_button_image, O_X_button.x, O_X_button.y, O_X_button.w, O_X_button.h);
+			if(mouse.x >= O_X_button.x &&
+			mouse.x <= O_X_button.x + O_X_button.w &&
+			mouse.y >= O_X_button.y &&
+			mouse.y <= O_X_button.y + O_X_button.h &&
+			mouse.press)
+			{
+				mouse.press = false;
+				Scene = "Menu";
+			}
+			
+			if(audio)
 			{
 				StopM.src = "Images/!som.png"
 			}
@@ -514,7 +615,7 @@
 			
 					
 			//SaveGame();
-			if(no_audio == false)
+			if(audio == false)
 			{
 				Sound();
 			}

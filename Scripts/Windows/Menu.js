@@ -17,12 +17,12 @@ Back.src = "Images/back.png";
 var BH = new Image();
 BH.src = "Images/help.png";
 
+var Settings_Size = {w: 225, h: 75};
 
 var anima = 0;
 var anima1 = false;
 var anima2 = false;
 
-var SettingsM = {x: 950, y: 25, w: 225, h: 75};
 function SetMenu()
 {
 	if(fadeOut)
@@ -266,17 +266,6 @@ function SetMenu()
 		mouse.press = false;
 		Scene = "Creditos";
 	}*/
-	
-	if(mouse.x >= SettingsM.x &&
-	mouse.x <= SettingsM.x + SettingsM.w &&
-	mouse.y >= SettingsM.y &&
-	mouse.y <= SettingsM.y + SettingsM.h &&
-	mouse.press)
-	{
-		fadeOut = true;
-		mouse.press = false;
-		auxScene = "Opcoes";
-	}
 	
 	
 
