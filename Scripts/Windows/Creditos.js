@@ -1,8 +1,3 @@
-var Nomes = {x:0 , y: 700, w: 1200, h:700, u:true, d:false};
-var Counting = 0;
-
-var imge = new Image();
-imge.src = "Images/Creditos.png"
 
 function SetCred()
 {

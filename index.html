@@ -1,5 +1,5 @@
 <html>
-<link rel="shortcut icon" href="Images/Icon2.jpg" type="image/jpg"/>
+<link rel="shortcut icon" href="Images/Icon.png" type="image/png"/>
 <center>
 <head>
 </head>
@@ -9,7 +9,6 @@
 <h1></h1>
 <canvas id="Oficina" width="800" height="600" style="border:1px solid #000000;"> 
 </canvas>
-<script src = "Scripts/Windows/Menu.js"></script>
 <script src = "Scripts/Windows/ChooseTeam.js"></script>
 <script src = "Scripts/Windows/Creditos.js"></script>
 <script src = "Scripts/Windows/Instrucoes1.js"></script>
@@ -87,8 +86,13 @@
 	back_image.src = "Images/back.png";
 	var X_button_image = new Image();
 	X_button_image.src = "Images/X_button.png";
-	var SetGo3 = new Image();
-	SetGo3.src = "Images/set.png";
+	var M_settings_image = new Image();
+	M_settings_image.src = "Images/Settings_Button.png";
+	var M_background_image = new Image();
+	M_background_image.src = "Images/Menu_Background.png";
+	var M_button_NG_image = new Image();
+	var M_button_I_image = new Image();
+	var M_button_C_image = new Image();
 	
 	
 	//RandomAIG
@@ -250,20 +254,6 @@
 					music2.src = "Audio/AudioDeBatalha2.mp3";
 				}
 			break;
-			case "Menu":
-			var image1 = new Image();
-			image1.src = "Images/1.png";
-			var image2 = new Image();
-			image2.src = "Images/2.png";
-			var image3 = new Image();
-			image3.src = "Images/3.png";
-			var image4 = new Image();
-			image4.src = "Images/4.png";
-			var image5 = new Image();
-			image5.src = "Images/5.png";
-		
-			
-			break;
 		}
 	}
 	function fadeon()
@@ -415,19 +405,233 @@
 				fadeIn = true;
 				fadeOut = false;
 			}
-			SetMenu();
+			context.drawImage(M_background_image,0,0);
 			
-			if(mouse.x >= canvas.width - Settings_Size.w &&
-			mouse.x <= canvas.width - Settings_Size.w + Settings_Size.w &&
-			mouse.y >= canvas.height - Settings_Size.h &&
-			mouse.y <= canvas.height - Settings_Size.h + Settings_Size.h &&
+			music1.pause("Music1Game");
+			music2.pause("Music2Game");
+			
+			var bottonB = {x:10,y:25,w:150,h:50};			
+			
+			//Button New Game
+			var M_button_NG = {x:canvas.width/2 - 125, y:212.5, w:250, h:50};
+			if(PTBR)
+			{
+				M_button_NG_image.src = "Images/New_Game_Button.png";
+			}
+			else
+			{
+				M_button_NG_image.src = "Images/Novo_Jogo_Botao.png";
+			}
+			context.drawImage(M_button_NG_image,M_button_NG.x,M_button_NG.y,M_button_NG.w,M_button_NG.h);
+			if(mouse.x >= M_button_NG.x &&
+			mouse.x <= M_button_NG.x + M_button_NG.w &&
+			mouse.y >= M_button_NG.y &&
+			mouse.y <= M_button_NG.y + M_button_NG.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				Backon = false;
+				TreePosition = null;
+				turnfirst = Math.floor(randomRange(0, 1)) 
+				music1.currentTime = 0;
+				music2.currentTime = 0;
+				GNRLDP = false;
+				REIDP = false;
+				KntDP = false;
+				ARCDP = false;
+				LANCERDP = false;
+				TORREDP = false;
+				GNRLDG = false;
+				REIDG = false;
+				KntDG = false;
+				ARCDG = false;
+				LANCERDG = false;
+				TORREDG = false;
+				Mouseoff = null
+				for(var i = 0; i < 8; i++) 
+				{
+					LancerP[i] = new LancersP(LancerP_x[i], 151, 48, 48, 40);			
+				}		
+				for(var i = 0; i < 8; i++) 
+				{
+					LancerG[i] = new LancersG(LancerG_x[i], 501, 48, 48, 40);			
+				}
+				for(var i = 0; i < 1; i++) 
+				{
+					KingG[i] = new KingsG(KingG_x[i], 551, 48, 48, 65);			
+				}	
+				for(var i = 0; i < 1; i++) 
+				{
+					KingP[i] = new KingsP(KingP_x[i], 101, 48, 48, 65);			
+				}	
+				for(var i = 0; i < 1; i++) 
+				{
+					GnrlG[i] = new GnrlsG(GnrlG_x[i], 551, 48, 48, 55);			
+				}	
+				for(var i = 0; i < 1; i++) 
+				{
+					GnrlP[i] = new GnrlsP(GnrlP_x[i], 101, 48, 48, 55);			
+				}	
+				for(var i = 0; i < 4; i++) 
+				{
+					KntP[i] = new KntsP(KntP_x[i], KntP_y[i], 48, 48, 45);			
+				}	
+				for(var i = 0; i < 4; i++) 
+				{
+					KntG[i] = new KntsG(KntG_x[i], KntG_y[i], 48, 48, 45);					
+				}
+				for(var i = 0; i < 8; i++) 
+				{
+					ArcP[i] = new ArchersP(ArcP_x[i], 101, 48, 48, 30);			
+				}	
+				for(var i = 0; i < 8; i++) 
+				{
+					ArcG[i] = new ArchersG(ArcG_x[i], 551, 48, 48, 30);			
+				}
+				for(var i = 0; i < 2; i++) 
+				{
+					TorP[i] = new TorsP(TorP_x[i], 201, 48, 48, 70);			
+				}	
+				for(var i = 0; i < 2; i++) 
+				{
+					TorG[i] = new TorsG(TorG_x[i], 451, 48, 48, 70);			
+				}
+				WallP_life = 100;
+				WallG_life = 100;
+				Click_CG = 0;
+				Click_AG = 0;
+				Click_LG = 0;  
+				Click_TG = 0; 
+				Click_GG = 0;  
+				Click_KG = 0;
+				Click_CP = 0;
+				Click_AP = 0;
+				Click_LP = 0;  
+				Click_TP = 0; 
+				Click_GP = 0;  
+				Click_KP = 0;
+				InfoWallG = false;
+				InfoArcG = false;
+				InfoGnrlG = false;
+				InfoKingG = false;
+				InfoLancerG = false;
+				InfoKntG = false;
+				InfoTorG = false;
+				InfoWallP = false;
+				InfoArcP = false;
+				InfoLancerP = false;
+				InfoTorP = false;
+				InfoKingP = false;
+				InfoGnrlP = false;
+				InfoKntP = false;
+				TorsGChoosed = null;
+				TorsPChoosed = null;
+				ArcsGChoosed = null;
+				ArcsPChoosed = null;
+				KntsGChoosed = null;
+				KntsPChoosed = null;
+				GnrlGChoosed = null;
+				GnrlPChoosed = null;
+				KingGChoosed = null;
+				KingPChoosed = null;
+				LancersGChoosed = null;
+				LancersPChoosed = null;
+				StringDano1 = "";
+				StringDano2 = "";
+				StringDano3 = "";
+				StringDano4 = "";
+				StringDano5 = "";
+				StringDano6 = "";
+				StringDano7 = "";
+				StringDano8 = "";
+				StringDano9 = "";
+				StringDano10 = "";
+				save = 0;
+				AIG = null;
+				AIP = null;
+				PT = null;
+				GT = null;
+				auxScene = "CTeam";
+			}
+
+			//Instructions Button
+			var M_button_I = {x:canvas.width/2 - 150, y:312.5, w:300, h:50};
+			if(PTBR)
+			{
+				M_button_I_image.src = "Images/Instructions_Button.png";
+			}
+			else
+			{
+				M_button_I_image.src = "Images/Instrucoes_Botao.png";
+			}
+			context.drawImage(M_button_I_image,M_button_I.x,M_button_I.y,M_button_I.w,M_button_I.h);
+			if(mouse.x >= M_button_I.x &&
+			mouse.x <= M_button_I.x + M_button_I.w &&
+			mouse.y >= M_button_I.y &&
+			mouse.y <= M_button_I.y + M_button_I.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				auxScene = "Instrucoes1";
+			}
+
+			//Credits Button
+			var M_button_C = {x:canvas.width/2 - 100, y:412.5, w:200, h:50};
+			if(PTBR)
+			{
+				M_button_C_image.src = "Images/Credits_Button.png";
+			}
+			else
+			{
+				M_button_C_image.src = "Images/Creditos_Botao.png";
+			}
+			context.drawImage(M_button_C_image,M_button_C.x,M_button_C.y,M_button_C.w,M_button_C.h);
+			
+			/*if(mouse.x >= bottonC.x &&
+			mouse.x <= bottonC.x + bottonC.w &&
+			mouse.y >= bottonC.y &&
+			mouse.y <= bottonC.y + bottonC.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				Scene = "Creditos";
+			}*/
+			
+			
+
+			if(Backon)
+			{
+				context.drawImage(Back,bottonB.x,bottonB.y,bottonB.w,bottonB.h);
+				
+				if(mouse.x >= bottonB.x &&
+				mouse.x <= bottonB.x + bottonB.w &&
+				mouse.y >= bottonB.y &&
+				mouse.y <= bottonB.y + bottonB.h &&
+				mouse.press)
+				{
+					
+					fadeOut = true;
+					mouse.press = false;
+					auxScene = "Jogo";
+				}
+			}
+			
+			var M_settings = {x:canvas.width - 80,y:16 ,w: 64, h: 64};
+
+			if(mouse.x >= M_settings.x &&
+			mouse.x <= M_settings.x + M_settings.w &&
+			mouse.y >= M_settings.y &&
+			mouse.y <= M_settings.y + M_settings.h &&
 			mouse.press)
 			{
 				mouse.press = false;
 				Scene = "Options";
 			}
 			
-			context.drawImage(SetGo3,canvas.width - Settings_Size.w, canvas.height - Settings_Size.h, Settings_Size.w, Settings_Size.h);
+			context.drawImage(M_settings_image, M_settings.x, M_settings.y, M_settings.w, M_settings.h);
 			break;
 			
 			case "CTeam":
@@ -562,6 +766,10 @@
 			mouse.x <= O_X_button.x + O_X_button.w &&
 			mouse.y >= O_X_button.y &&
 			mouse.y <= O_X_button.y + O_X_button.h &&
+			mouse.press || mouse.x < O_background.x &&
+			mouse.press	|| mouse.x > O_background.x + O_background.w &&
+			mouse.press || mouse.y < O_background.y &&
+			mouse.press	|| mouse.y > O_background.y + O_background.h &&
 			mouse.press)
 			{
 				mouse.press = false;
