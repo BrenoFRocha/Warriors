@@ -9,7 +9,6 @@
 <h1></h1>
 <canvas id="Oficina" width="800" height="600" style="border:1px solid #000000;"> 
 </canvas>
-<script src = "Scripts/Windows/ChooseTeam.js"></script>
 <script src = "Scripts/Windows/Instrucoes1.js"></script>
 <script src = "Scripts/Windows/Instrucoes2.js"></script>
 <script src = "Scripts/Windows/Instrucoes3.js"></script>
@@ -85,13 +84,24 @@
 	back_image.src = "Images/back.png";
 	var X_button_image = new Image();
 	X_button_image.src = "Images/X_button.png";
-	var C_exit_button = {x:80, y:90, w: 64, h: 64};
+	var C_exit_button = {x:72.5, y:80, w: 64, h: 64};
 	var exit_button_image = new Image();
 	exit_button_image.src = "Images/exit_button.png";
 	var M_settings_image = new Image();
 	M_settings_image.src = "Images/Settings_Button.png";
 	var M_background_image = new Image();
 	M_background_image.src = "Images/Menu_Background.png";
+	var CT_background_image = new Image();
+	var CT_persian_button = {x: 175, y: 110, w: 64, h:64};
+	var CT_persian_button_image = new Image();
+	CT_persian_button_image.src = "Images/play_persian.png";
+	var CT_greek_button = {x: canvas.width - 239, y: 110, w: 64, h:64};
+	var CT_greek_button_image = new Image();
+	CT_greek_button_image.src = "Images/play_greek.png";
+	var CT_multiplayer_button = {x: canvas.width/2 - 48, y: canvas.height - 104, w: 96, h:96};
+	var CT_multiplayer_button_image = new Image();
+	CT_multiplayer_button_image.src = "Images/play_multiplayer.png";
+	var CT_exit_button = {x: 12, y: 12, w: 48, h:48};
 	var M_button_NG_image = new Image();
 	var M_button_I_image = new Image();
 	var M_button_C_image = new Image();
@@ -636,7 +646,88 @@
 			break;
 			
 			case "CTeam":
-			SetTeam();
+
+			if(fadeOut)
+			{
+				fadeIn = true;
+				fadeOut = false;
+			}
+
+			//Background
+			if(PTBR)
+			{
+				CT_background_image.src = "Images/Menu_Team.png";
+			}
+			else
+			{
+				CT_background_image.src = "Images/Menu_Time.png";
+			}
+			context.drawImage(CT_background_image, 0, 0);
+
+			//Persian's Button
+			context.drawImage(CT_persian_button_image, CT_persian_button.x, CT_persian_button.y, CT_persian_button.w, CT_persian_button.h);
+			if(mouse.x >= CT_persian_button.x &&
+			mouse.x <= CT_persian_button.x + CT_persian_button.w &&
+			mouse.y >= CT_persian_button.y &&
+			mouse.y <= CT_persian_button.y + CT_persian_button.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				AIG = true;
+				AIP = false;
+				GT = false;
+				PT = true;
+				auxScene = "Jogo";
+			}
+
+			//Greek's Button
+			context.drawImage(CT_greek_button_image, CT_greek_button.x, CT_greek_button.y, CT_greek_button.w, CT_greek_button.h);
+			if(mouse.x >= CT_greek_button.x &&
+			mouse.x <= CT_greek_button.x + CT_greek_button.w &&
+			mouse.y >= CT_greek_button.y &&
+			mouse.y <= CT_greek_button.y + CT_greek_button.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				AIG = false;
+				AIP = true;
+				GT = true;
+				PT = false;
+				auxScene = "Jogo";
+			}
+
+			//Multiplayer's Button
+			context.drawImage(CT_multiplayer_button_image, CT_multiplayer_button.x, CT_multiplayer_button.y, CT_multiplayer_button.w, CT_multiplayer_button.h);
+			if(mouse.x >= CT_multiplayer_button.x &&
+			mouse.x <= CT_multiplayer_button.x + CT_multiplayer_button.w &&
+			mouse.y >= CT_multiplayer_button.y &&
+			mouse.y <= CT_multiplayer_button.y + CT_multiplayer_button.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				AIG = false;
+				AIP = false;
+				GT = true;
+				PT = true;
+				auxScene = "Jogo";
+			}
+
+			//Exit Button
+			context.drawImage(exit_button_image, CT_exit_button.x, CT_exit_button.y, CT_exit_button.w, CT_exit_button.h);
+			if(mouse.x >= CT_exit_button.x &&
+			mouse.x <= CT_exit_button.x + CT_exit_button.w &&
+			mouse.y >= CT_exit_button.y &&
+			mouse.y <= CT_exit_button.y + CT_exit_button.h &&
+			mouse.press)
+			{
+				fadeOut = true;
+				mouse.press = false;
+				auxScene = "Menu";
+			}
+			//SetTeam();
 			break;
 			
 			case "WinG":
