@@ -45,7 +45,7 @@
 
 	var Scene = "Jogo";
 	var auxScene = Scene;
-	var audio = true;
+	var audio = false;
 	//Fade
 	var fadeAlpha=1;
 	var fadeState=1;
@@ -100,13 +100,28 @@
 	var CT_multiplayer_button_image = new Image();
 	CT_multiplayer_button_image.src = "Images/play_multiplayer.png";
 	var CT_exit_button = {x: 12, y: 12, w: 48, h:48};
+	var G_exit_button = {x: canvas.width - 188, y: 15, w: 48, h:48};
+	var G_audio_button = {x: canvas.width - 60, y: 18, w: 45, h:45};
+	var G_language_button = {x: canvas.width - 126, y: 15, w: 48, h:48};
 	var M_button_NG_image = new Image();
 	var M_button_I_image = new Image();
 	var M_button_C_image = new Image();
 	var C_background_image = new Image();
+	var flag_image = new Image();
+	var audio_image = new Image();
 	var limit_down = 451;
 	var lancer_number = 8;
 	var archer_number = 8;
+	var GI_background_image = new Image();
+	GI_background_image.src = "Images/GI_background.png";
+	var Greek_s_Turn_image = new Image();
+	Greek_s_Turn_image.src = "Images/Greek_s_Turn.png";
+	var Persian_s_Turn_image = new Image();
+	Persian_s_Turn_image.src = "Images/Persian_s_Turn.png";
+	var Turno_dos_Gregos_image = new Image();
+	Turno_dos_Gregos_image.src = "Images/Turno_dos_Gregos.png";
+	var Turno_dos_Persas_image = new Image();
+	Turno_dos_Persas_image.src = "Images/Turno_dos_Persas.png";
 	
 	//RandomAIG
 	var SourceCharG;
@@ -141,7 +156,7 @@
 			{//VARIAVEIS	
 					
 					var Campo_F = new Image();
-					Campo_F.src = "Images/Campo.png";
+					Campo_F.src = "Images/Ground.png";
 					
 					var Tree = new Image();
 					Tree.src = "Images/tree.png";
@@ -171,12 +186,6 @@
 					var resetChoosedAIG = false;
 					var resetChoosedAIP = false;
 					
-					var StopM = new Image();
-					var StopM_x = canvas.width-590;
-					var StopM_y = 0;
-					var StopM_w = 50;
-					var StopM_h = 50;
-					
 					//som
 					var firstsound = true;
 					var stop = false;
@@ -184,13 +193,13 @@
 					var stop2 = false;
 					
 					{//Mapa
-						var Linha = 10;
+						var Linha = 8;
 						var Coluna = 12;
 						var Map_x = [];
 						var Map_y = [];
 						var Map_w = 50;
 						var Map_h = 50;
-						var Map_c = "#000000";
+						var Map_c = "#c0c0c0";
 						
 						for (var c = 0; c < Coluna; c++)
 						{
@@ -220,16 +229,6 @@
 					var LANCERDG = false;
 					var TORREDG = false;
 
-					var Menu = new Image();
-					
-					var Menu_x = canvas.width/2 + canvas.width/4 - 125;
-					var Menu_y = 325;
-					var Menu_w = 250;
-					var Menu_h = 50;
-					/*for(var i = 0; i < 4; i++) 
-					{	
-						localStorage["Warriors.KntP.x"] = KntP[i].x 
-					}*/
 					var opacity = 22;
 					var Fade = new Image();
 					var FadeD_x = 0;
@@ -338,30 +337,6 @@
 		}
 		if(Scene == "Jogo")
 		{
-			if(stop)
-			{
-				StopM.src = "Images/!som.png";
-			}
-			if(stop == false)
-			{
-				StopM.src = "Images/som.png";
-			}
-			if(mouse.x > StopM_x &&
-			mouse.x < StopM_x + StopM_w &&
-			mouse.y > StopM_y &&
-			mouse.y < StopM_y + StopM_h &&
-			mouse.press)
-			{
-				mouse.press = false;
-				if(stop)
-				{
-					stop = false;
-				}
-				else
-				{
-					stop = true;
-				}
-			}
 			if(stop1)
 			{
 				if(stop)
@@ -402,14 +377,6 @@
 	}
 	function update()
 	{	
-		if(PTBR)
-		{
-			Menu.src = "Images/MenuPT.png";
-		}
-		else
-		{
-			Menu.src = "Images/MenuEN.png";
-		}
 		switch(Scene)
 		{
 			case "Menu":
@@ -615,7 +582,7 @@
 
 			if(Backon)
 			{
-				context.drawImage(Back,bottonB.x,bottonB.y,bottonB.w,bottonB.h);
+				context.drawImage(exit_button_image,bottonB.x,bottonB.y,bottonB.w,bottonB.h);
 				
 				if(mouse.x >= bottonB.x &&
 				mouse.x <= bottonB.x + bottonB.w &&
@@ -793,7 +760,6 @@
 			
 			//Language
 			var Flag = {x:O_background.x + O_background.w/2 - 26, y: O_background.y + O_background.h/2 + 70, w:52, h:52};
-			var flag_image = new Image();
 			if(PTBR)
 			{
 				flag_image.src = "Images/usa-flag.png"
@@ -824,8 +790,7 @@
 
 			//Audio
 			var O_Audio = {x:O_background.x + O_background.w/2 - 21, y: O_background.y + O_background.h/2 + 165 , w: 42 , h:42};
-			var audio_image = new Image();
-			if(audio)
+			if(audio && !stop)
 			{
 				audio_image.src = "Images/play_sound.png";
 			}
@@ -866,10 +831,6 @@
 			{
 				mouse.press = false;
 				Scene = "Menu";
-			}
-			if(audio)
-			{
-				StopM.src = "Images/!som.png"
 			}
 
 			break;
@@ -1035,14 +996,46 @@
 					Reload();
 				}
 				if(mouse.press &&
-				mouse.x > Menu_x &&
-				mouse.x < Menu_x + Menu_w &&
-				mouse.y > Menu_y &&
-				mouse.y < Menu_y + Menu_h)
+				mouse.x > G_exit_button.x &&
+				mouse.x < G_exit_button.x + G_exit_button.w &&
+				mouse.y > G_exit_button.y &&
+				mouse.y < G_exit_button.y + G_exit_button.h)
 				{
 					fadeOut = true;
 					mouse.press = false;
 					auxScene = "Menu";
+				}
+				if(mouse.x > G_audio_button.x &&
+				mouse.x < G_audio_button.x + G_audio_button.w &&
+				mouse.y > G_audio_button.y &&
+				mouse.y < G_audio_button.y + G_audio_button.h &&
+				mouse.press)
+				{
+					mouse.press = false;
+					if(audio)
+					{
+						audio = false;
+					}
+					stop = !stop;
+				}
+
+				if(mouse.x >= G_language_button.x + 7.5 &&
+				mouse.x <= G_language_button.x + G_language_button.w - 7.5 &&
+				mouse.y >= G_language_button.y + 7.5 &&
+				mouse.y <= G_language_button.y + G_language_button.h - 7.5 &&
+				mouse.press)
+				{
+					mouse.press = false;
+					if(PTBR)
+					{
+						PTBR = false;
+						ENUS = true;
+					}
+					else
+					{
+						ENUS = false;
+						PTBR = true;
+					}
 				}
 				save++;
 				if(AIP && GNRLDP && REIDP && KntDP && ARCDP && LANCERDP && TORREDP == false)
@@ -1104,7 +1097,7 @@
 				}
 				
 				context.clearRect(0,0,canvas.width,canvas.height);
-				context.drawImage(Campo_F,0,0,601,700);
+				context.drawImage(Campo_F,0,0,800,600);
 				{//Árvores
 					if(TreePosition == null)
 					{
@@ -2106,8 +2099,9 @@
 				
 				
 				{//Draws ded info
-					context.fillStyle = "#B0B0B0";
-					context.fillRect(601,0,601,700);
+					context.drawImage(GI_background_image,600,0,200,600);
+					/*context.fillStyle = "#FFFFFF";
+					context.fillRect(600,0,601,700);*/
 					Text(405, 584, StringDano1);
 					Text(405, 554, StringDano2);
 					Text(405, 524, StringDano3);
@@ -2135,33 +2129,51 @@
 					DieTowers();
 					DieGnrls();
 					DieKings();
-					context.drawImage(Menu,Menu_x,Menu_y,Menu_w,Menu_h);
+					context.drawImage(exit_button_image,G_exit_button.x,G_exit_button.y,G_exit_button.w,G_exit_button.h);
+					if(!audio && stop)
+					{
+						audio_image.src = "Images/play_sound.png";
+					}
+					else if(audio && !stop)
+					{
+						audio_image.src = "Images/play_sound.png";
+					}
+					else
+					{
+						audio_image.src = "Images/pause_sound.png";
+					}
+					context.drawImage(audio_image, G_audio_button.x,G_audio_button.y, G_audio_button.w, G_audio_button.h);
+					if(PTBR)
+					{
+						flag_image.src = "Images/usa-flag.png"
+					}
+					else
+					{
+						flag_image.src = "Images/br-flag.png"
+					}
+					context.drawImage(flag_image, G_language_button.x, G_language_button.y, G_language_button.w, G_language_button.h);
 				}
 				
 				if(Vez_Persas)
 				{
-					context.fillStyle = "#000000";
-					context.font = "50px Times New Roman";
 					if(PTBR)
 					{
-						context.fillText("Vez dos Persas", 750, 50);		
+						context.drawImage(Persian_s_Turn_image, 612.5,75);		
 					}
 					else
 					{
-						context.fillText("Persian's Turn", 750, 50);		
+						context.drawImage(Turno_dos_Persas_image, 612.5,75);		
 					}
 				}
 				else if(Vez_Gregos)
 				{
-					context.fillStyle = "#000000";
-					context.font = "50px Times New Roman";
 					if(PTBR)
 					{
-						context.fillText("Vez dos Gregos", 750, 50);		
+						context.drawImage(Greek_s_Turn_image, 612.5,75);		
 					}
 					else
 					{
-						context.fillText("Greek's Turn", 750, 50);	
+						context.drawImage(Turno_dos_Gregos_image, 612.5,75);
 					}
 				}
 				
@@ -2250,9 +2262,6 @@
 						GT = false;
 					}
 				}
-						
-				context.drawImage(StopM,StopM_x,StopM_y,StopM_w,StopM_h);
-
 				if(GT && PT)
 				{
 					
