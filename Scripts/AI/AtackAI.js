@@ -399,51 +399,6 @@ function AtackAI()
 							Vez_Gregos = true;
 						}
 					}
-				}
-				if(CountM < 8)
-				{
-					if(LancerP[CountM].y == limit_down)
-					{
-						CountOnM = false;
-						KntPMove = false;
-						GnrlPMove = false;
-						KingPMove = false;
-						LancerPMove = false;
-						ArcPMove = false;
-						context.drawImage(AtkA,LancerP[CountM].x + 50, LancerP[CountM].y + 50, LancerP[CountM].w, LancerP[CountM].h);
-						context.drawImage(AtkA,LancerP[CountM].x - 50, LancerP[CountM].y - 50, LancerP[CountM].w, LancerP[CountM].h);
-						context.drawImage(AtkA,LancerP[CountM].x + 50, LancerP[CountM].y - 50, LancerP[CountM].w, LancerP[CountM].h);
-						context.drawImage(AtkA,LancerP[CountM].x - 50, LancerP[CountM].y + 50, LancerP[CountM].w, LancerP[CountM].h);
-						CountTime --;
-						if(CountTime <= 0)
-						{
-							if(Math.floor(randomRange(0,99)<20))
-							{
-								WallG_life -= 26;
-								if(PTBR)
-								{
-									newLine("Golpe Critico! Muralha Grega perde 26 pontos de vida.");
-								}
-								else
-									newLine("Critical attack! - Greek Wall loses 26 life points.");
-							}
-							
-							else
-							{
-								damage = Math.floor(randomRange(16,21));
-								WallG_life -= damage;
-								if(PTBR)
-								{
-									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
-								}
-								else
-									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
-							}
-							CountTime = 100;
-							Vez_Persas = false;	
-							Vez_Gregos = true;
-						}
-					}
 					else if(ArcP[CountM].y == limit_down - 100 || ArcP[CountM].y == limit_down-50 || ArcP[CountM].y == limit_down)
 					{
 						CountOnM = false;
@@ -494,7 +449,51 @@ function AtackAI()
 							Vez_Gregos = true;
 						}
 					}
-				
+				}
+				if(CountM < 6)
+				{
+					if(LancerP[CountM].y == limit_down)
+					{
+						CountOnM = false;
+						KntPMove = false;
+						GnrlPMove = false;
+						KingPMove = false;
+						LancerPMove = false;
+						ArcPMove = false;
+						context.drawImage(AtkA,LancerP[CountM].x + 50, LancerP[CountM].y + 50, LancerP[CountM].w, LancerP[CountM].h);
+						context.drawImage(AtkA,LancerP[CountM].x - 50, LancerP[CountM].y - 50, LancerP[CountM].w, LancerP[CountM].h);
+						context.drawImage(AtkA,LancerP[CountM].x + 50, LancerP[CountM].y - 50, LancerP[CountM].w, LancerP[CountM].h);
+						context.drawImage(AtkA,LancerP[CountM].x - 50, LancerP[CountM].y + 50, LancerP[CountM].w, LancerP[CountM].h);
+						CountTime --;
+						if(CountTime <= 0)
+						{
+							if(Math.floor(randomRange(0,99)<20))
+							{
+								WallG_life -= 26;
+								if(PTBR)
+								{
+									newLine("Golpe Critico! Muralha Grega perde 26 pontos de vida.");
+								}
+								else
+									newLine("Critical attack! - Greek Wall loses 26 life points.");
+							}
+							
+							else
+							{
+								damage = Math.floor(randomRange(16,21));
+								WallG_life -= damage;
+								if(PTBR)
+								{
+									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
+								}
+								else
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
+							}
+							CountTime = 100;
+							Vez_Persas = false;	
+							Vez_Gregos = true;
+						}
+					}
 				}
 				else
 				{
@@ -3059,51 +3058,6 @@ function AtackAI()
 							Vez_Persas = true;
 						}
 					}
-				}
-				if(CountM < 8)
-				{
-					if(LancerG[CountM].y == 101)
-					{
-						CountOnM = false;
-						KntGMove = false;
-						GnrlGMove = false;
-						KingGMove = false;
-						LancerGMove = false;
-						ArcGMove = false;
-						context.drawImage(AtkA,LancerG[CountM].x + 50, LancerG[CountM].y + 50, LancerG[CountM].w, LancerG[CountM].h);
-						context.drawImage(AtkA,LancerG[CountM].x - 50, LancerG[CountM].y - 50, LancerG[CountM].w, LancerG[CountM].h);
-						context.drawImage(AtkA,LancerG[CountM].x + 50, LancerG[CountM].y - 50, LancerG[CountM].w, LancerG[CountM].h);
-						context.drawImage(AtkA,LancerG[CountM].x - 50, LancerG[CountM].y + 50, LancerG[CountM].w, LancerG[CountM].h);
-						CountTime --;
-						if(CountTime <= 0)
-						{
-							if(Math.floor(randomRange(0,99)<20))
-							{
-								WallP_life -= 26;
-								if(PTBR)
-								{
-									newLine("Golpe Critico! Muralha Persa perde 26 pontos de vida.");
-								}
-								else
-									newLine("Critical attack! - Persian Wall loses 26 life points.");
-							}
-							
-							else
-							{
-								damage = Math.floor(randomRange(16,21));
-								WallP_life -= damage;
-								if(PTBR)
-								{
-									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
-								}
-								else
-									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
-							}
-							CountTime = 100;
-							Vez_Gregos = false;	
-							Vez_Persas = true;
-						}
-					}
 					else if(ArcG[CountM].y == 201 || ArcG[CountM].y == 151 || ArcG[CountM].y == 101)
 					{
 						CountOnM = false;
@@ -3154,7 +3108,51 @@ function AtackAI()
 							Vez_Persas = true;
 						}
 					}
-				
+				}
+				if(CountM < 6)
+				{
+					if(LancerG[CountM].y == 101)
+					{
+						CountOnM = false;
+						KntGMove = false;
+						GnrlGMove = false;
+						KingGMove = false;
+						LancerGMove = false;
+						ArcGMove = false;
+						context.drawImage(AtkA,LancerG[CountM].x + 50, LancerG[CountM].y + 50, LancerG[CountM].w, LancerG[CountM].h);
+						context.drawImage(AtkA,LancerG[CountM].x - 50, LancerG[CountM].y - 50, LancerG[CountM].w, LancerG[CountM].h);
+						context.drawImage(AtkA,LancerG[CountM].x + 50, LancerG[CountM].y - 50, LancerG[CountM].w, LancerG[CountM].h);
+						context.drawImage(AtkA,LancerG[CountM].x - 50, LancerG[CountM].y + 50, LancerG[CountM].w, LancerG[CountM].h);
+						CountTime --;
+						if(CountTime <= 0)
+						{
+							if(Math.floor(randomRange(0,99)<20))
+							{
+								WallP_life -= 26;
+								if(PTBR)
+								{
+									newLine("Golpe Critico! Muralha Persa perde 26 pontos de vida.");
+								}
+								else
+									newLine("Critical attack! - Persian Wall loses 26 life points.");
+							}
+							
+							else
+							{
+								damage = Math.floor(randomRange(16,21));
+								WallP_life -= damage;
+								if(PTBR)
+								{
+									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
+								}
+								else
+									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
+							}
+							CountTime = 100;
+							Vez_Gregos = false;	
+							Vez_Persas = true;
+						}
+					}
 				}
 				else
 				{
