@@ -19,6 +19,8 @@ var POSMGP1 = 0;
 var POSMGP2 = 0;
 var POSMGP3 = 0;
 var POSMGP4 = 0;
+var limit_down = 451;
+var limit_right = 351;
 
 function PossibilitiesAIGP()
 {
@@ -104,12 +106,12 @@ function PossibilitiesAIGP()
 					
 					if(GnrlsPCC != 0)
 					{
-						if(GnrlP[0].y < 551)
+						if(GnrlP[0].y < limit_down)
 						{
 							context.drawImage(MovG, GnrlP[0].x + 50, GnrlP[0].y + 50, GnrlP[0].w, GnrlP[0].h);
 							context.drawImage(MovG, GnrlP[0].x - 50, GnrlP[0].y + 50, GnrlP[0].w, GnrlP[0].h);
 						}
-						if(GnrlP[0].y < 501)
+						if(GnrlP[0].y < limit_down-50)
 						{
 							context.drawImage(MovG, GnrlP[0].x - 100, GnrlP[0].y + 100, GnrlP[0].w, GnrlP[0].h);
 							context.drawImage(MovG, GnrlP[0].x + 100, GnrlP[0].y + 100, GnrlP[0].w, GnrlP[0].h);
@@ -325,7 +327,7 @@ function PossibilitiesAIGP()
 					
 					if(GnrlsPCC == 1)
 					{
-						if(GnrlP[0].x > 51 && GnrlP[0].y < 501)
+						if(GnrlP[0].x > 51 && GnrlP[0].y < limit_down-50)
 						{
 							if(GnrlsPCC != 2 && GnrlsPCC != 3 && GnrlsPCC != 4)
 							{
@@ -362,7 +364,7 @@ function PossibilitiesAIGP()
 					}
 					if(GnrlsPCC == 2)
 					{
-						if(GnrlP[0].x > 1 && GnrlP[0].y < 551)
+						if(GnrlP[0].x > 1 && GnrlP[0].y < limit_down)
 						{
 							if(GnrlsPCC != 1 && GnrlsPCC != 3 && GnrlsPCC != 4)
 							{
@@ -402,7 +404,7 @@ function PossibilitiesAIGP()
 					}
 					if(GnrlsPCC == 3)
 					{	
-						if(GnrlP[0].x < 501 && GnrlP[0].y < 501)
+						if(GnrlP[0].x < limit_right-50 && GnrlP[0].y < limit_down-50)
 						{
 							if(GnrlsPCC != 1 && GnrlsPCC != 2 && GnrlsPCC != 4)
 							{
@@ -440,7 +442,7 @@ function PossibilitiesAIGP()
 					}
 					if(GnrlsPCC == 4)
 					{
-						if(GnrlP[0].x < 551 && GnrlP[0].y < 551)
+						if(GnrlP[0].x < limit_right && GnrlP[0].y < limit_down)
 						{
 							if(GnrlsPCC != 1 && GnrlsPCC != 2 && GnrlsPCC != 3)
 							{

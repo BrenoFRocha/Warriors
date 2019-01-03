@@ -1,5 +1,9 @@
 var PTBR = true;
-	var ENUS = false;
+var ENUS = false;
+var archer_number = 4;
+var limit_down = 451;
+var limit_right = 351;
+
 function ArchersP(ArcherP_x, ArcherP_y, ArcherP_w, ArcherP_h, ArcherP_l)
 {	
 	this.x = ArcherP_x;
@@ -67,26 +71,26 @@ function ArchersG(ArcherG_x, ArcherG_y, ArcherG_w, ArcherG_h, ArcherG_l)
 }
 
 {//instanciando Arqueiros Persas
-	var ArcP_x = [51, 101, 151 , 201, 351, 401, 451, 501];	
+	var ArcP_x = [51, 101,  251, 301];	
 	var ArcP = [];
 	var Click_AP = 0;		
 	var OrdemAP = ArcsPChoosed;
 	
-	for(var i = 0; i < 8; i++) 
+	for(var i = 0; i < archer_number; i++) 
 	{
 		ArcP[i] = new ArchersP(ArcP_x[i], 101, 48, 48, 30);			
 	}				
 }
 	
 {//instanciando Arqueiros Gregos
-	var ArcG_x = [51, 101, 151 , 201, 351, 401, 451, 501];	
+	var ArcG_x = [51, 101, 251, 301];	
 	var ArcG = [];
 	var Click_AG = 0;
 	var OrdemAG = ArcsGChoosed;
 	
-	for(var i = 0; i < 8; i++) 
+	for(var i = 0; i < archer_number; i++) 
 	{
-		ArcG[i] = new ArchersG(ArcG_x[i], 551, 48, 48, 30);			
+		ArcG[i] = new ArchersG(ArcG_x[i], 301, 48, 48, 30);			
 	}				
 }
 
@@ -214,7 +218,7 @@ function PossibilitiesA()
 			context.drawImage(MovA, ArcG[ArcsGChoosed].x - 50, ArcG[ArcsGChoosed].y, ArcG[ArcsGChoosed].w, ArcG[ArcsGChoosed].h);
 			context.drawImage(MovA, ArcG[ArcsGChoosed].x + 50, ArcG[ArcsGChoosed].y, ArcG[ArcsGChoosed].w, ArcG[ArcsGChoosed].h);
 			
-			if(ArcG[ArcsGChoosed].y < 551)
+			if(ArcG[ArcsGChoosed].y < limit_down)
 			{
 				context.drawImage(MovA, ArcG[ArcsGChoosed].x , ArcG[ArcsGChoosed].y + 50, ArcG[ArcsGChoosed].w, ArcG[ArcsGChoosed].h);
 			}
@@ -223,7 +227,7 @@ function PossibilitiesA()
 			mouse.x < ArcG[ArcsGChoosed].x + ArcG[ArcsGChoosed].w*2 && 
 			mouse.y > ArcG[ArcsGChoosed].y &&
 			mouse.y < ArcG[ArcsGChoosed].y + ArcG[ArcsGChoosed].h &&
-			ArcG[ArcsGChoosed].x < 551)
+			ArcG[ArcsGChoosed].x < limit_right)
 			{
 				ArcG[ArcsGChoosed].x += 50;
 				if(GregosCouldMoveA())
@@ -264,7 +268,7 @@ function PossibilitiesA()
 			mouse.x < ArcG[ArcsGChoosed].x + ArcG[ArcsGChoosed].w && 
 			mouse.y > ArcG[ArcsGChoosed].y + ArcG[ArcsGChoosed].h + 3 &&
 			mouse.y < ArcG[ArcsGChoosed].y + ArcG[ArcsGChoosed].h*2 &&
-			ArcG[ArcsGChoosed].y < 551)
+			ArcG[ArcsGChoosed].y < limit_down)
 			{
 				ArcG[ArcsGChoosed].y += 50;
 				if(GregosCouldMoveA())
@@ -1139,7 +1143,7 @@ function PossibilitiesA()
 			}
 			context.drawImage(MovA, ArcP[ArcsPChoosed].x - 50, ArcP[ArcsPChoosed].y, ArcP[ArcsPChoosed].w, ArcP[ArcsPChoosed].h);
 			context.drawImage(MovA, ArcP[ArcsPChoosed].x + 50, ArcP[ArcsPChoosed].y, ArcP[ArcsPChoosed].w, ArcP[ArcsPChoosed].h);
-			if(ArcP[ArcsPChoosed].y < 551)
+			if(ArcP[ArcsPChoosed].y < limit_down)
 			{
 				context.drawImage(MovA, ArcP[ArcsPChoosed].x , ArcP[ArcsPChoosed].y + 50, ArcP[ArcsPChoosed].w, ArcP[ArcsPChoosed].h);
 			}
@@ -1148,7 +1152,7 @@ function PossibilitiesA()
 			mouse.x < ArcP[ArcsPChoosed].x + ArcP[ArcsPChoosed].w*2 && 
 			mouse.y > ArcP[ArcsPChoosed].y &&
 			mouse.y < ArcP[ArcsPChoosed].y + ArcP[ArcsPChoosed].h &&
-			ArcP[ArcsPChoosed].x < 551)
+			ArcP[ArcsPChoosed].x < limit_right)
 			{
 				ArcP[ArcsPChoosed].x += 50;
 				
@@ -1191,7 +1195,7 @@ function PossibilitiesA()
 			mouse.x < ArcP[ArcsPChoosed].x + ArcP[ArcsPChoosed].w && 
 			mouse.y > ArcP[ArcsPChoosed].y + ArcP[ArcsPChoosed].h + 3 &&
 			mouse.y < ArcP[ArcsPChoosed].y + ArcP[ArcsPChoosed].h*2 &&
-			ArcP[ArcsPChoosed].y < 551)
+			ArcP[ArcsPChoosed].y < limit_down)
 			{
 				ArcP[ArcsPChoosed].y += 50;
 				if(PersasCouldMoveA())

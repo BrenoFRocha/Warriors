@@ -106,7 +106,9 @@
 	var M_button_I_image = new Image();
 	var M_button_C_image = new Image();
 	var C_background_image = new Image();
-
+	var limit_down = 451;
+	var lancer_number = 6;
+	var archer_number = 4;
 	
 	//RandomAIG
 	var SourceCharG;
@@ -222,7 +224,7 @@
 
 					var Menu = new Image();
 					
-					var Menu_x = 780;
+					var Menu_x = canvas.width/2 + canvas.width/4 - 125;
 					var Menu_y = 325;
 					var Menu_w = 250;
 					var Menu_h = 50;
@@ -462,17 +464,17 @@
 				LANCERDG = false;
 				TORREDG = false;
 				Mouseoff = null
-				for(var i = 0; i < 8; i++) 
+				for(var i = 0; i < lancer_number; i++) 
 				{
 					LancerP[i] = new LancersP(LancerP_x[i], 151, 48, 48, 40);			
 				}		
-				for(var i = 0; i < 8; i++) 
+				for(var i = 0; i < lancer_number; i++) 
 				{
-					LancerG[i] = new LancersG(LancerG_x[i], 501, 48, 48, 40);			
+					LancerG[i] = new LancersG(LancerG_x[i], 401, 48, 48, 40);			
 				}
 				for(var i = 0; i < 1; i++) 
 				{
-					KingG[i] = new KingsG(KingG_x[i], 551, 48, 48, 65);			
+					KingG[i] = new KingsG(KingG_x[i], limit_down, 48, 48, 65);			
 				}	
 				for(var i = 0; i < 1; i++) 
 				{
@@ -480,7 +482,7 @@
 				}	
 				for(var i = 0; i < 1; i++) 
 				{
-					GnrlG[i] = new GnrlsG(GnrlG_x[i], 551, 48, 48, 55);			
+					GnrlG[i] = new GnrlsG(GnrlG_x[i], limit_down, 48, 48, 55);			
 				}	
 				for(var i = 0; i < 1; i++) 
 				{
@@ -494,21 +496,21 @@
 				{
 					KntG[i] = new KntsG(KntG_x[i], KntG_y[i], 48, 48, 45);					
 				}
-				for(var i = 0; i < 8; i++) 
+				for(var i = 0; i < archer_number; i++) 
 				{
 					ArcP[i] = new ArchersP(ArcP_x[i], 101, 48, 48, 30);			
 				}	
-				for(var i = 0; i < 8; i++) 
+				for(var i = 0; i < archer_number; i++) 
 				{
-					ArcG[i] = new ArchersG(ArcG_x[i], 551, 48, 48, 30);			
+					ArcG[i] = new ArchersG(ArcG_x[i], limit_down, 48, 48, 30);			
 				}
 				for(var i = 0; i < 2; i++) 
 				{
-					TorP[i] = new TorsP(TorP_x[i], 201, 48, 48, 70);			
+					TorP[i] = new TorsP(TorP_x[i], 201, 48, 48, 30);			
 				}	
 				for(var i = 0; i < 2; i++) 
 				{
-					TorG[i] = new TorsG(TorG_x[i], 451, 48, 48, 70);			
+					TorG[i] = new TorsG(TorG_x[i], 351, 48, 48, 30);			
 				}
 				WallP_life = 100;
 				WallG_life = 100;
@@ -936,9 +938,6 @@
 			
 			case "Jogo":
 			
-			
-					
-			//SaveGame();
 			if(audio == false)
 			{
 				Sound();
@@ -1018,7 +1017,6 @@
 					UpdateGnrlP();
 					UpdateKingP();
 					Reload();
-					//SaveGame();
 				}
 				if(GT == true && PT == true)
 				{
@@ -1037,7 +1035,6 @@
 					UpdateGnrlG();
 					UpdateKingG();
 					Reload();
-					//SaveGame();
 				}
 				if(mouse.press &&
 				mouse.x > Menu_x &&
@@ -1052,7 +1049,7 @@
 				save++;
 				if(AIP && GNRLDP && REIDP && KntDP && ARCDP && LANCERDP && TORREDP == false)
 				{
-					for(var i = 0; i < 8; i ++)
+					for(var i = 0; i < archer_number; i ++)
 					{
 						ArcP[i] = new ArchersP(ArcP_x[i], 101, 48, 48, 15);
 					}
@@ -1068,7 +1065,7 @@
 				}
 				if(AIG && GNRLDG && REIDG && KntDG && ARCDG && LANCERDG && TORREDG == false)
 				{
-					for(var i = 0; i < 8; i ++)
+					for(var i = 0; i < archer_number; i ++)
 					{
 						ArcG[i] = new ArchersG(ArcG_x[i], 101, 48, 48, 15);
 					}
@@ -1117,10 +1114,10 @@
 					}
 					if(TreePosition == 0)
 					{
-						TreeA = {x:51, y:251, w:50, h:50};	 
-						TreeB = {x:551, y:451, w:50, h:50};	 
+						TreeA = {x:51, y:251, w:50, h:50};	
+						TreeB = {x:101, y:151, w:50, h:50};	 
 						TreeC = {x:201, y:301, w:50, h:50};	 
-						TreeD = {x:101, y:401, w:50, h:50};	 
+						TreeD = {x:151, y:301, w:50, h:50};	 
 						TreeE = {x:351, y:351, w:50, h:50};
 						TreeF = {x:401, y:201, w:50, h:50};	
 					}
@@ -1130,7 +1127,7 @@
 						TreeB = {x:401, y:451, w:50, h:50};	 
 						TreeC = {x:401, y:251, w:50, h:50};	 
 						TreeD = {x:251, y:301, w:50, h:50};	 
-						TreeE = {x:151, y:401, w:50, h:50};
+						TreeE = {x:201, y:301, w:50, h:50};
 						TreeF = {x:301, y:251, w:50, h:50};	
 					}
 					if(TreePosition == 2)
@@ -1138,18 +1135,18 @@
 						TreeA = {x:201, y:301, w:50, h:50};	 
 						TreeB = {x:101, y:351, w:50, h:50};	 
 						TreeC = {x:1, y:251, w:50, h:50};	 
-						TreeD = {x:151, y:451, w:50, h:50};	
+						TreeD = {x:151, y:351, w:50, h:50};	
 						TreeE = {x:451, y:351, w:50, h:50}; 
 						TreeF = {x:351, y:251, w:50, h:50};	
 					}
 					if(TreePosition == 3)
 					{
 						TreeA = {x:251, y:201, w:50, h:50};	 
-						TreeB = {x:301, y:451, w:50, h:50};	 
-						TreeC = {x:101, y:301, w:50, h:50};	 
+						TreeB = {x:201, y:351, w:50, h:50};	 
+						TreeC = {x:151, y:201, w:50, h:50};	 
 						TreeD = {x:201, y:401, w:50, h:50};	 
-						TreeE = {x:551, y:251, w:50, h:50};
-						TreeF = {x:501, y:401, w:50, h:50};	
+						TreeE = {x:101, y:201, w:50, h:50};
+						TreeF = {x:501, y:301, w:50, h:50};	
 					}
 					context.drawImage(Tree,TreeA.x,TreeA.y,TreeA.w,TreeA.h)
 					context.drawImage(Tree,TreeB.x,TreeB.y,TreeB.w,TreeB.h)
@@ -1448,14 +1445,6 @@
 					{
 						LancersGCChoosed = 6;
 					}
-					if(LancerG[6].dead && LancersGCChoosed == 6)
-					{
-						LancersGCChoosed = 7;
-					}
-					if(LancerG[7].dead && LancersGCChoosed == 7)
-					{
-						LancersGCChoosed = 0;
-					}
 					if(ArcG[0].dead && ArcsGCChoosed == 0)
 					{
 						ArcsGCChoosed = 1;
@@ -1471,22 +1460,6 @@
 					if(ArcG[3].dead && ArcsGCChoosed == 3)
 					{
 						ArcsGCChoosed = 4;
-					}
-					if(ArcG[4].dead && ArcsGCChoosed == 4)
-					{
-						ArcsGCChoosed = 5;
-					}
-					if(ArcG[5].dead && ArcsGCChoosed == 5)
-					{
-						ArcsGCChoosed = 6;
-					}
-					if(ArcG[6].dead && ArcsGCChoosed == 6)
-					{
-						ArcsGCChoosed = 7;
-					}
-					if(ArcG[7].dead && ArcsGCChoosed == 7)
-					{
-						ArcsGCChoosed = 0;
 					}
 					if(KntsGCChoosed == 0 && KntG[0].dead)
 					{
@@ -1577,7 +1550,7 @@
 						}
 					}
 					
-					for(var i = 0; i < 8; i++)
+					for(var i = 0; i < archer_number; i++)
 					{
 						if(i != ArcsGCChoosed)
 						{
@@ -1604,7 +1577,7 @@
 							{
 								CMA += 1;
 								CountTime = 100;
-								ArcsGCChoosed = Math.floor(randomRange(0,7));
+								ArcsGCChoosed = Math.floor(randomRange(0,archer_number-1));
 							
 								MOVMAG1 = null;
 								MOVMAG2 = null;
@@ -1616,7 +1589,7 @@
 								POSMAG2 = 0;
 								POSMAG3 = 0;
 							}
-							if(CMA >= 8)
+							if(CMA >= archer_number)
 							{
 								CountTime = 100;
 								ChooseG = Math.floor(randomRange(0,4));
@@ -1636,7 +1609,7 @@
 						}
 					}
 				
-					for(var i = 0; i < 8; i++)
+					for(var i = 0; i < lancer_number; i++)
 					{
 						if(i != LancersGCChoosed)
 						{
@@ -1669,7 +1642,7 @@
 								MOVMLG4 = null;
 								MOVMLG5 = null;
 								MOVMLG6 = null;
-								LancersGCChoosed = Math.floor(randomRange(0,7));
+								LancersGCChoosed = Math.floor(randomRange(0,lancer_number-1));
 								Mov1LG = false;
 								Mov2LG = false;
 								Mov3LG = false;
@@ -1683,7 +1656,7 @@
 								POSMLG5 = 0;
 								POSMLG6 = 0;
 							}
-							if(CML >= 8)
+							if(CML >= 6)
 							{
 								CountTime = 100;
 								ChooseG = Math.floor(randomRange(0,4));
@@ -1806,14 +1779,6 @@
 					{
 						LancersPCChoosed = 6;
 					}
-					if(LancerP[6].dead && LancersPCChoosed == 6)
-					{
-						LancersPCChoosed = 7;
-					}
-					if(LancerP[7].dead && LancersPCChoosed == 7)
-					{
-						LancersPCChoosed = 0;
-					}
 					if(ArcP[0].dead && ArcsPCChoosed == 0)
 					{
 						ArcsPCChoosed = 1;
@@ -1829,22 +1794,6 @@
 					if(ArcP[3].dead && ArcsPCChoosed == 3)
 					{
 						ArcsPCChoosed = 4;
-					}
-					if(ArcP[4].dead && ArcsPCChoosed == 4)
-					{
-						ArcsPCChoosed = 5;
-					}
-					if(ArcP[5].dead && ArcsPCChoosed == 5)
-					{
-						ArcsPCChoosed = 6;
-					}
-					if(ArcP[6].dead && ArcsPCChoosed == 6)
-					{
-						ArcsPCChoosed = 7;
-					}
-					if(ArcP[7].dead && ArcsPCChoosed == 7)
-					{
-						ArcsPCChoosed = 0;
 					}
 					if(KntsPCChoosed == 0 && KntG[0].dead)
 					{
@@ -1935,7 +1884,7 @@
 							}
 						}
 					}
-					for(var i = 0; i < 8; i++)
+					for(var i = 0; i < archer_number; i++)
 					{
 						if(i != ArcsPCChoosed)
 						{
@@ -1962,7 +1911,7 @@
 							{
 								CMA += 1;
 								CountTime = 100;
-								ArcsPCChoosed = Math.floor(randomRange(0,7));
+								ArcsPCChoosed = Math.floor(randomRange(0,archer_number-1));
 							
 								MOVMAP1 = null;
 								MOVMAP2 = null;
@@ -1974,7 +1923,7 @@
 								POSMAP2 = 0;
 								POSMAP3 = 0;
 							}
-							if(CMA >= 8)
+							if(CMA >= archer_number)
 							{
 								CountTime = 100;
 								ChooseP = Math.floor(randomRange(0,4));
@@ -1994,7 +1943,7 @@
 						}
 					}
 				
-					for(var i = 0; i < 8; i++)
+					for(var i = 0; i < lancer_number; i++)
 					{
 						if(i != LancersPCChoosed)
 						{
@@ -2027,7 +1976,7 @@
 								MOVMLP4 = null;
 								MOVMLP5 = null;
 								MOVMLP6 = null;
-								LancersPCChoosed = Math.floor(randomRange(0,7));
+								LancersPCChoosed = Math.floor(randomRange(0,lancer_number-1));
 								Mov1LG = false;
 								Mov2LG = false;
 								Mov3LG = false;
@@ -2041,7 +1990,7 @@
 								POSMLP5 = 0;
 								POSMLP6 = 0;
 							}
-							if(CML >= 8)
+							if(CML >= lancer_number)
 							{
 								CountTime = 100;
 								ChooseP = Math.floor(randomRange(0,4));
@@ -2112,27 +2061,26 @@
 				
 				{//Draws ded info
 					context.fillStyle = "#B0B0B0";
-					context.fillRect(601,0,601,700);
-					Text(605, 684, StringDano1);
-					Text(605, 654, StringDano2);
-					Text(605, 624, StringDano3);
-					Text(605, 594, StringDano4);
-					Text(605, 564, StringDano5);
-					Text(605, 534, StringDano6);
-					Text(605, 504, StringDano7);
-					Text(605, 474, StringDano8);
-					Text(605, 444, StringDano9);
-					Text(605, 414, StringDano10);
+					context.fillRect(401,0,601,700);
+					Text(405, 584, StringDano1);
+					Text(405, 554, StringDano2);
+					Text(405, 524, StringDano3);
+					Text(405, 494, StringDano4);
+					Text(405, 464, StringDano5);
+					Text(405, 434, StringDano6);
+					Text(405, 404, StringDano7);
+					Text(405, 374, StringDano8);
+					Text(405, 344, StringDano9);
+					Text(405, 314, StringDano10);
 					
-					//context.drawImage(Save,Save_x,Save_y,Save_w,Save_h)
 					context.drawImage(Ataque,Ataque_x,Ataque_y,Ataque_w,Ataque_h);
 					context.drawImage(Movimentacao,Movimentacao_x,Movimentacao_y,Movimentacao_w,Movimentacao_h);
 					context.drawImage(Unidade,Unidade_x,Unidade_y,Unidade_w,Unidade_h);
 					context.drawImage(Vida,Vida_x,Vida_y,Vida_w,Vida_h)
-					context.drawImage(Ataque,Ataque_x + 325,Ataque_y,Ataque_w,Ataque_h);
-					context.drawImage(Movimentacao,Movimentacao_x + 325,Movimentacao_y,Movimentacao_w,Movimentacao_h);
-					context.drawImage(Unidade,Unidade_x + 325,Unidade_y,Unidade_w,Unidade_h);
-					context.drawImage(Vida,Vida_x + 325,Vida_y,Vida_w,Vida_h)
+					context.drawImage(Ataque,Ataque_x + 125,Ataque_y,Ataque_w,Ataque_h);
+					context.drawImage(Movimentacao,Movimentacao_x +125,Movimentacao_y,Movimentacao_w,Movimentacao_h);
+					context.drawImage(Unidade,Unidade_x + 125,Unidade_y,Unidade_w,Unidade_h);
+					context.drawImage(Vida,Vida_x + 125,Vida_y,Vida_w,Vida_h)
 					DrawInfos();
 					DieKnts();
 					DieLancers();
@@ -2178,13 +2126,13 @@
 					}
 					
 					
-					if(ArcP[0].dead && ArcP[1].dead && ArcP[2].dead && ArcP[3].dead && ArcP[4].dead && ArcP[5].dead && ArcP[6].dead && ArcP[7].dead)
+					if(ArcP[0].dead && ArcP[1].dead && ArcP[2].dead && ArcP[3].dead)
 					{
 						ARCDP = true
 					}
 					
 					
-					if(LancerP[0].dead && LancerP[1].dead && LancerP[2].dead && LancerP[3].dead && LancerP[4].dead && LancerP[5].dead && LancerP[6].dead && LancerP[7].dead)
+					if(LancerP[0].dead && LancerP[1].dead && LancerP[2].dead && LancerP[3].dead && LancerP[4].dead && LancerP[5].dead)
 					{
 						LANCERDP = true
 					}
@@ -2220,13 +2168,13 @@
 					}
 					
 					
-					if(ArcG[0].dead && ArcG[1].dead && ArcG[2].dead && ArcG[3].dead && ArcG[4].dead && ArcG[5].dead && ArcG[6].dead && ArcG[7].dead)
+					if(ArcG[0].dead && ArcG[1].dead && ArcG[2].dead && ArcG[3].dead)
 					{
 						ARCDG = true
 					}
 					
 					
-					if(LancerG[0].dead && LancerG[1].dead && LancerG[2].dead && LancerG[3].dead && LancerG[4].dead && LancerG[5].dead && LancerG[6].dead && LancerG[7].dead)
+					if(LancerG[0].dead && LancerG[1].dead && LancerG[2].dead && LancerG[3].dead && LancerG[4].dead && LancerG[5].dead)
 					{
 						LANCERDG = true
 					}
@@ -2261,7 +2209,7 @@
 				if(GT && PT)
 				{
 					
-					context.drawImage(Pass,560,325,250,50);
+					context.drawImage(Pass,canvas.width/2 + canvas/4 + 125,425,250,50);
 					if(mouse.press && mouse.x > 560 && mouse.x < 810 && mouse.y > 325 && mouse.y < 375)
 					{
 						mouse.press = false;
@@ -2308,37 +2256,35 @@
 		SourceCharG = Math.floor(randomRange(0,99));
 		if(SourceCharG <= 75)
 		{
-			if(ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
-			ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
-			ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < GnrlG[0].y &&
-			ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 < KingG[0].y)
+			if(ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number < LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number &&
+			ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number < GnrlG[0].y &&
+			ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number < KingG[0].y)
 			{
 				ChooseG = 3;
 			}
-			else if(LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
-			LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
-			LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < GnrlG[0].y &&
-			LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 < KingG[0].y)
+			else if(LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number < ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number &&
+			LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number < GnrlG[0].y &&
+			LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number < KingG[0].y)
 			{
 				ChooseG = 2
 			}
-			else if(KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
-			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
+			else if(KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number &&
+			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number &&
 			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < GnrlG[0].y &&
 			KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 < KingG[0].y)
 			{
 				ChooseG = 4;
 			}
-			else if(GnrlG[0].y < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
-			GnrlG[0].y < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
-			GnrlG[0].y < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			else if(GnrlG[0].y < ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number  &&
+			GnrlG[0].y < LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number &&	GnrlG[0].y < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
 			GnrlG[0].y < KingG[0].y)
 			{
 				ChooseG = 0;
 			}
-			else if(KingG[0].y < ArcG[0].y/8 + ArcG[1].y/8 + ArcG[2].y/8 + ArcG[3].y/8 + ArcG[4].y/8 + ArcG[5].y/8 + ArcG[6].y/8 + ArcG[7].y/8 &&
-			KingG[0].y < LancerG[0].y/8 + LancerG[1].y/8 + LancerG[2].y/8 + LancerG[3].y/8 + LancerG[4].y/8 + LancerG[5].y/8 + LancerG[6].y/8 + LancerG[7].y/8 &&
-			KingG[0].y < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
+			else if(KingG[0].y < ArcG[0].y/archer_number + ArcG[1].y/archer_number + ArcG[2].y/archer_number + ArcG[3].y/archer_number 
+			&& KingG[0].y < LancerG[0].y/lancer_number + LancerG[1].y/lancer_number + LancerG[2].y/lancer_number + LancerG[3].y/lancer_number + LancerG[4].y/lancer_number + LancerG[5].y/lancer_number && KingG[0].y < KntG[0].y/4 + KntG[1].y/4 + KntG[2].y/4 + KntG[3].y/4 &&
 			KingG[0].y < GnrlG[0].y)
 			{
 				ChooseG = 1;
@@ -2378,36 +2324,36 @@
 		SourceCharP = Math.floor(randomRange(0,99));
 		if(SourceCharP <= 75)
 		{
-			if(ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
-			ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
-			ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < GnrlP[0].y &&
-			ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 < KingP[0].y)
+			if(ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number < LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number &&
+			ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
+			ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number < GnrlP[0].y &&
+			ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number < KingP[0].y)
 			{
 				ChooseP = 3;
 			}
-			else if(LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
-			LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
-			LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < GnrlP[0].y &&
-			LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 < KingP[0].y)
+			else if(LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number < ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number &&
+			LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
+			LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number < GnrlP[0].y &&
+			LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number < KingP[0].y)
 			{
 				ChooseP = 2
 			}
-			else if(KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
-			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			else if(KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number &&
+			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number &&
 			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < GnrlP[0].y &&
 			KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 < KingP[0].y)
 			{
 				ChooseP = 4;
 			}
-			else if(GnrlP[0].y < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
-			GnrlP[0].y < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			else if(GnrlP[0].y < ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number &&
+			GnrlP[0].y < LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number &&
 			GnrlP[0].y < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
 			GnrlP[0].y < KingP[0].y)
 			{
 				ChooseP = 0;
 			}
-			else if(KingP[0].y < ArcP[0].y/8 + ArcP[1].y/8 + ArcP[2].y/8 + ArcP[3].y/8 + ArcP[4].y/8 + ArcP[5].y/8 + ArcP[6].y/8 + ArcP[7].y/8 &&
-			KingP[0].y < LancerP[0].y/8 + LancerP[1].y/8 + LancerP[2].y/8 + LancerP[3].y/8 + LancerP[4].y/8 + LancerP[5].y/8 + LancerP[6].y/8 + LancerP[7].y/8 &&
+			else if(KingP[0].y < ArcP[0].y/archer_number + ArcP[1].y/archer_number + ArcP[2].y/archer_number + ArcP[3].y/archer_number &&
+			KingP[0].y < LancerP[0].y/lancer_number + LancerP[1].y/lancer_number + LancerP[2].y/lancer_number + LancerP[3].y/lancer_number + LancerP[4].y/lancer_number + LancerP[5].y/lancer_number &&
 			KingP[0].y < KntP[0].y/4 + KntP[1].y/4 + KntP[2].y/4 + KntP[3].y/4 &&
 			KingP[0].y < GnrlP[0].y)
 			{
@@ -2450,7 +2396,7 @@
 	function Text(x,y,text)
 	{
 		context.fillStyle = "#000000";
-		context.font = "25px Myriad Pro";
+		context.font = "15px Myriad Pro";
 		context.fillText(text, x, y);		
 	}
 	function TextLife(text,x,y)

@@ -1,8 +1,8 @@
 var PTBR = true;
 var ENUS = false;
 var WallG_x = 0;
-var WallG_y = 600;
-var WallG_w = 601;
+var WallG_y = 500;
+var WallG_w = 400;
 var WallG_h = 100;
 var WallG_life = 100;
 
@@ -10,59 +10,17 @@ var save = 0;
 
 var WallP_x = 0;
 var WallP_y = 0;
-var WallP_w = 601;
+var WallP_w = 400;
 var WallP_h = 100;
 var WallP_life = 100;
 
 var WallG = new Image();
-WallG.src = "Images/Muralha_Grega.png";
+WallG.src = "Images/Greek_Wall.png";
 
 var WallP = new Image();
-WallP.src = "Images/Muralha_Persa.png";
+WallP.src = "Images/Persian_Wall.png";
 
-var SaveC = null;
-var Save_x = 1150;
-var Save_y = 0;
-var Save_w = 50;
-var Save_h = 50;
-var Save = new Image()
-Save.src = "Images/Save.png";
 var Alert = false;
-//var CountAlert = true;
-/*function SaveGame()
-{
-	if(mouse.press && mouse.x >= Save_x &&
-	mouse.x <= Save_x + Save_w &&
-	mouse.y >= Save_y &&
-	mouse.y <= Save_y + Save_h)
-	{
-		Backon = true;
-		localStorage.setItem("TaSalvo",Backon);
-		for(var i = 0; i < 4; i++) 
-		{	
-			localStorage.setItem("Warriors.SaveC1", KntP[i].x);
-			localStorage.setItem("Warriors.SaveC2", KntP[i].y);
-			localStorage.setItem("Warriors.SaveC3", KntP[i].life);
-		}
-		newLine("Jogo Salvo com Sucesso!");
-		mouse.press = false;
-		save = 0;
-		CountAlert = true;
-	}
-	if(save > 5000 && CountAlert == true)
-	{
-		Alert = true;
-		save = 0;
-		if(Alert)
-		{
-			newLine("Salve seu jogo para evitar a perda de dados.");
-			if(save > 5000)
-			{
-				CountAlert = false;
-			}
-		}
-	}
-}*/
 var Mouseoff = false;
 var InfoWallG = false;
 var InfoWallP = false;
@@ -320,10 +278,10 @@ if(ENUS)
 {
 	Movimentacao.src = "Images/MovimentacaoEN.png";
 }
-var Movimentacao_x = 605;
+var Movimentacao_x = 405;
 var Movimentacao_y = 150;
-var Movimentacao_w = 200;
-var Movimentacao_h = 50;
+var Movimentacao_w = 100;
+var Movimentacao_h = 25;
 
 var Ataque = new Image();
 if(PTBR)
@@ -334,10 +292,10 @@ if(ENUS)
 {
 	Ataque.src = "Images/AtaqueEN.png";
 }
-var Ataque_x = 605;
+var Ataque_x = 405;
 var Ataque_y = 200;
-var Ataque_w = 230;
-var Ataque_h = 50;
+var Ataque_w = 115;
+var Ataque_h = 25;
 
 var Vida = new Image();
 if(PTBR)
@@ -348,10 +306,10 @@ if(ENUS)
 {
 	Vida.src = "Images/VidaEN.png";
 }
-var Vida_x = 613;
+var Vida_x = 413;
 var Vida_y = 255;
-var Vida_w = 80;
-var Vida_h = 40;
+var Vida_w = 40;
+var Vida_h = 20;
 
 var Unidade = new Image();
 if(PTBR)
@@ -362,30 +320,30 @@ if(ENUS)
 {
 	Unidade.src = "Images/UnidadeEN.png";
 }
-var Unidade_x = 605;
+var Unidade_x = 405;
 var Unidade_y = 100;
-var Unidade_w = 150;
-var Unidade_h = 40;
+var Unidade_w = 125;
+var Unidade_h = 20;
 
-var InfoU_x = 755;
+var InfoU_x = 455;
 var InfoU_y = 100;
-var InfoU_w = 50;
-var InfoU_h = 50;
+var InfoU_w = 25;
+var InfoU_h = 25;
 
-var InfoM_x = 805;
+var InfoM_x = 505;
 var InfoM_y = 150;
-var InfoM_w = 50;
-var InfoM_h = 50;
+var InfoM_w = 25;
+var InfoM_h = 25;
 
-var InfoA_x = 730;
+var InfoA_x = 530;
 var InfoA_y = 200;
-var InfoA_w = 50;
-var InfoA_h = 50;
+var InfoA_w = 25;
+var InfoA_h = 25;
 
-var InfoV_x = 693;
+var InfoV_x = 493;
 var InfoV_y = 289;
-var InfoV_w = 50;
-var InfoV_h = 50;
+var InfoV_w = 25;
+var InfoV_h = 25;
 
 
 
@@ -438,25 +396,25 @@ function InfoTorPS()
 	context.drawImage(TorPM,InfoM_x,InfoM_y,InfoM_w,InfoM_h)
 	TextLife(TorP[TorsPChoosed].life,InfoV_x,InfoV_y)
 }
-var InfoUG_x = 1080;
+var InfoUG_x = 580;
 var InfoUG_y = 100;
-var InfoUG_w = 50;
-var InfoUG_h = 50;
+var InfoUG_w = 25;
+var InfoUG_h = 25;
 
-var InfoMG_x = 1130;
+var InfoMG_x = 630;
 var InfoMG_y = 150;
-var InfoMG_w = 50;
-var InfoMG_h = 50;
+var InfoMG_w = 25;
+var InfoMG_h = 25;
 
-var InfoAG_x = 1050;
+var InfoAG_x = 650;
 var InfoAG_y = 200;
-var InfoAG_w = 50;
-var InfoAG_h = 50;
+var InfoAG_w = 25;
+var InfoAG_h = 25;
 
-var InfoVG_x = 1018;
+var InfoVG_x = 618;
 var InfoVG_y = 289;
-var InfoVG_w = 50;
-var InfoVG_h = 50;
+var InfoVG_w = 25;
+var InfoVG_h = 25;
 
 
 function InfoKingGS()

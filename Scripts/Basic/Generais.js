@@ -1,5 +1,7 @@
 var PTBR = true;
-	var ENUS = false;
+var ENUS = false;
+var limit_down = 451;
+var limit_right = 351;
 
 function GnrlsP(GnrlP_x, GnrlP_y, GnrlP_w, GnrlP_h, GnrlP_l)
 {	
@@ -67,7 +69,7 @@ function GnrlsG(GnrlG_x, GnrlG_y, GnrlG_w, GnrlG_h, GnrlG_l)
 }
 
 {//General Persa
-	var GnrlP_x = [301];
+	var GnrlP_x = [151];
 	var GnrlP = [];
 	var Click_GP = 0;
 	
@@ -78,13 +80,13 @@ function GnrlsG(GnrlG_x, GnrlG_y, GnrlG_w, GnrlG_h, GnrlG_l)
 }
 
 {//General Grego
-	var GnrlG_x = [251];
+	var GnrlG_x = [201];
 	var GnrlG = [];
 	var Click_GG = 0;
 	
 	for(var i = 0; i < 1; i++) 
 	{
-		GnrlG[i] = new GnrlsG(GnrlG_x[i], 551, 48, 48, 55);			
+		GnrlG[i] = new GnrlsG(GnrlG_x[i], limit_down, 48, 48, 55);			
 	}				
 }
 function updateGnrls()
@@ -195,12 +197,12 @@ function PossibilitiesG()
 	{
 		if(Click_GG == 1)
 		{
-			if(GnrlG[GnrlGChoosed].y < 551)
+			if(GnrlG[GnrlGChoosed].y < limit_down)
 			{
 				context.drawImage(MovG, GnrlG[GnrlGChoosed].x + 50, GnrlG[GnrlGChoosed].y + 50, GnrlG[GnrlGChoosed].w, GnrlG[GnrlGChoosed].h);
 				context.drawImage(MovG, GnrlG[GnrlGChoosed].x - 50, GnrlG[GnrlGChoosed].y + 50, GnrlG[GnrlGChoosed].w, GnrlG[GnrlGChoosed].h);
 			}
-			if(GnrlG[GnrlGChoosed].y < 501)
+			if(GnrlG[GnrlGChoosed].y < limit_down-50)
 			{
 				context.drawImage(MovG, GnrlG[GnrlGChoosed].x - 100, GnrlG[GnrlGChoosed].y + 100, GnrlG[GnrlGChoosed].w, GnrlG[GnrlGChoosed].h);
 				context.drawImage(MovG, GnrlG[GnrlGChoosed].x + 100, GnrlG[GnrlGChoosed].y + 100, GnrlG[GnrlGChoosed].w, GnrlG[GnrlGChoosed].h);
@@ -220,7 +222,7 @@ function PossibilitiesG()
 			mouse.x < GnrlG[GnrlGChoosed].x + GnrlG[GnrlGChoosed].w*2 &&
 			mouse.y < GnrlG[GnrlGChoosed].y - 2 &&
 			mouse.y > GnrlG[GnrlGChoosed].y - GnrlG[GnrlGChoosed].h &&
-			GnrlG[GnrlGChoosed].x < 551 &&
+			GnrlG[GnrlGChoosed].x < limit_right &&
 			GnrlG[GnrlGChoosed].y > 101)
 			{
 				GnrlG[GnrlGChoosed].x += 50;
@@ -268,7 +270,7 @@ function PossibilitiesG()
 			mouse.x > GnrlG[GnrlGChoosed].x - GnrlG[GnrlGChoosed].w &&
 			mouse.y > GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h + 2 &&
 			mouse.y < GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h*2 &&
-			GnrlG[GnrlGChoosed].y < 551)
+			GnrlG[GnrlGChoosed].y < limit_down)
 			{
 				GnrlG[GnrlGChoosed].x -= 50;
 				GnrlG[GnrlGChoosed].y += 50;
@@ -292,8 +294,8 @@ function PossibilitiesG()
 			mouse.x < GnrlG[GnrlGChoosed].x + GnrlG[GnrlGChoosed].w*2 &&
 			mouse.y > GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h + 3 &&
 			mouse.y < GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h*2 &&
-			GnrlG[GnrlGChoosed].y < 551 &&
-			GnrlG[GnrlGChoosed].x < 551)
+			GnrlG[GnrlGChoosed].y < limit_down &&
+			GnrlG[GnrlGChoosed].x < limit_right)
 			{
 				GnrlG[GnrlGChoosed].x += 50;
 				GnrlG[GnrlGChoosed].y += 50;
@@ -317,7 +319,7 @@ function PossibilitiesG()
 			mouse.x < GnrlG[GnrlGChoosed].x + GnrlG[GnrlGChoosed].w*3 &&
 			mouse.y < GnrlG[GnrlGChoosed].y - GnrlG[GnrlGChoosed].h - 3&&
 			mouse.y > GnrlG[GnrlGChoosed].y - GnrlG[GnrlGChoosed].h*2 &&
-			GnrlG[GnrlGChoosed].x < 501 &&
+			GnrlG[GnrlGChoosed].x < limit_right-50 &&
 			GnrlG[GnrlGChoosed].y > 151)
 			{
 				GnrlG[GnrlGChoosed].x += 100;
@@ -374,7 +376,7 @@ function PossibilitiesG()
 			mouse.x > GnrlG[GnrlGChoosed].x - GnrlG[GnrlGChoosed].w*2 &&
 			mouse.y > GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h*2 + 3 &&
 			mouse.y < GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h*3 &&
-			GnrlG[GnrlGChoosed].y < 501) 
+			GnrlG[GnrlGChoosed].y < limit_down-50) 
 			{
 				GnrlG[GnrlGChoosed].x -= 100;
 				GnrlG[GnrlGChoosed].y += 100;
@@ -402,8 +404,8 @@ function PossibilitiesG()
 			mouse.x < GnrlG[GnrlGChoosed].x + GnrlG[GnrlGChoosed].w*3 &&
 			mouse.y > GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h*2 + 3 &&
 			mouse.y < GnrlG[GnrlGChoosed].y + GnrlG[GnrlGChoosed].h*3 &&
-			GnrlG[GnrlGChoosed].y < 501 &&
-			GnrlG[GnrlGChoosed].x < 501)
+			GnrlG[GnrlGChoosed].y < limit_down-50 &&
+			GnrlG[GnrlGChoosed].x < limit_right-50)
 			{
 				GnrlG[GnrlGChoosed].x += 100;
 				GnrlG[GnrlGChoosed].y += 100;
@@ -1056,12 +1058,12 @@ function PossibilitiesG()
 	{
 		if(Click_GP == 1)
 		{
-			if(GnrlP[GnrlPChoosed].y < 551)
+			if(GnrlP[GnrlPChoosed].y < limit_down)
 			{
 				context.drawImage(MovG, GnrlP[GnrlPChoosed].x + 50, GnrlP[GnrlPChoosed].y + 50, GnrlP[GnrlPChoosed].w, GnrlP[GnrlPChoosed].h);
 				context.drawImage(MovG, GnrlP[GnrlPChoosed].x - 50, GnrlP[GnrlPChoosed].y + 50, GnrlP[GnrlPChoosed].w, GnrlP[GnrlPChoosed].h);
 			}
-			if(GnrlP[GnrlPChoosed].y < 501)
+			if(GnrlP[GnrlPChoosed].y < limit_down)
 			{
 				context.drawImage(MovG, GnrlP[GnrlPChoosed].x - 100, GnrlP[GnrlPChoosed].y + 100, GnrlP[GnrlPChoosed].w, GnrlP[GnrlPChoosed].h);
 				context.drawImage(MovG, GnrlP[GnrlPChoosed].x + 100, GnrlP[GnrlPChoosed].y + 100, GnrlP[GnrlPChoosed].w, GnrlP[GnrlPChoosed].h);
@@ -1081,7 +1083,7 @@ function PossibilitiesG()
 			mouse.x < GnrlP[GnrlPChoosed].x + GnrlP[GnrlPChoosed].w*2 &&
 			mouse.y < GnrlP[GnrlPChoosed].y - 2 &&
 			mouse.y > GnrlP[GnrlPChoosed].y - GnrlP[GnrlPChoosed].h &&
-			GnrlP[GnrlPChoosed].x < 551 &&
+			GnrlP[GnrlPChoosed].x < limit_right &&
 			GnrlP[GnrlPChoosed].y > 101)
 			{
 				GnrlP[GnrlPChoosed].x += 50;
@@ -1129,7 +1131,7 @@ function PossibilitiesG()
 			mouse.x > GnrlP[GnrlPChoosed].x - GnrlP[GnrlPChoosed].w &&
 			mouse.y > GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h + 2 &&
 			mouse.y < GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h*2 &&
-			GnrlP[GnrlPChoosed].y < 551)
+			GnrlP[GnrlPChoosed].y < limit_down)
 			{
 				GnrlP[GnrlPChoosed].x -= 50;
 				GnrlP[GnrlPChoosed].y += 50;
@@ -1153,8 +1155,8 @@ function PossibilitiesG()
 			mouse.x < GnrlP[GnrlPChoosed].x + GnrlP[GnrlPChoosed].w*2 &&
 			mouse.y > GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h + 3 &&
 			mouse.y < GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h*2 &&
-			GnrlP[GnrlPChoosed].y < 551 &&
-			GnrlP[GnrlPChoosed].x < 551)
+			GnrlP[GnrlPChoosed].y < limit_down &&
+			GnrlP[GnrlPChoosed].x < limit_right)
 			{
 				GnrlP[GnrlPChoosed].x += 50;
 				GnrlP[GnrlPChoosed].y += 50;
@@ -1178,7 +1180,7 @@ function PossibilitiesG()
 			mouse.x < GnrlP[GnrlPChoosed].x + GnrlP[GnrlPChoosed].w*3 &&
 			mouse.y < GnrlP[GnrlPChoosed].y - GnrlP[GnrlPChoosed].h - 3&&
 			mouse.y > GnrlP[GnrlPChoosed].y - GnrlP[GnrlPChoosed].h*2 &&
-			GnrlP[GnrlPChoosed].x < 501 &&
+			GnrlP[GnrlPChoosed].x < limit_right-50 &&
 			GnrlP[GnrlPChoosed].y > 151)
 			{
 				GnrlP[GnrlPChoosed].x += 100;
@@ -1235,7 +1237,7 @@ function PossibilitiesG()
 			mouse.x > GnrlP[GnrlPChoosed].x - GnrlP[GnrlPChoosed].w*2 &&
 			mouse.y > GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h*2 + 3 &&
 			mouse.y < GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h*3 &&
-			GnrlP[GnrlPChoosed].y < 501) 
+			GnrlP[GnrlPChoosed].y < limit_down-50) 
 			{
 				GnrlP[GnrlPChoosed].x -= 100;
 				GnrlP[GnrlPChoosed].y += 100;
@@ -1263,8 +1265,8 @@ function PossibilitiesG()
 			mouse.x < GnrlP[GnrlPChoosed].x + GnrlP[GnrlPChoosed].w*3 &&
 			mouse.y > GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h*2 + 3 &&
 			mouse.y < GnrlP[GnrlPChoosed].y + GnrlP[GnrlPChoosed].h*3 &&
-			GnrlP[GnrlPChoosed].y < 501 &&
-			GnrlP[GnrlPChoosed].x < 501)
+			GnrlP[GnrlPChoosed].y < limit_down-50 &&
+			GnrlP[GnrlPChoosed].x < limit_right-50)
 			{
 				GnrlP[GnrlPChoosed].x += 100;
 				GnrlP[GnrlPChoosed].y += 100;

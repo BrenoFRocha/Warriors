@@ -24,6 +24,8 @@ var POSMLG3 = 0;
 var POSMLG4 = 0;
 var POSMLG5 = 0;
 var POSMLG6 = 0;
+var limit_down = 451;
+var limit_right = 351;
 
 
 function PossibilitiesAILG()
@@ -36,37 +38,29 @@ function PossibilitiesAILG()
 			ChooseLG = Math.floor(randomRange(0,99));
 			if(LancersGCChoosed == null && ChooseLG <= 75)
 			{
-				if(LancerG[0].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[0].y < LancerG[3].y && LancerG[0].y < LancerG[4].y && LancerG[0].y < LancerG[5].y && LancerG[0].y < LancerG[6].y && LancerG[0].y < LancerG[7].y)
+				if(LancerG[0].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[0].y < LancerG[3].y && LancerG[0].y < LancerG[4].y && LancerG[0].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 0;
 				}
-				else if(LancerG[1].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[1].y < LancerG[3].y && LancerG[1].y < LancerG[4].y && LancerG[1].y < LancerG[5].y && LancerG[1].y < LancerG[6].y && LancerG[1].y < LancerG[7].y)
+				else if(LancerG[1].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[1].y < LancerG[3].y && LancerG[1].y < LancerG[4].y && LancerG[1].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 1;
 				}
-				else if(LancerG[2].y < LancerG[1].y && LancerG[2].y < LancerG[0].y && LancerG[2].y < LancerG[3].y && LancerG[2].y < LancerG[4].y && LancerG[2].y < LancerG[5].y && LancerG[2].y < LancerG[6].y && LancerG[2].y < LancerG[7].y)
+				else if(LancerG[2].y < LancerG[1].y && LancerG[2].y < LancerG[0].y && LancerG[2].y < LancerG[3].y && LancerG[2].y < LancerG[4].y && LancerG[2].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 2;
 				}
-				else if(LancerG[3].y < LancerG[1].y && LancerG[3].y < LancerG[2].y && LancerG[3].y < LancerG[0].y && LancerG[3].y < LancerG[4].y && LancerG[3].y < LancerG[5].y && LancerG[3].y < LancerG[6].y && LancerG[3].y < LancerG[7].y)
+				else if(LancerG[3].y < LancerG[1].y && LancerG[3].y < LancerG[2].y && LancerG[3].y < LancerG[0].y && LancerG[3].y < LancerG[4].y && LancerG[3].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 3;
 				}
-				else if(LancerG[4].y < LancerG[1].y && LancerG[4].y < LancerG[2].y && LancerG[4].y < LancerG[3].y && LancerG[4].y < LancerG[0].y && LancerG[4].y < LancerG[5].y && LancerG[4].y < LancerG[6].y && LancerG[4].y < LancerG[7].y)
+				else if(LancerG[4].y < LancerG[1].y && LancerG[4].y < LancerG[2].y && LancerG[4].y < LancerG[3].y && LancerG[4].y < LancerG[0].y && LancerG[4].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 4;
 				}
-				else if(LancerG[5].y < LancerG[1].y && LancerG[5].y < LancerG[2].y && LancerG[5].y < LancerG[3].y && LancerG[5].y < LancerG[4].y && LancerG[5].y < LancerG[0].y && LancerG[5].y < LancerG[6].y && LancerG[5].y < LancerG[7].y)
+				else if(LancerG[5].y < LancerG[1].y && LancerG[5].y < LancerG[2].y && LancerG[5].y < LancerG[3].y && LancerG[5].y < LancerG[4].y && LancerG[5].y < LancerG[0].y)
 				{
 					LancersGCChoosed = 5;
-				}
-				else if(LancerG[6].y < LancerG[1].y && LancerG[6].y < LancerG[2].y && LancerG[6].y < LancerG[3].y && LancerG[6].y < LancerG[4].y && LancerG[6].y < LancerG[5].y && LancerG[6].y < LancerG[0].y && LancerG[6].y < LancerG[7].y)
-				{
-					LancersGCChoosed = 6;
-				}
-				else if(LancerG[7].y < LancerG[1].y && LancerG[7].y < LancerG[2].y && LancerG[7].y < LancerG[3].y && LancerG[7].y < LancerG[4].y && LancerG[7].y < LancerG[5].y && LancerG[7].y < LancerG[6].y && LancerG[7].y < LancerG[0].y)
-				{
-					LancersGCChoosed = 7;
 				}
 				else
 				{
@@ -75,7 +69,7 @@ function PossibilitiesAILG()
 			}
 			else if(LancersGCChoosed == null && ChooseLG > 75)
 			{
-				LancersGCChoosed = Math.floor(randomRange(0,7));
+				LancersGCChoosed = Math.floor(randomRange(0,5));
 			}
 			
 			if(ChooseG == 2)
@@ -92,11 +86,11 @@ function PossibilitiesAILG()
 					{
 						LancersGCC = 2;
 					}
-					else if(moverL > 10 && moverL <= 15 && LancersGCC == 0  && LancerG[LancersGCChoosed].x < 551)
+					else if(moverL > 10 && moverL <= 15 && LancersGCC == 0  && LancerG[LancersGCChoosed].x < limit_right)
 					{
 						LancersGCC = 3;
 					}
-					else if(moverL > 15 && moverL <= 20 && LancersGCC == 0  && LancerG[LancersGCChoosed].x < 501)
+					else if(moverL > 15 && moverL <= 20 && LancersGCC == 0  && LancerG[LancersGCChoosed].x < limit_right-50)
 					{
 						LancersGCC = 4;
 					}
@@ -200,11 +194,11 @@ function PossibilitiesAILG()
 						{
 							context.drawImage(MovL, LancerG[LancersGCChoosed].x , LancerG[LancersGCChoosed].y - 100, LancerG[LancersGCChoosed].w, LancerG[LancersGCChoosed].h);
 						}
-						if(LancerG[LancersGCChoosed].y < 551)
+						if(LancerG[LancersGCChoosed].y < limit_down)
 						{
 							context.drawImage(MovL, LancerG[LancersGCChoosed].x, LancerG[LancersGCChoosed].y + 50, LancerG[LancersGCChoosed].w, LancerG[LancersGCChoosed].h);
 						}
-						if(LancerG[LancersGCChoosed].y < 501)
+						if(LancerG[LancersGCChoosed].y < limit_down-50)
 						{
 							context.drawImage(MovL, LancerG[LancersGCChoosed].x, LancerG[LancersGCChoosed].y + 100, LancerG[LancersGCChoosed].w, LancerG[LancersGCChoosed].h);
 						}
@@ -669,7 +663,7 @@ function PossibilitiesAILG()
 						}
 						if(LancersGCC == 3)
 						{	
-							if(LancerG[LancersGCChoosed].x < 551)
+							if(LancerG[LancersGCChoosed].x < limit_right)
 							{
 								if(LancersGCC != 1 && LancersGCC != 2 && LancersGCC != 4 && LancersGCC != 5 && LancersGCC != 6)
 								{
@@ -716,7 +710,7 @@ function PossibilitiesAILG()
 						}
 						if(LancersGCC == 4)
 						{
-							if(LancerG[LancersGCChoosed].x < 501)
+							if(LancerG[LancersGCChoosed].x < limit_right-50)
 							{
 								if(LancersGCC != 1 && LancersGCC != 2 && LancersGCC != 3 && LancersGCC != 5 && LancersGCC != 6)
 								{

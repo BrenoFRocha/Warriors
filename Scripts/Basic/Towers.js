@@ -1,5 +1,6 @@
 var PTBR = true;
 var ENUS = false;
+
 function TorsP(TorP_x, TorP_y, TorP_w, TorP_h, TorP_l)
 {	
 	this.x = TorP_x;
@@ -64,24 +65,24 @@ function TorsG(TorG_x, TorG_y, TorG_w, TorG_h, TorG_l)
 }
 
 {//Torres Persas
-	var TorP_x = [101,451];
+	var TorP_x = [1,351];
 	var TorP = [];
 	var Click_TP = 0;
 	var OrdemTP = TorsPChoosed;
 	for(var i = 0; i < 2; i++) 
 	{
-		TorP[i] = new TorsP(TorP_x[i], 201, 48, 48, 70);			
+		TorP[i] = new TorsP(TorP_x[i], 201, 48, 48, 30);			
 	}				
 }
 	
 {//Torres Gregas
-	var TorG_x = [101,451];
+	var TorG_x = [1,351];
 	var TorG = [];
 	var Click_TG = 0;
 	var OrdemTG = TorsGChoosed;
 	for(var i = 0; i < 2; i++) 
 	{
-		TorG[i] = new TorsG(TorG_x[i], 451, 48, 48, 70);			
+		TorG[i] = new TorsG(TorG_x[i], 351, 48, 48, 30);			
 	}				
 }
 function updateTowers()

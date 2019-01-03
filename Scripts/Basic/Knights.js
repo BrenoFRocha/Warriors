@@ -1,5 +1,8 @@
 var PTBR = true;
-	var ENUS = false;
+var ENUS = false;
+var limit_down = 451;
+var limit_right = 351;
+
 function KntsP(KntP_x, KntP_y, KntP_w, KntP_h, KntP_l)
 {	
 	this.x = KntP_x;
@@ -62,7 +65,7 @@ function KntsG(KntG_x, KntG_y, KntG_w, KntG_h, KntG_l)
 }
 
 {//Cavaleiros Persas
-	var KntP_x = [1,1,551,551];
+	var KntP_x = [1,1,351,351];
 	var KntP_y = [101,151,101,151];	
 	var Click_CP = 0;	
 	var KntP = [];
@@ -75,8 +78,8 @@ function KntsG(KntG_x, KntG_y, KntG_w, KntG_h, KntG_l)
 }
 	
 {//Cavaleiros Gregas
-	var KntG_x = [1,1,551,551];
-	var KntG_y = [551,501,551,501];		
+	var KntG_x = [1,1,351,351];
+	var KntG_y = [limit_down,limit_down-50,limit_down,limit_down-50];		
 	var KntG = [];
 	var Click_CG = 0;
 	var OrdemCG = KntsGChoosed;
@@ -205,7 +208,7 @@ function PossibilitiesC()
 				context.drawImage(MovC, KntG[KntsGChoosed].x + 50, KntG[KntsGChoosed].y - 50, KntG[KntsGChoosed].w, KntG[KntsGChoosed].h);
 				context.drawImage(MovC, KntG[KntsGChoosed].x - 50, KntG[KntsGChoosed].y - 50, KntG[KntsGChoosed].w, KntG[KntsGChoosed].h);
 			}
-			if(KntG[KntsGChoosed].y < 551)
+			if(KntG[KntsGChoosed].y < limit_down)
 			{
 				context.drawImage(MovC, KntG[KntsGChoosed].x + 50, KntG[KntsGChoosed].y + 50, KntG[KntsGChoosed].w, KntG[KntsGChoosed].h);
 				context.drawImage(MovC, KntG[KntsGChoosed].x - 50, KntG[KntsGChoosed].y + 50, KntG[KntsGChoosed].w, KntG[KntsGChoosed].h);
@@ -215,7 +218,7 @@ function PossibilitiesC()
 			mouse.x < KntG[KntsGChoosed].x + KntG[KntsGChoosed].w*2 &&
 			mouse.y < KntG[KntsGChoosed].y - 2 &&
 			mouse.y > KntG[KntsGChoosed].y - KntG[KntsGChoosed].h &&
-			KntG[KntsGChoosed].x < 551 &&
+			KntG[KntsGChoosed].x < limit_right &&
 			KntG[KntsGChoosed].y > 101)
 			{					
 				KntG[KntsGChoosed].x += 50;
@@ -264,7 +267,7 @@ function PossibilitiesC()
 			mouse.x > KntG[KntsGChoosed].x - KntG[KntsGChoosed].w &&
 			mouse.y > KntG[KntsGChoosed].y + KntG[KntsGChoosed].h + 3 &&
 			mouse.y < KntG[KntsGChoosed].y + KntG[KntsGChoosed].h*2 &&
-			KntG[KntsGChoosed].y < 551)
+			KntG[KntsGChoosed].y < limit_down)
 			{	
 				KntG[KntsGChoosed].x -= 50;
 				KntG[KntsGChoosed].y += 50;
@@ -288,8 +291,8 @@ function PossibilitiesC()
 			mouse.x < KntG[KntsGChoosed].x + KntG[KntsGChoosed].w*2 &&
 			mouse.y > KntG[KntsGChoosed].y + KntG[KntsGChoosed].h + 3 &&
 			mouse.y < KntG[KntsGChoosed].y + KntG[KntsGChoosed].h*2 &&
-			KntG[KntsGChoosed].y < 551 &&
-			KntG[KntsGChoosed].x < 551)
+			KntG[KntsGChoosed].y < limit_down &&
+			KntG[KntsGChoosed].x < limit_right)
 			{
 				KntG[KntsGChoosed].x += 50;
 				KntG[KntsGChoosed].y += 50;
@@ -746,7 +749,7 @@ function PossibilitiesC()
 				context.drawImage(MovC, KntP[KntsPChoosed].x + 50, KntP[KntsPChoosed].y - 50, KntP[KntsPChoosed].w, KntP[KntsPChoosed].h);
 				context.drawImage(MovC, KntP[KntsPChoosed].x - 50, KntP[KntsPChoosed].y - 50, KntP[KntsPChoosed].w, KntP[KntsPChoosed].h);
 			}
-			if(KntP[KntsPChoosed].y < 551)
+			if(KntP[KntsPChoosed].y < limit_down)
 			{
 				context.drawImage(MovC, KntP[KntsPChoosed].x + 50, KntP[KntsPChoosed].y + 50, KntP[KntsPChoosed].w, KntP[KntsPChoosed].h);
 				context.drawImage(MovC, KntP[KntsPChoosed].x - 50, KntP[KntsPChoosed].y + 50, KntP[KntsPChoosed].w, KntP[KntsPChoosed].h);
@@ -756,7 +759,7 @@ function PossibilitiesC()
 			mouse.x < KntP[KntsPChoosed].x + KntP[KntsPChoosed].w*2 &&
 			mouse.y < KntP[KntsPChoosed].y - 2 &&
 			mouse.y > KntP[KntsPChoosed].y - KntP[KntsPChoosed].h &&
-			KntP[KntsPChoosed].x < 551 &&
+			KntP[KntsPChoosed].x < limit_right &&
 			KntP[KntsPChoosed].y > 101)
 			{					
 				KntP[KntsPChoosed].x += 50;
@@ -805,7 +808,7 @@ function PossibilitiesC()
 			mouse.x > KntP[KntsPChoosed].x - KntP[KntsPChoosed].w &&
 			mouse.y > KntP[KntsPChoosed].y + KntP[KntsPChoosed].h + 3 &&
 			mouse.y < KntP[KntsPChoosed].y + KntP[KntsPChoosed].h*2 &&
-			KntP[KntsPChoosed].y < 551)
+			KntP[KntsPChoosed].y < limit_down)
 			{	
 				KntP[KntsPChoosed].x -= 50;
 				KntP[KntsPChoosed].y += 50;
@@ -829,8 +832,8 @@ function PossibilitiesC()
 			mouse.x < KntP[KntsPChoosed].x + KntP[KntsPChoosed].w*2 &&
 			mouse.y > KntP[KntsPChoosed].y + KntP[KntsPChoosed].h + 3 &&
 			mouse.y < KntP[KntsPChoosed].y + KntP[KntsPChoosed].h*2 &&
-			KntP[KntsPChoosed].y < 551 &&
-			KntP[KntsPChoosed].x < 551)
+			KntP[KntsPChoosed].y < limit_down &&
+			KntP[KntsPChoosed].x < limit_right)
 			{
 				KntP[KntsPChoosed].x += 50;
 				KntP[KntsPChoosed].y += 50;				

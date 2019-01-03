@@ -12,6 +12,8 @@ var POSMCP2 = 0;
 var ChooseKP = 0;
 var Mov1CP = false;
 var Mov2CP = false;
+var limit_down = 451;
+var limit_right = 351;
 
 
 function PossibilitiesAICP()
@@ -53,11 +55,11 @@ function PossibilitiesAICP()
 				{	
 					moverC = Math.floor(randomRange(1,99))
 					
-					if(moverC <= 50 && KntsPCC == 0 && KntP[KntsPCChoosed].x > 1 && KntP[KntsPCChoosed].y < 551)
+					if(moverC <= 50 && KntsPCC == 0 && KntP[KntsPCChoosed].x > 1 && KntP[KntsPCChoosed].y < limit_down)
 					{
 						KntsPCC = 1;
 					}
-					else if(moverC > 50 && KntsPCC == 0 && KntP[KntsPCChoosed].x < 551 && KntP[KntsPCChoosed].y < 551)
+					else if(moverC > 50 && KntsPCC == 0 && KntP[KntsPCChoosed].x < limit_right && KntP[KntsPCChoosed].y < limit_down)
 					{
 						KntsPCC = 2;
 					}
@@ -107,7 +109,7 @@ function PossibilitiesAICP()
 							context.drawImage(MovC, KntP[KntsPCChoosed].x + 50, KntP[KntsPCChoosed].y - 50, KntP[KntsPCChoosed].w, KntP[KntsPCChoosed].h);	
 							context.drawImage(MovC, KntP[KntsPCChoosed].x - 50, KntP[KntsPCChoosed].y - 50, KntP[KntsPCChoosed].w, KntP[KntsPCChoosed].h);								
 						}
-						if(KntP[KntsPCChoosed].y < 551)
+						if(KntP[KntsPCChoosed].y < limit_down)
 						{
 							context.drawImage(MovC, KntP[KntsPCChoosed].x - 50 , KntP[KntsPCChoosed].y + 50, KntP[KntsPCChoosed].w, KntP[KntsPCChoosed].h);	
 							context.drawImage(MovC, KntP[KntsPCChoosed].x + 50 , KntP[KntsPCChoosed].y + 50, KntP[KntsPCChoosed].w, KntP[KntsPCChoosed].h);	
@@ -217,7 +219,7 @@ function PossibilitiesAICP()
 					}
 					if(KntsPCC == 1)
 					{
-						if(KntP[KntsPCChoosed].x > 1 && KntP[KntsPCChoosed].y < 551)
+						if(KntP[KntsPCChoosed].x > 1 && KntP[KntsPCChoosed].y < limit_down)
 						{
 							if(KntsPCC != 2)
 							{
@@ -255,7 +257,7 @@ function PossibilitiesAICP()
 					}
 					if(KntsPCC == 2)
 					{
-						if(KntP[KntsPCChoosed].x < 551 && KntP[KntsPCChoosed].y < 551)
+						if(KntP[KntsPCChoosed].x < limit_right && KntP[KntsPCChoosed].y < limit_down)
 						{
 							if(KntsPCC != 1)
 							{

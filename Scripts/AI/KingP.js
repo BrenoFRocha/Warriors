@@ -26,6 +26,9 @@ var POSMKP4 = 0;
 var POSMKP5 = 0;
 var POSMKP6 = 0;
 
+var limit_down = 451;
+var limit_right = 351;
+
 function PossibilitiesAIKP()
 {
 	if(AIP)
@@ -136,11 +139,11 @@ function PossibilitiesAIKP()
 						{
 							context.drawImage(MovK, KingP[0].x , KingP[0].y - 100, KingP[0].w, KingP[0].h);
 						}
-						if(KingP[0].y < 551)
+						if(KingP[0].y < limit_down)
 						{
 							context.drawImage(MovK, KingP[0].x, KingP[0].y + 50, KingP[0].w, KingP[0].h);
 						}
-						if(KingP[0].y < 501)
+						if(KingP[0].y < limit_down-50)
 						{
 							context.drawImage(MovK, KingP[0].x, KingP[0].y + 100, KingP[0].w, KingP[0].h);
 						}
@@ -544,7 +547,7 @@ function PossibilitiesAIKP()
 					}
 					if(KingsPCC == 3)
 					{	
-						if(KingP[0].x < 551)
+						if(KingP[0].x < limit_right)
 						{
 							if(KingsPCC != 1 && KingsPCC != 2 && KingsPCC != 4 && KingsPCC != 5 && KingsPCC != 6)
 							{
@@ -582,7 +585,7 @@ function PossibilitiesAIKP()
 					}
 					if(KingsPCC == 4)
 					{
-						if(KingP[0].x < 501)
+						if(KingP[0].x < limit_right-50)
 						{
 							if(KingsPCC != 1 && KingsPCC != 2 && KingsPCC != 3 && KingsPCC != 5 && KingsPCC != 6)
 							{
@@ -620,7 +623,7 @@ function PossibilitiesAIKP()
 					}
 					if(KingsPCC == 5)
 					{
-						if(KingP[0].y < 551)
+						if(KingP[0].y < limit_down)
 						{
 							if(KingsPCC != 1 && KingsPCC != 2 && KingsPCC != 3 && KingsPCC != 4 && KingsPCC != 6)
 							{
@@ -659,7 +662,7 @@ function PossibilitiesAIKP()
 					}
 					if(KingsPCC == 6)
 					{
-						if(KingP[0].y < 501)
+						if(KingP[0].y < limit_down-50)
 						{
 							if(KingsPCC != 1 && KingsPCC != 2 && KingsPCC != 3 && KingsPCC != 4 && KingsPCC != 5)
 							{

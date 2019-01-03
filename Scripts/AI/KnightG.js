@@ -13,6 +13,9 @@ var ChooseKG = 0;
 var Mov1CG = false;
 var Mov2CG = false;
 
+var limit_down = 451;
+var limit_right = 351;
+
 
 function PossibilitiesAICG()
 {
@@ -57,7 +60,7 @@ function PossibilitiesAICG()
 					{
 						KntsGCC = 1;
 					}
-					else if(moverC > 50 && KntsGCC == 0 && KntG[KntsGCChoosed].x < 551 && KntG[KntsGCChoosed].y > 101)
+					else if(moverC > 50 && KntsGCC == 0 && KntG[KntsGCChoosed].x < limit_right && KntG[KntsGCChoosed].y > 101)
 					{
 						KntsGCC = 2;
 					}
@@ -107,7 +110,7 @@ function PossibilitiesAICG()
 							context.drawImage(MovC, KntG[KntsGCChoosed].x + 50, KntG[KntsGCChoosed].y - 50, KntG[KntsGCChoosed].w, KntG[KntsGCChoosed].h);	
 							context.drawImage(MovC, KntG[KntsGCChoosed].x - 50, KntG[KntsGCChoosed].y -50, KntG[KntsGCChoosed].w, KntG[KntsGCChoosed].h);								
 						}
-						if(KntG[KntsGCChoosed].y < 551)
+						if(KntG[KntsGCChoosed].y < limit_down)
 						{
 							context.drawImage(MovC, KntG[KntsGCChoosed].x - 50 , KntG[KntsGCChoosed].y + 50, KntG[KntsGCChoosed].w, KntG[KntsGCChoosed].h);	
 							context.drawImage(MovC, KntG[KntsGCChoosed].x + 50 , KntG[KntsGCChoosed].y + 50, KntG[KntsGCChoosed].w, KntG[KntsGCChoosed].h);	
@@ -255,7 +258,7 @@ function PossibilitiesAICG()
 					}
 					if(KntsGCC == 2)
 					{
-						if(KntG[KntsGCChoosed].x < 551 && KntG[KntsGCChoosed].y > 101)
+						if(KntG[KntsGCChoosed].x < limit_right && KntG[KntsGCChoosed].y > 101)
 						{
 							if(KntsGCC != 1)
 							{

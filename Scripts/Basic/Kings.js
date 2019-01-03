@@ -1,5 +1,8 @@
- var PTBR = true;
-	var ENUS = false;
+var PTBR = true;
+var ENUS = false;
+var limit_down = 451;
+var limit_right = 351;
+
  function KingsP(KingP_x, KingP_y, KingP_w, KingP_h, KingP_l)
 {	
 	this.x = KingP_x;
@@ -68,7 +71,7 @@ function KingsG(KingG_x, KingG_y, KingG_w, KingG_h, KingG_l)
 }
 
 {//Rei Persa
-	var KingP_x = [251];
+	var KingP_x = [201];
 	var KingP = [];
 	var Click_KP = 0;
 
@@ -79,13 +82,13 @@ function KingsG(KingG_x, KingG_y, KingG_w, KingG_h, KingG_l)
 }
 
 {//Rei Grego
-	var KingG_x = [301];
+	var KingG_x = [151];
 	var KingG = [];
 	var Click_KG = 0;
 	
 	for(var i = 0; i < 1; i++) 
 	{
-		KingG[i] = new KingsG(KingG_x[i], 551, 48, 48, 65);			
+		KingG[i] = new KingsG(KingG_x[i], limit_down, 48, 48, 65);			
 	}				
 }
 function updateKings()
@@ -200,11 +203,11 @@ function PossibilitiesK()
 			{
 				context.drawImage(MovK, KingG[KingGChoosed].x , KingG[KingGChoosed].y - 100, KingG[KingGChoosed].w, KingG[KingGChoosed].h);
 			}
-			if(KingG[KingGChoosed].y < 551)
+			if(KingG[KingGChoosed].y < limit_down)
 			{
 				context.drawImage(MovK, KingG[KingGChoosed].x, KingG[KingGChoosed].y + 50, KingG[KingGChoosed].w, KingG[KingGChoosed].h);
 			}
-			if(KingG[KingGChoosed].y < 501)
+			if(KingG[KingGChoosed].y < limit_down-50)
 			{
 				context.drawImage(MovK, KingG[KingGChoosed].x, KingG[KingGChoosed].y + 100, KingG[KingGChoosed].w, KingG[KingGChoosed].h);
 			}
@@ -218,7 +221,7 @@ function PossibilitiesK()
 			mouse.x < KingG[KingGChoosed].x + KingG[KingGChoosed].w*2 && 
 			mouse.y > KingG[KingGChoosed].y &&
 			mouse.y < KingG[KingGChoosed].y + KingG[KingGChoosed].h &&
-			KingG[KingGChoosed].x < 551)
+			KingG[KingGChoosed].x < limit_right)
 			{
 				KingG[KingGChoosed].x += 50;
 				if(GregosCouldMoveK())
@@ -239,7 +242,7 @@ function PossibilitiesK()
 			mouse.x < KingG[KingGChoosed].x + KingG[KingGChoosed].w*3 && 
 			mouse.y > KingG[KingGChoosed].y &&
 			mouse.y < KingG[KingGChoosed].y + KingG[KingGChoosed].h &&
-			KingG[KingGChoosed].x < 501)
+			KingG[KingGChoosed].x < limit_right-50)
 			{
 				KingG[KingGChoosed].x += 100;
 				if(GregosCouldMoveK() || TreeA.x + 50 == KingG[KingGChoosed].x && TreeA.y == KingG[KingGChoosed].y ||
@@ -355,7 +358,7 @@ function PossibilitiesK()
 			mouse.x < KingG[KingGChoosed].x + KingG[KingGChoosed].w && 
 			mouse.y > KingG[KingGChoosed].y + KingG[KingGChoosed].h + 2 &&
 			mouse.y < KingG[KingGChoosed].y + KingG[KingGChoosed].h*2 &&
-			KingG[KingGChoosed].y < 551)
+			KingG[KingGChoosed].y < limit_down)
 			{
 				KingG[KingGChoosed].y+=50;
 				if(GregosCouldMoveK())
@@ -376,7 +379,7 @@ function PossibilitiesK()
 			mouse.x < KingG[KingGChoosed].x + KingG[KingGChoosed].w && 
 			mouse.y > KingG[KingGChoosed].y + KingG[KingGChoosed].h*2 + 3 &&
 			mouse.y < KingG[KingGChoosed].y + KingG[KingGChoosed].h*3 &&
-			KingG[KingGChoosed].y < 501)
+			KingG[KingGChoosed].y < limit_down-50)
 			{
 				KingG[KingGChoosed].y += 100;
 				if(GregosCouldMoveK() || TreeA.x == KingG[KingGChoosed].x && TreeA.y + 50 == KingG[KingGChoosed].y ||
@@ -1411,11 +1414,11 @@ function PossibilitiesK()
 			{
 				context.drawImage(MovK, KingP[KingPChoosed].x , KingP[KingPChoosed].y - 100, KingP[KingPChoosed].w, KingP[KingPChoosed].h);
 			}
-			if(KingP[KingPChoosed].y < 551)
+			if(KingP[KingPChoosed].y < limit_down)
 			{
 				context.drawImage(MovK, KingP[KingPChoosed].x, KingP[KingPChoosed].y + 50, KingP[KingPChoosed].w, KingP[KingPChoosed].h);
 			}
-			if(KingP[KingPChoosed].y < 501)
+			if(KingP[KingPChoosed].y < limit_down - 50)
 			{
 				context.drawImage(MovK, KingP[KingPChoosed].x, KingP[KingPChoosed].y + 100, KingP[KingPChoosed].w, KingP[KingPChoosed].h);
 			}
@@ -1429,7 +1432,7 @@ function PossibilitiesK()
 			mouse.x < KingP[KingPChoosed].x + KingP[KingPChoosed].w*2 && 
 			mouse.y > KingP[KingPChoosed].y &&
 			mouse.y < KingP[KingPChoosed].y + KingP[KingPChoosed].h &&
-			KingP[KingPChoosed].x < 551)
+			KingP[KingPChoosed].x < limit_right)
 			{
 				KingP[KingPChoosed].x += 50;
 				if(PersasCouldMoveK())
@@ -1450,7 +1453,7 @@ function PossibilitiesK()
 			mouse.x < KingP[KingPChoosed].x + KingP[KingPChoosed].w*3 && 
 			mouse.y > KingP[KingPChoosed].y &&
 			mouse.y < KingP[KingPChoosed].y + KingP[KingPChoosed].h &&
-			KingP[KingPChoosed].x < 501)
+			KingP[KingPChoosed].x < limit_right-50)
 			{
 				KingP[KingPChoosed].x += 100;
 				if(PersasCouldMoveK() || TreeA.x + 50 == KingP[KingPChoosed].x && TreeA.y == KingP[KingPChoosed].y ||
@@ -1571,7 +1574,7 @@ function PossibilitiesK()
 			mouse.x < KingP[KingPChoosed].x + KingP[KingPChoosed].w && 
 			mouse.y > KingP[KingPChoosed].y + KingP[KingPChoosed].h + 2 &&
 			mouse.y < KingP[KingPChoosed].y + KingP[KingPChoosed].h*2 &&
-			KingP[KingPChoosed].y < 551)
+			KingP[KingPChoosed].y < limit_down)
 			{
 				KingP[KingPChoosed].y += 50;
 				if(PersasCouldMoveK())
@@ -1592,7 +1595,7 @@ function PossibilitiesK()
 			mouse.x < KingP[KingPChoosed].x + KingP[KingPChoosed].w && 
 			mouse.y > KingP[KingPChoosed].y + KingP[KingPChoosed].h*2 + 3 &&
 			mouse.y < KingP[KingPChoosed].y + KingP[KingPChoosed].h*3 &&
-			KingP[KingPChoosed].y < 501)
+			KingP[KingPChoosed].y < limit_down-50)
 			{
 				KingP[KingPChoosed].y += 100;
 				if(PersasCouldMoveK() || TreeA.x == KingP[KingPChoosed].x && TreeA.y + 50 == KingP[KingPChoosed].y ||

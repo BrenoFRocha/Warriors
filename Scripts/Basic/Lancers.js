@@ -1,5 +1,9 @@
 var PTBR = true;
 var ENUS = false;
+var limit_down = 451;
+var limit_right = 351;
+var lancers_numbers = 6;
+
 function LancersP(LancerP_x, LancerP_y, LancerP_w, LancerP_h, LancerP_l)
 {	
 	this.x = LancerP_x;
@@ -66,23 +70,23 @@ function LancersG(LancerG_x, LancerG_y, LancerG_w, LancerG_h, LancerG_l)
 }
 
 {//Lanceiros Persas
-	var LancerP_x = [251, 51, 151 , 201, 351, 401, 501, 301];	
+	var LancerP_x = [51, 101, 151,201, 251, 301];	
 	var LancerP = [];
 	var Click_LP = 0;
 	var OrdemLP = LancersPChoosed;
 	
-	for(var i = 0; i < 8; i++) 
+	for(var i = 0; i < lancers_numbers; i++) 
 	{
 		LancerP[i] = new LancersP(LancerP_x[i], 151, 48, 48, 40);			
 	}				
 }
 	
 {//Lanceiros Gregos
-	var LancerG_x = [251, 51, 151 , 201, 351, 401, 501, 301];	
+	var LancerG_x = [51, 101, 151,201, 251, 301];	
 	var LancerG = [];
 	var Click_LG = 0;
 	var OrdemLG = LancersGChoosed;
-	for(var i = 0; i < 8; i++) 
+	for(var i = 0; i < lancers_numbers; i++) 
 	{
 		LancerG[i] = new LancersG(LancerG_x[i], 501, 48, 48, 40);			
 	}				
@@ -209,11 +213,11 @@ function PossibilitiesL()
 			{
 				context.drawImage(MovL, LancerG[LancersGChoosed].x , LancerG[LancersGChoosed].y - 100, LancerG[LancersGChoosed].w, LancerG[LancersGChoosed].h);
 			}
-			if(LancerG[LancersGChoosed].y < 551)
+			if(LancerG[LancersGChoosed].y < limit_down)
 			{
 				context.drawImage(MovL, LancerG[LancersGChoosed].x, LancerG[LancersGChoosed].y + 50, LancerG[LancersGChoosed].w, LancerG[LancersGChoosed].h);
 			}
-			if(LancerG[LancersGChoosed].y < 501)
+			if(LancerG[LancersGChoosed].y < limit_down - 50)
 			{
 				context.drawImage(MovL, LancerG[LancersGChoosed].x, LancerG[LancersGChoosed].y + 100, LancerG[LancersGChoosed].w, LancerG[LancersGChoosed].h);
 			}
@@ -227,7 +231,7 @@ function PossibilitiesL()
 			mouse.x < LancerG[LancersGChoosed].x + LancerG[LancersGChoosed].w*2 &&
 			mouse.y > LancerG[LancersGChoosed].y &&
 			mouse.y < LancerG[LancersGChoosed].y + LancerG[LancersGChoosed].h &&
-			LancerG[LancersGChoosed].x < 551)
+			LancerG[LancersGChoosed].x < limit_right)
 			{
 				LancerG[LancersGChoosed].x += 50;
 				if(GregosCouldMoveL())
@@ -249,7 +253,7 @@ function PossibilitiesL()
 			mouse.x < LancerG[LancersGChoosed].x + LancerG[LancersGChoosed].w*3 &&
 			mouse.y > LancerG[LancersGChoosed].y &&
 			mouse.y < LancerG[LancersGChoosed].y + LancerG[LancersGChoosed].h &&
-			LancerG[LancersGChoosed].x < 501)
+			LancerG[LancersGChoosed].x < limit_right - 50)
 			{
 				LancerG[LancersGChoosed].x += 100;
 				if(GregosCouldMoveL() || TreeA.x + 50 == LancerG[LancersGChoosed].x && TreeA.y == LancerG[LancersGChoosed].y ||
@@ -323,7 +327,7 @@ function PossibilitiesL()
 			mouse.x < LancerG[LancersGChoosed].x + LancerG[LancersGChoosed].w &&
 			mouse.y > LancerG[LancersGChoosed].y + LancerG[LancersGChoosed].h + 2 &&
 			mouse.y < LancerG[LancersGChoosed].y + LancerG[LancersGChoosed].h*2 &&
-			LancerG[LancersGChoosed].y < 551)
+			LancerG[LancersGChoosed].y < limit_down)
 			{ 
 				LancerG[LancersGChoosed].y += 50;
 				if(GregosCouldMoveL())
@@ -345,7 +349,7 @@ function PossibilitiesL()
 			mouse.x < LancerG[LancersGChoosed].x + LancerG[LancersGChoosed].w &&
 			mouse.y > LancerG[LancersGChoosed].y + LancerG[LancersGChoosed].h*2 + 3 &&
 			mouse.y < LancerG[LancersGChoosed].y + LancerG[LancersGChoosed].h*3 &&
-			LancerG[LancersGChoosed].y < 501)
+			LancerG[LancersGChoosed].y < limit_down - 50)
 			{ 
 				LancerG[LancersGChoosed].y += 100;
 				if(GregosCouldMoveL() || TreeA.y + 50 == LancerG[LancersGChoosed].y && TreeA.x == LancerG[LancersGChoosed].x ||
@@ -852,11 +856,11 @@ function PossibilitiesL()
 			{
 				context.drawImage(MovL, LancerP[LancersPChoosed].x , LancerP[LancersPChoosed].y - 100, LancerP[LancersPChoosed].w, LancerP[LancersPChoosed].h);
 			}
-			if(LancerP[LancersPChoosed].y < 551)
+			if(LancerP[LancersPChoosed].y < limit_down)
 			{
 				context.drawImage(MovL, LancerP[LancersPChoosed].x, LancerP[LancersPChoosed].y + 50, LancerP[LancersPChoosed].w, LancerP[LancersPChoosed].h);
 			}
-			if(LancerP[LancersPChoosed].y < 501)
+			if(LancerP[LancersPChoosed].y < limit_down - 50)
 			{
 				context.drawImage(MovL, LancerP[LancersPChoosed].x, LancerP[LancersPChoosed].y + 100, LancerP[LancersPChoosed].w, LancerP[LancersPChoosed].h);
 			}
@@ -869,7 +873,7 @@ function PossibilitiesL()
 			mouse.x < LancerP[LancersPChoosed].x + LancerP[LancersPChoosed].w*2 &&
 			mouse.y > LancerP[LancersPChoosed].y &&
 			mouse.y < LancerP[LancersPChoosed].y + LancerP[LancersPChoosed].h &&
-			LancerP[LancersPChoosed].x < 551)
+			LancerP[LancersPChoosed].x < limit_right)
 			{
 				LancerP[LancersPChoosed].x += 50;
 				if(PersasCouldMoveL())
@@ -891,7 +895,7 @@ function PossibilitiesL()
 			mouse.x < LancerP[LancersPChoosed].x + LancerP[LancersPChoosed].w*3 &&
 			mouse.y > LancerP[LancersPChoosed].y &&
 			mouse.y < LancerP[LancersPChoosed].y + LancerP[LancersPChoosed].h &&
-			LancerP[LancersPChoosed].x < 501)
+			LancerP[LancersPChoosed].x < limit_right - 50)
 			{
 				LancerP[LancersPChoosed].x += 100;
 				if(PersasCouldMoveL() || TreeA.x + 50 == LancerP[LancersPChoosed].x && LancerP[LancersPChoosed].y == TreeA.y ||
@@ -966,7 +970,7 @@ function PossibilitiesL()
 			mouse.x < LancerP[LancersPChoosed].x + LancerP[LancersPChoosed].w &&
 			mouse.y > LancerP[LancersPChoosed].y + LancerP[LancersPChoosed].h + 2 &&
 			mouse.y < LancerP[LancersPChoosed].y + LancerP[LancersPChoosed].h*2 &&
-			LancerP[LancersPChoosed].y < 551)
+			LancerP[LancersPChoosed].y < limit_down)
 			{ 
 				LancerP[LancersPChoosed].y += 50;
 				if(PersasCouldMoveL())
@@ -988,7 +992,7 @@ function PossibilitiesL()
 			mouse.x < LancerP[LancersPChoosed].x + LancerP[LancersPChoosed].w &&
 			mouse.y > LancerP[LancersPChoosed].y + LancerP[LancersPChoosed].h*2 + 3 &&
 			mouse.y < LancerP[LancersPChoosed].y + LancerP[LancersPChoosed].h*3 &&
-			LancerP[LancersPChoosed].y < 501)
+			LancerP[LancersPChoosed].y < limit_down - 50)
 			{ 
 				LancerP[LancersPChoosed].y += 100;
 				if(PersasCouldMoveL() || LancerP[LancersPChoosed].x == TreeA.x &&  TreeA.y + 50 == LancerP[LancersPChoosed].y ||

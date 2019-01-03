@@ -26,6 +26,9 @@ var POSMKG4 = 0;
 var POSMKG5 = 0;
 var POSMKG6 = 0;
 
+var limit_down = 451;
+var limit_right = 351;
+
 function PossibilitiesAIKG()
 {
 	if(AIG)
@@ -141,11 +144,11 @@ function PossibilitiesAIKG()
 						{
 							context.drawImage(MovK, KingG[0].x , KingG[0].y - 100, KingG[0].w, KingG[0].h);
 						}
-						if(KingG[0].y < 551)
+						if(KingG[0].y < limit_down)
 						{
 							context.drawImage(MovK, KingG[0].x, KingG[0].y + 50, KingG[0].w, KingG[0].h);
 						}
-						if(KingG[0].y < 501)
+						if(KingG[0].y < limit_down-50)
 						{
 							context.drawImage(MovK, KingG[0].x, KingG[0].y + 100, KingG[0].w, KingG[0].h);
 						}
@@ -549,7 +552,7 @@ function PossibilitiesAIKG()
 					}
 					if(KingsGCC == 3)
 					{	
-						if(KingG[0].x < 551)
+						if(KingG[0].x < limit_right)
 						{
 							if(KingsGCC != 1 && KingsGCC != 2 && KingsGCC != 4 && KingsGCC != 5 && KingsGCC != 6)
 							{
@@ -587,7 +590,7 @@ function PossibilitiesAIKG()
 					}
 					if(KingsGCC == 4)
 					{
-						if(KingG[0].x < 501)
+						if(KingG[0].x < limit_right-50)
 						{
 							if(KingsGCC != 1 && KingsGCC != 2 && KingsGCC != 3 && KingsGCC != 5 && KingsGCC != 6)
 							{

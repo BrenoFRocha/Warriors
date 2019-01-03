@@ -12,6 +12,8 @@ var AtackMG = true;
 var CountM = -1;
 var CountOnM = true;
 var Boolean8 = false;
+var limit_down = 451;
+var limit_right = 351;
 
 function drawAtacksK()
 {
@@ -204,7 +206,7 @@ function AtackAI()
 				ArcsPCC = 0;
 				if(CountM < 1)
 				{
-					if(KingP[CountM].y == 551)
+					if(KingP[CountM].y == limit_down)
 					{
 						CountOnM = false;
 						KntPMove = false;
@@ -235,7 +237,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Grega perde 32 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Greek Wall lose 32 life points.");
+									newLine("Critical attack! - Greek Wall loses 32 life points.");
 							}
 							
 							else
@@ -247,7 +249,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Greek Wall lose "+damage+" life points.");
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Persas = false;	
@@ -255,7 +257,7 @@ function AtackAI()
 						}
 					}
 					
-					else if(GnrlP[CountM].y == 551 || GnrlP[CountM].y == 501)
+					else if(GnrlP[CountM].y == limit_down || GnrlP[CountM].y == limit_down-50)
 					{
 						CountOnM = false;
 						KntPMove = false;
@@ -282,7 +284,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Grega perde 32 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Greek Wall lose 32 life points.");
+									newLine("Critical attack! - Greek Wall loses 32 life points.");
 							}
 							
 							else
@@ -294,7 +296,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Greek Wall lose "+damage+" life points.");
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Persas = false;	
@@ -302,7 +304,7 @@ function AtackAI()
 						}
 					}
 					
-					else if(KingP[CountM].y == 501)
+					else if(KingP[CountM].y == limit_down-50)
 					{
 						CountOnM = false;
 						KntPMove = false;
@@ -333,7 +335,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Grega perde 32 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Greek Wall lose 32 life points.");
+									newLine("Critical attack! - Greek Wall loses 32 life points.");
 							}
 							
 							else
@@ -345,7 +347,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Greek Wall lose "+damage+" life points.");
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Persas = false;	
@@ -355,7 +357,7 @@ function AtackAI()
 				}
 				if(CountM < 4)
 				{
-					if(KntP[CountM].y == 551)
+					if(KntP[CountM].y == limit_down)
 					{
 						CountOnM = false;
 						KntPMove = false;
@@ -378,7 +380,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Grega perde 27 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Greek Wall lose 27 life points.");
+									newLine("Critical attack! - Greek Wall loses 27 life points.");
 							}
 							
 							else
@@ -390,7 +392,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Greek Wall lose "+damage+" life points.");
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Persas = false;	
@@ -400,7 +402,7 @@ function AtackAI()
 				}
 				if(CountM < 8)
 				{
-					if(LancerP[CountM].y == 551)
+					if(LancerP[CountM].y == limit_down)
 					{
 						CountOnM = false;
 						KntPMove = false;
@@ -423,7 +425,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Grega perde 26 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Greek Wall lose 26 life points.");
+									newLine("Critical attack! - Greek Wall loses 26 life points.");
 							}
 							
 							else
@@ -435,14 +437,14 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Greek Wall lose "+damage+" life points.");
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Persas = false;	
 							Vez_Gregos = true;
 						}
 					}
-					else if(ArcP[CountM].y == 451 || ArcP[CountM].y == 501 || ArcP[CountM].y == 551)
+					else if(ArcP[CountM].y == limit_down - 100 || ArcP[CountM].y == limit_down-50 || ArcP[CountM].y == limit_down)
 					{
 						CountOnM = false;
 						KntPMove = false;
@@ -473,7 +475,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Grega perde 21 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Greek Wall lose 21 life points.");
+									newLine("Critical attack! - Greek Wall loses 21 life points.");
 							}
 							
 							else
@@ -485,7 +487,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Greek Wall lose "+damage+" life points.");
+									newLine("Normal attack - Greek Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Persas = false;	
@@ -552,7 +554,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 32 life points.");
+													newLine("Critical attack! - Greek King loses 32 life points.");
 											}
 											else
 											{
@@ -563,7 +565,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -600,7 +602,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 32 life points.");
+													newLine("Critical attack! - Greek General loses 32 life points.");
 											}
 											else
 											{
@@ -611,7 +613,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -647,7 +649,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 29 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 29 life points.");
+													newLine("Critical attack! - Greek King loses 29 life points.");
 											}
 											else
 											{
@@ -658,7 +660,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -694,7 +696,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 29 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 29 life points.");
+													newLine("Critical attack! - Greek General loses 29 life points.");
 											}
 											else
 											{
@@ -705,7 +707,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -741,7 +743,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 32 life points.");
+													newLine("Critical attack! - Greek King loses 32 life points.");
 											}
 											else
 											{
@@ -752,7 +754,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -788,7 +790,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 32 life points.");
+													newLine("Critical attack! - Greek General loses 32 life points.");
 											}
 											else
 											{
@@ -799,7 +801,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}											
 											KntPMove = true;
 											GnrlPMove = true;
@@ -841,7 +843,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 27 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 27 life points.");
+													newLine("Critical attack! - Greek King loses 27 life points.");
 											}
 											else
 											{
@@ -852,7 +854,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -891,7 +893,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 27 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 27 life points.");
+													newLine("Critical attack! - Greek General loses 27 life points.");
 											}
 											else
 											{
@@ -902,7 +904,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -944,7 +946,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 24 life points.");
+													newLine("Critical attack! - Greek King loses 24 life points.");
 											}
 											else
 											{
@@ -955,7 +957,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -991,7 +993,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 24 life points.");
+													newLine("Critical attack! - Greek King loses 24 life points.");
 											}
 											else
 											{
@@ -1002,7 +1004,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -1038,7 +1040,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 24 pontos de vida.");
 												}
 												else  
-													newLine("Critical attack! - Greek General lose 24 life points.");
+													newLine("Critical attack! - Greek General loses 24 life points.");
 											}
 											else
 											{
@@ -1049,7 +1051,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -1085,7 +1087,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 24 life points.");
+													newLine("Critical attack! - Greek General loses 24 life points.");
 											}
 											else
 											{
@@ -1096,7 +1098,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -1138,7 +1140,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 26 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 26 life points.");
+													newLine("Critical attack! - Greek King loses 26 life points.");
 											}
 											else
 											{
@@ -1149,7 +1151,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -1188,7 +1190,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 26 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 26 life points.");
+													newLine("Critical attack! - Greek General loses 26 life points.");
 											}
 											else
 											{
@@ -1199,7 +1201,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											KntPMove = true;
 											GnrlPMove = true;
@@ -1238,7 +1240,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Grego perde 21 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek King lose 21 life points.");
+													newLine("Critical attack! - Greek King loses 21 life points.");
 											}
 											else
 											{
@@ -1249,7 +1251,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek King lose "+damage+" life points.");
+													newLine("Normal attack - Greek King loses "+damage+" life points.");
 											}
 											
 											KingPMove = true;
@@ -1288,7 +1290,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Grego perde 21 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Greek General lose 21 life points.");
+													newLine("Critical attack! - Greek General loses 21 life points.");
 											}
 											else
 											{
@@ -1299,7 +1301,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Greek General lose "+damage+" life points.");
+													newLine("Normal attack - Greek General loses "+damage+" life points.");
 											}
 											
 											KingPMove = true;
@@ -1344,7 +1346,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Grega perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Tower lose 32 life points.");
+												newLine("Critical attack! - Greek Tower loses 32 life points.");
 										}
 										else
 										{
@@ -1355,7 +1357,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Tower lose "+damage+" life points.");
+												newLine("Normal attack - Greek Tower loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1391,7 +1393,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Grega perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Tower lose 29 life points.");
+												newLine("Critical attack! - Greek Tower loses 29 life points.");
 										}
 										else
 										{
@@ -1402,7 +1404,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Tower lose "+damage+" life points.");
+												newLine("Normal attack - Greek Tower loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1439,7 +1441,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Grega perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Tower lose 32 life points.");
+												newLine("Critical attack! - Greek Tower loses 32 life points.");
 										}
 										else
 										{
@@ -1450,7 +1452,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Tower lose "+damage+" life points.");
+												newLine("Normal attack - Greek Tower loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1492,7 +1494,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Grega perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Tower lose 27 life points.");
+												newLine("Critical attack! - Greek Tower loses 27 life points.");
 										}
 										else
 										{
@@ -1503,7 +1505,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Tower lose "+damage+" life points.");
+												newLine("Normal attack - Greek Tower loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1545,7 +1547,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Grega perde 26 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Tower lose 26 life points.");
+												newLine("Critical attack! - Greek Tower loses 26 life points.");
 										}
 										else
 										{
@@ -1556,7 +1558,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Tower lose "+damage+" life points.");
+												newLine("Normal attack - Greek Tower loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1595,7 +1597,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Grega perde 21 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Tower lose 21 life points.");
+												newLine("Critical attack! - Greek Tower loses 21 life points.");
 										}
 										else
 										{
@@ -1606,7 +1608,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Tower lose "+damage+" life points.");
+												newLine("Normal attack - Greek Tower loses "+damage+" life points.");
 										}
 										TorMove = true;
 										GnrlPMove = true;
@@ -1649,7 +1651,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 32 life points.");
+												newLine("Critical attack! - Greek Archer loses 32 life points.");
 										}
 										else
 										{
@@ -1660,7 +1662,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1696,7 +1698,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Grego perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Knight lose 29 life points.");
+												newLine("Critical attack! - Greek Knight loses 29 life points.");
 										}
 										else
 										{
@@ -1707,7 +1709,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Knight lose "+damage+" life points.");
+												newLine("Normal attack - Greek Knight loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1744,7 +1746,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 32 life points.");
+												newLine("Critical attack! - Greek Archer loses 32 life points.");
 										}
 										else
 										{
@@ -1755,7 +1757,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1796,7 +1798,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Grego perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Knight lose 27 life points.");
+												newLine("Critical attack! - Greek Knight loses 27 life points.");
 										}
 										else
 										{
@@ -1807,7 +1809,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Knight lose "+damage+" life points.");
+												newLine("Normal attack - Greek Knight loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1849,7 +1851,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 24 life points.");
+												newLine("Critical attack! - Greek Lancer loses 24 life points.");
 										}
 										else
 										{
@@ -1860,7 +1862,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1896,7 +1898,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 24 life points.");
+												newLine("Critical attack! - Greek Lancer loses 24 life points.");
 										}
 										else
 										{
@@ -1907,7 +1909,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1949,7 +1951,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Grego perde 26 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Knight lose 26 life points.");
+												newLine("Critical attack! - Greek Knight loses 26 life points.");
 										}
 										else
 										{
@@ -1960,7 +1962,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Knight lose "+damage+" life points.");
+												newLine("Normal attack - Greek Knight loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -1999,7 +2001,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Grego perde 21 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Knight lose 21 life points.");
+												newLine("Critical attack! - Greek Knight loses 21 life points.");
 										}
 										else
 										{
@@ -2010,7 +2012,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Knight lose "+damage+" life points.");
+												newLine("Normal attack - Greek Knight loses "+damage+" life points.");
 										}
 										
 										KntPMove = true;
@@ -2054,7 +2056,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 32 life points.");
+												newLine("Critical attack! - Greek Lancer loses 32 life points.");
 										}
 										else
 										{
@@ -2065,7 +2067,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2101,7 +2103,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 32 life points.");
+												newLine("Critical attack! - Greek Archer loses 32 life points.");
 										}
 										else
 										{
@@ -2112,7 +2114,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2148,7 +2150,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 29 life points.");
+												newLine("Critical attack! - Greek Lancer loses 29 life points.");
 										}
 										else
 										{
@@ -2159,7 +2161,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2196,7 +2198,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 21 life points.");
+												newLine("Critical attack! - Greek Archer loses 21 life points.");
 										}
 										else
 										{
@@ -2207,7 +2209,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2244,7 +2246,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 32 life points.");
+												newLine("Critical attack! - Greek Lancer loses 32 life points.");
 										}
 										else
 										{
@@ -2255,7 +2257,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2291,7 +2293,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 32 life points.");
+												newLine("Critical attack! - Greek Archer loses 32 life points.");
 										}
 										else
 										{
@@ -2302,7 +2304,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2344,7 +2346,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 27 life points.");
+												newLine("Critical attack! - Greek Lancer loses 27 life points.");
 										}
 										else
 										{
@@ -2355,7 +2357,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2394,7 +2396,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 27 life points.");
+												newLine("Critical attack! - Greek Archer loses 27 life points.");
 										}
 										else
 										{
@@ -2405,7 +2407,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2447,7 +2449,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 24 life points.");										}
+												newLine("Critical attack! - Greek Lancer loses 24 life points.");										}
 										else
 										{
 											damage = Math.floor(randomRange(10,20));
@@ -2457,7 +2459,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2493,7 +2495,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 24 life points.");
+												newLine("Critical attack! - Greek Lancer loses 24 life points.");
 										}
 										else
 										{
@@ -2504,7 +2506,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2540,7 +2542,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 24 life points.");
+												newLine("Critical attack! - Greek Archer loses 24 life points.");
 										}
 										else
 										{
@@ -2551,7 +2553,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2587,7 +2589,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Grego perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Archer lose 24 life points.");
+												newLine("Critical attack! - Greek Archer loses 24 life points.");
 										}
 										else
 										{
@@ -2598,7 +2600,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2640,7 +2642,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 27 life points.");
+												newLine("Critical attack! - Greek Lancer loses 27 life points.");
 										}
 										else
 										{
@@ -2651,7 +2653,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2688,7 +2690,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Grego perde 21 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek Lancer lose 21 life points.");
+												newLine("Critical attack! - Greek Lancer loses 21 life points.");
 										}
 										else
 										{
@@ -2699,7 +2701,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Greek Lancer loses "+damage+" life points.");
 										}
 										
 										KntPMove = true;
@@ -2737,7 +2739,7 @@ function AtackAI()
 												newLine("Golpe Critico! General Grego perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Greek General lose 27 life points.");
+												newLine("Critical attack! - Greek General loses 27 life points.");
 										}
 										else
 										{
@@ -2748,7 +2750,7 @@ function AtackAI()
 												newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Greek General lose "+damage+" life points.");
+												newLine("Normal attack - Greek General loses "+damage+" life points.");
 										}
 										KntPMove = true;
 										GnrlPMove = true;
@@ -2785,7 +2787,7 @@ function AtackAI()
 											newLine("Golpe Critico! Arqueiro Grego perde 21 pontos de vida.");
 										}
 										else
-											newLine("Critical attack! - Greek Archer lose 21 life points.");
+											newLine("Critical attack! - Greek Archer loses 21 life points.");
 									}
 									else
 									{
@@ -2796,7 +2798,7 @@ function AtackAI()
 											newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 										}
 										else
-											newLine("Normal attack - Greek Archer lose "+damage+" life points.");
+											newLine("Normal attack - Greek Archer loses "+damage+" life points.");
 									}
 									KntPMove = true;
 									GnrlPMove = true;
@@ -2897,7 +2899,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Persa perde 32 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Persian Wall lose 32 life points.");
+									newLine("Critical attack! - Persian Wall loses 32 life points.");
 							}
 							
 							else
@@ -2909,7 +2911,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Persian Wall lose "+damage+" life points.");
+									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Gregos = false;	
@@ -2944,7 +2946,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Persa perde 32 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Persian Wall lose 32 life points.");
+									newLine("Critical attack! - Persian Wall loses 32 life points.");
 							}
 							
 							else
@@ -2956,7 +2958,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Persian Wall lose "+damage+" life points.");
+									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Gregos = false;	
@@ -2995,7 +2997,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Persa perde 32 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Persian Wall lose 32 life points.");
+									newLine("Critical attack! - Persian Wall loses 32 life points.");
 							}
 							
 							else
@@ -3007,7 +3009,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Persian Wall lose "+damage+" life points.");
+									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Gregos = false;	
@@ -3040,7 +3042,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Persa perde 27 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Persian Wall lose 27 life points.");
+									newLine("Critical attack! - Persian Wall loses 27 life points.");
 							}
 							
 							else
@@ -3083,7 +3085,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Persa perde 26 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Persian Wall lose 26 life points.");
+									newLine("Critical attack! - Persian Wall loses 26 life points.");
 							}
 							
 							else
@@ -3095,7 +3097,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Persian Wall lose "+damage+" life points.");
+									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Gregos = false;	
@@ -3133,7 +3135,7 @@ function AtackAI()
 									newLine("Golpe Critico! Muralha Persa perde 21 pontos de vida.");
 								}
 								else
-									newLine("Critical attack! - Persian Wall lose 21 life points.");
+									newLine("Critical attack! - Persian Wall loses 21 life points.");
 							}
 							
 							else
@@ -3145,7 +3147,7 @@ function AtackAI()
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
 								else
-									newLine("Normal attack - Persian Wall lose "+damage+" life points.");
+									newLine("Normal attack - Persian Wall loses "+damage+" life points.");
 							}
 							CountTime = 100;
 							Vez_Gregos = false;	
@@ -3212,7 +3214,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 32 life points.");
+													newLine("Critical attack! - Persian King loses 32 life points.");
 											}
 											else
 											{
@@ -3223,7 +3225,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3260,7 +3262,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 32 life points.");
+													newLine("Critical attack! - Persian General loses 32 life points.");
 											}
 											else
 											{
@@ -3271,7 +3273,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3307,7 +3309,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 29 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 29 life points.");
+													newLine("Critical attack! - Persian King loses 29 life points.");
 											}
 											else
 											{
@@ -3318,7 +3320,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3354,7 +3356,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 29 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 29 life points.");
+													newLine("Critical attack! - Persian General loses 29 life points.");
 											}
 											else
 											{
@@ -3365,7 +3367,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3401,7 +3403,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 32 life points.");
+													newLine("Critical attack! - Persian King loses 32 life points.");
 											}
 											else
 											{
@@ -3412,7 +3414,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3448,7 +3450,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 32 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 32 life points.");
+													newLine("Critical attack! - Persian General loses 32 life points.");
 											}
 											else
 											{
@@ -3459,7 +3461,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3501,7 +3503,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 27 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 27 life points.");
+													newLine("Critical attack! - Persian King loses 27 life points.");
 											}
 											else
 											{
@@ -3512,7 +3514,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3551,7 +3553,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 27 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 27 life points.");
+													newLine("Critical attack! - Persian General loses 27 life points.");
 											}
 											else
 											{
@@ -3562,7 +3564,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3604,7 +3606,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 24 life points.");
+													newLine("Critical attack! - Persian King loses 24 life points.");
 											}
 											else
 											{
@@ -3615,7 +3617,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3651,7 +3653,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 24 life points.");
+													newLine("Critical attack! - Persian King loses 24 life points.");
 											}
 											else
 											{
@@ -3662,7 +3664,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3698,7 +3700,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 24 life points.");
+													newLine("Critical attack! - Persian General loses 24 life points.");
 											}
 											else
 											{
@@ -3709,7 +3711,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3745,7 +3747,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 24 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 24 life points.");
+													newLine("Critical attack! - Persian General loses 24 life points.");
 											}
 											else
 											{
@@ -3756,7 +3758,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3798,7 +3800,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 26 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 26 life points.");
+													newLine("Critical attack! - Persian General loses 26 life points.");
 											}
 											else
 											{
@@ -3809,7 +3811,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3848,7 +3850,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 26 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 26 life points.");
+													newLine("Critical attack! - Persian General loses 26 life points.");
 											}
 											else
 											{
@@ -3859,7 +3861,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											KntGMove = true;
 											GnrlGMove = true;
@@ -3898,7 +3900,7 @@ function AtackAI()
 													newLine("Golpe Critico! Rei Persa perde 21 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian King lose 21 life points.");
+													newLine("Critical attack! - Persian King loses 21 life points.");
 											}
 											else
 											{
@@ -3909,7 +3911,7 @@ function AtackAI()
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian King lose "+damage+" life points.");
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
 											}
 												
 											KingGMove = true;
@@ -3948,7 +3950,7 @@ function AtackAI()
 													newLine("Golpe Critico! General Persa perde 21 pontos de vida.");
 												}
 												else
-													newLine("Critical attack! - Persian General lose 21 life points.");
+													newLine("Critical attack! - Persian General loses 21 life points.");
 											}
 											else
 											{
@@ -3959,7 +3961,7 @@ function AtackAI()
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-													newLine("Normal attack - Persian General lose "+damage+" life points.");
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
 											
 											KingGMove = true;
@@ -4004,7 +4006,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Tower lose 32 life points.");
+												newLine("Critical attack! - Persian Tower loses 32 life points.");
 										}
 										else
 										{
@@ -4015,7 +4017,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Tower lose "+damage+" life points.");
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4051,7 +4053,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Persa perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Tower lose 29 life points.");
+												newLine("Critical attack! - Persian Tower loses 29 life points.");
 										}
 										else
 										{
@@ -4062,7 +4064,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Tower lose "+damage+" life points.");
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4099,7 +4101,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Tower lose 32 life points.");
+												newLine("Critical attack! - Persian Tower loses 32 life points.");
 										}
 										else
 										{
@@ -4110,7 +4112,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Tower lose "+damage+" life points.");
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4152,7 +4154,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Persa perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Tower lose 27 life points.");
+												newLine("Critical attack! - Persian Tower loses 27 life points.");
 										}
 										else
 										{
@@ -4163,7 +4165,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Tower lose "+damage+" life points.");
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4205,7 +4207,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Persa perde 26 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Tower lose 26 life points.");
+												newLine("Critical attack! - Persian Tower loses 26 life points.");
 										}
 										else
 										{
@@ -4216,7 +4218,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Tower lose "+damage+" life points.");
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4255,7 +4257,7 @@ function AtackAI()
 												newLine("Golpe Critico! Torre Persa perde 21 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Tower lose 21 life points.");
+												newLine("Critical attack! - Persian Tower loses 21 life points.");
 										}
 										else
 										{
@@ -4266,7 +4268,7 @@ function AtackAI()
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Tower lose "+damage+" life points.");
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
 										}
 										
 										TorMove = true;
@@ -4310,7 +4312,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 32 life points.");
+												newLine("Critical attack! - Persian Archer loses 32 life points.");
 										}
 										else
 										{
@@ -4321,7 +4323,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4357,7 +4359,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Persa perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 29 life points.");
+												newLine("Critical attack! - Persian Knight loses 29 life points.");
 										}
 										else
 										{
@@ -4368,7 +4370,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Knight lose "+damage+" life points.");
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4405,7 +4407,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 32 life points.");
+												newLine("Critical attack! - Persian Knight loses 32 life points.");
 										}
 										else
 										{
@@ -4416,7 +4418,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4457,7 +4459,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Persa perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 27 life points.");
+												newLine("Critical attack! - Persian Knight loses 27 life points.");
 										}
 										else
 										{
@@ -4468,7 +4470,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Knight lose "+damage+" life points.");
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4510,7 +4512,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 24 life points.");
+												newLine("Critical attack! - Persian Knight loses 24 life points.");
 										}
 										else
 										{
@@ -4521,7 +4523,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Knight lose "+damage+" life points.");
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
 										}	
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4557,7 +4559,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 24 life points.");
+												newLine("Critical attack! - Persian Knight loses 24 life points.");
 										}
 										else
 										{
@@ -4568,7 +4570,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Knight lose "+damage+" life points.");
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4610,7 +4612,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Persa perde 26 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 26 life points.");
+												newLine("Critical attack! - Persian Knight loses 26 life points.");
 										}
 										else
 										{
@@ -4621,7 +4623,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Knight lose "+damage+" life points.");
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4660,7 +4662,7 @@ function AtackAI()
 												newLine("Golpe Critico! Cavaleiro Persa perde 21 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Knight lose 21 life points.");
+												newLine("Critical attack! - Persian Knight loses 21 life points.");
 										}
 										else
 										{
@@ -4671,7 +4673,7 @@ function AtackAI()
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Knight lose "+damage+" life points.");
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
 										}
 										
 										KntGMove = true;
@@ -4715,7 +4717,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 32 life points.");
+												newLine("Critical attack! - Persian Lancer loses 32 life points.");
 										}
 										else
 										{
@@ -4726,7 +4728,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4762,7 +4764,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 32 life points.");
+												newLine("Critical attack! - Persian Archer loses 32 life points.");
 										}
 										else
 										{
@@ -4773,7 +4775,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4809,7 +4811,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 29 life points.");
+												newLine("Critical attack! - Persian Lancer loses 29 life points.");
 										}
 										else
 										{
@@ -4820,7 +4822,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4857,7 +4859,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 29 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 29 life points.");
+												newLine("Critical attack! - Persian Archer loses 29 life points.");
 										}
 										else
 										{
@@ -4868,7 +4870,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4905,7 +4907,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 32 life points.");
+												newLine("Critical attack! - Persian Lancer loses 32 life points.");
 										}
 										else
 										{
@@ -4916,7 +4918,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -4952,7 +4954,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 32 life points.");
+												newLine("Critical attack! - Persian Archer loses 32 life points.");
 										}
 										else
 										{
@@ -4963,7 +4965,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5005,7 +5007,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 27 life points.");
+												newLine("Critical attack! - Persian Lancer loses 27 life points.");
 										}
 										else
 										{
@@ -5016,7 +5018,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5055,7 +5057,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 27 life points.");
+												newLine("Critical attack! - Persian Archer loses 27 life points.");
 										}
 										else
 										{
@@ -5066,7 +5068,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5108,7 +5110,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 24 life points.");
+												newLine("Critical attack! - Persian Lancer loses 24 life points.");
 										}
 										else
 										{
@@ -5119,7 +5121,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5155,7 +5157,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 24 life points.");
+												newLine("Critical attack! - Persian Lancer loses 24 life points.");
 										}
 										else
 										{
@@ -5166,7 +5168,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5202,7 +5204,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 24 life points.");
+												newLine("Critical attack! - Persian Archer loses 24 life points.");
 										}
 										else
 										{
@@ -5213,7 +5215,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5249,7 +5251,7 @@ function AtackAI()
 												newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Archer lose 24 life points.");
+												newLine("Critical attack! - Persian Archer loses 24 life points.");
 										}
 										else
 										{
@@ -5260,7 +5262,7 @@ function AtackAI()
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5302,7 +5304,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 27 life points.");
+												newLine("Critical attack! - Persian Lancer loses 27 life points.");
 										}
 										else
 										{
@@ -5313,7 +5315,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5350,7 +5352,7 @@ function AtackAI()
 												newLine("Golpe Critico! Lanceiro Persa perde 21 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian Lancer lose 21 life points.");
+												newLine("Critical attack! - Persian Lancer loses 21 life points.");
 										}
 										else
 										{
@@ -5361,7 +5363,7 @@ function AtackAI()
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian Lancer lose "+damage+" life points.");
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
 										
 										KntGMove = true;
@@ -5399,7 +5401,7 @@ function AtackAI()
 												newLine("Golpe Critico! General Persa perde 27 pontos de vida.");
 											}
 											else
-												newLine("Critical attack! - Persian General lose 27 life points.");
+												newLine("Critical attack! - Persian General loses 27 life points.");
 										}
 										else
 										{
@@ -5410,7 +5412,7 @@ function AtackAI()
 												newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 											}
 											else
-												newLine("Normal attack - Persian General lose "+damage+" life points.");
+												newLine("Normal attack - Persian General loses "+damage+" life points.");
 										}
 										KntGMove = true;
 										GnrlGMove = true;
@@ -5447,7 +5449,7 @@ function AtackAI()
 											newLine("Golpe Critico! Arqueiro Persa perde 21 pontos de vida.");
 										}
 										else
-											newLine("Critical attack! - Persian Archer lose 21 life points.");
+											newLine("Critical attack! - Persian Archer loses 21 life points.");
 									}
 									else
 									{
@@ -5458,7 +5460,7 @@ function AtackAI()
 											newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 										}
 										else
-											newLine("Normal attack - Persian Archer lose "+damage+" life points.");
+											newLine("Normal attack - Persian Archer loses "+damage+" life points.");
 									}
 									KntGMove = true;
 									GnrlGMove = true;
