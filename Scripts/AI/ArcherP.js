@@ -19,7 +19,8 @@ var POSMAP3 = 0;
 var ArcsPCChoosed = null;
 
 var limit_down = 451;
-var limit_right = 351;
+var limit_right = 551;
+var archers_number = 8;
 
 function PossibilitiesAIAP()
 {
@@ -30,26 +31,43 @@ function PossibilitiesAIAP()
 			ChooseAP = Math.floor(randomRange(0,99));
 			if(ArcsPCChoosed == null && ChooseAP <= 75)
 			{
-				if(ArcP[0].y < ArcP[1].y && ArcP[0].y < ArcP[2].y && ArcP[0].y < ArcP[3].y)
+				
+				if(ArcP[0].y < ArcP[1].y && ArcP[0].y < ArcP[2].y && ArcP[0].y < ArcP[3].y && ArcP[0].y < ArcP[4].y && ArcP[0].y < ArcP[5].y && ArcP[0].y < ArcP[6].y && ArcP[0].y < ArcP[7].y)
 				{
 					ArcsPCChoosed = 0;
 				}
-				else if(ArcP[1].y < ArcP[1].y && ArcP[0].y < ArcP[2].y && ArcP[1].y < ArcP[3].y)
+				else if(ArcP[1].y < ArcP[1].y && ArcP[0].y < ArcP[2].y && ArcP[1].y < ArcP[3].y && ArcP[1].y < ArcP[4].y && ArcP[1].y < ArcP[5].y && ArcP[1].y < ArcP[6].y && ArcP[1].y < ArcP[7].y)
 				{
 					ArcsPCChoosed = 1;
 				}
-				else if(ArcP[2].y < ArcP[1].y && ArcP[2].y < ArcP[0].y && ArcP[2].y < ArcP[3].y)
+				else if(ArcP[2].y < ArcP[1].y && ArcP[2].y < ArcP[0].y && ArcP[2].y < ArcP[3].y && ArcP[2].y < ArcP[4].y && ArcP[2].y < ArcP[5].y && ArcP[2].y < ArcP[6].y && ArcP[2].y < ArcP[7].y)
 				{
 					ArcsPCChoosed = 2;
 				}
-				else if(ArcP[3].y < ArcP[1].y && ArcP[3].y < ArcP[2].y && ArcP[3].y < ArcP[0].y)
+				else if(ArcP[3].y < ArcP[1].y && ArcP[3].y < ArcP[2].y && ArcP[3].y < ArcP[0].y && ArcP[3].y < ArcP[4].y && ArcP[3].y < ArcP[5].y && ArcP[3].y < ArcP[6].y && ArcP[3].y < ArcP[7].y)
 				{
 					ArcsPCChoosed = 3;
+				}
+				else if(ArcP[4].y < ArcP[1].y && ArcP[4].y < ArcP[2].y && ArcP[4].y < ArcP[3].y && ArcP[4].y < ArcP[0].y && ArcP[4].y < ArcP[5].y && ArcP[4].y < ArcP[6].y && ArcP[4].y < ArcP[7].y)
+				{
+					ArcsPCChoosed = 4;
+				}
+				else if(ArcP[5].y < ArcP[1].y && ArcP[5].y < ArcP[2].y && ArcP[5].y < ArcP[3].y && ArcP[5].y < ArcP[4].y && ArcP[5].y < ArcP[0].y && ArcP[5].y < ArcP[6].y && ArcP[5].y < ArcP[7].y)
+				{
+					ArcsPCChoosed = 5;
+				}
+				else if(ArcP[6].y < ArcP[1].y && ArcP[6].y < ArcP[2].y && ArcP[6].y < ArcP[3].y && ArcP[6].y < ArcP[4].y && ArcP[6].y < ArcP[5].y && ArcP[6].y < ArcP[0].y && ArcP[6].y < ArcP[7].y)
+				{
+					ArcsPCChoosed = 6;
+				}
+				else if(ArcP[7].y < ArcP[1].y && ArcP[7].y < ArcP[2].y && ArcP[7].y < ArcP[3].y && ArcP[7].y < ArcP[4].y && ArcP[7].y < ArcP[5].y && ArcP[7].y < ArcP[6].y && ArcP[7].y < ArcP[0].y)
+				{
+					ArcsPCChoosed = 7;
 				}
 			}
 			else if(ArcsPCChoosed == null && ChooseAP > 75)
 			{
-				ArcsPCChoosed = Math.floor(randomRange(0,3));
+				ArcsPCChoosed = Math.floor(randomRange(0,archers_number-1));
 			}
 			
 			if(ChooseP == 3)

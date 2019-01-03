@@ -14,8 +14,9 @@ var Mov1CG = false;
 var Mov2CG = false;
 
 var limit_down = 451;
-var limit_right = 351;
+var limit_right = 551;
 
+var archers_number = 4;
 
 function PossibilitiesAICG()
 {
@@ -157,14 +158,17 @@ function PossibilitiesAICG()
 								{
 									MOVMCG1 = false;
 								}
-								
-								if((KntG[KntsGCChoosed].x == LancerP[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == LancerP[POSMCG1].y + 50)||
-								(KntG[KntsGCChoosed].x == ArcP[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == ArcP[POSMCG1].y + 50) ||
-								(KntG[KntsGCChoosed].x == ArcG[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == ArcG[POSMCG1].y + 50) ||
-								(KntG[KntsGCChoosed].x == LancerG[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == LancerG[POSMCG1].y + 50))
+								if(POSMCG1 < archers_number)
 								{
-									MOVMCG1 = false;
+									if((KntG[KntsGCChoosed].x == LancerP[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == LancerP[POSMCG1].y + 50)||
+									(KntG[KntsGCChoosed].x == ArcP[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == ArcP[POSMCG1].y + 50) ||
+									(KntG[KntsGCChoosed].x == ArcG[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == ArcG[POSMCG1].y + 50) ||
+									(KntG[KntsGCChoosed].x == LancerG[POSMCG1].x + 50 && KntG[KntsGCChoosed].y == LancerG[POSMCG1].y + 50))
+									{
+										MOVMCG1 = false;
+									}
 								}
+								
 							}	
 						}
 						

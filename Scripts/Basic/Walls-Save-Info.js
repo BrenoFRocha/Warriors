@@ -2,7 +2,7 @@ var PTBR = true;
 var ENUS = false;
 var WallG_x = 0;
 var WallG_y = 500;
-var WallG_w = 400;
+var WallG_w = 600;
 var WallG_h = 100;
 var WallG_life = 100;
 
@@ -10,7 +10,7 @@ var save = 0;
 
 var WallP_x = 0;
 var WallP_y = 0;
-var WallP_w = 400;
+var WallP_w = 600;
 var WallP_h = 100;
 var WallP_life = 100;
 

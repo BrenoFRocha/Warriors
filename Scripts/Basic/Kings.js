@@ -1,7 +1,7 @@
 var PTBR = true;
 var ENUS = false;
 var limit_down = 451;
-var limit_right = 351;
+var limit_right = 551;
 
  function KingsP(KingP_x, KingP_y, KingP_w, KingP_h, KingP_l)
 {	
@@ -71,7 +71,7 @@ function KingsG(KingG_x, KingG_y, KingG_w, KingG_h, KingG_l)
 }
 
 {//Rei Persa
-	var KingP_x = [201];
+	var KingP_x = [251];
 	var KingP = [];
 	var Click_KP = 0;
 
@@ -82,7 +82,7 @@ function KingsG(KingG_x, KingG_y, KingG_w, KingG_h, KingG_l)
 }
 
 {//Rei Grego
-	var KingG_x = [151];
+	var KingG_x = [301];
 	var KingG = [];
 	var Click_KG = 0;
 	

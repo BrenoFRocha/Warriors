@@ -1,7 +1,7 @@
 var PTBR = true;
 var ENUS = false;
 var limit_down = 451;
-var limit_right = 351;
+var limit_right = 551;
 
 function GnrlsP(GnrlP_x, GnrlP_y, GnrlP_w, GnrlP_h, GnrlP_l)
 {	
@@ -69,7 +69,7 @@ function GnrlsG(GnrlG_x, GnrlG_y, GnrlG_w, GnrlG_h, GnrlG_l)
 }
 
 {//General Persa
-	var GnrlP_x = [151];
+	var GnrlP_x = [301];
 	var GnrlP = [];
 	var Click_GP = 0;
 	
@@ -80,7 +80,7 @@ function GnrlsG(GnrlG_x, GnrlG_y, GnrlG_w, GnrlG_h, GnrlG_l)
 }
 
 {//General Grego
-	var GnrlG_x = [201];
+	var GnrlG_x = [251];
 	var GnrlG = [];
 	var Click_GG = 0;
 	

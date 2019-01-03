@@ -21,7 +21,7 @@ var POSMGG3 = 0;
 var POSMGG4 = 0;
 
 var limit_down = 451;
-var limit_right = 351;
+var limit_right = 551;
 
 function PossibilitiesAIGG()
 {
