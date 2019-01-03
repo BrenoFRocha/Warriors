@@ -14,7 +14,7 @@ var Mov1CG = false;
 var Mov2CG = false;
 
 var limit_down = 451;
-var limit_right = 351;
+var limit_right = 551;
 
 
 function PossibilitiesAICG()
