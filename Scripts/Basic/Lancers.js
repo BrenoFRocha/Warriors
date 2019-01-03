@@ -1,8 +1,8 @@
 var PTBR = true;
 var ENUS = false;
 var limit_down = 451;
-var limit_right = 551;
-var lancers_numbers = 8;
+var limit_right = 351;
+var lancers_numbers = 6;
 
 function LancersP(LancerP_x, LancerP_y, LancerP_w, LancerP_h, LancerP_l)
 {	
@@ -70,7 +70,7 @@ function LancersG(LancerG_x, LancerG_y, LancerG_w, LancerG_h, LancerG_l)
 }
 
 {//Lanceiros Persas
-	var LancerP_x = [251, 51, 151 , 201, 301, 351, 401, 501];	
+	var LancerP_x = [51, 101, 151,201, 251, 301];	
 	var LancerP = [];
 	var Click_LP = 0;
 	var OrdemLP = LancersPChoosed;
@@ -82,7 +82,7 @@ function LancersG(LancerG_x, LancerG_y, LancerG_w, LancerG_h, LancerG_l)
 }
 	
 {//Lanceiros Gregos
-	var LancerG_x = [251, 51, 151 , 201, 301, 351, 401, 501];	
+	var LancerG_x = [51, 101, 151,201, 251, 301];	
 	var LancerG = [];
 	var Click_LG = 0;
 	var OrdemLG = LancersGChoosed;

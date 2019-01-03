@@ -25,8 +25,7 @@ var POSMLP4 = 0;
 var POSMLP5 = 0;
 var POSMLP6 = 0;
 var limit_down = 451;
-var limit_right = 551;
-var lancers_number = 8;
+var limit_right = 351;
 
 function PossibilitiesAILP()
 {
@@ -38,37 +37,29 @@ function PossibilitiesAILP()
 			ChooseLP = Math.floor(randomRange(0,99));
 			if(LancersPCChoosed == null && ChooseLP <= 75)
 			{
-				if(LancerP[0].y < LancerP[1].y && LancerP[0].y < LancerP[2].y && LancerP[0].y < LancerP[3].y && LancerP[0].y < LancerP[4].y && LancerP[0].y < LancerP[5].y && LancerP[0].y < LancerP[6].y && LancerP[0].y < LancerP[7].y)
+				if(LancerP[0].y < LancerP[1].y && LancerP[0].y < LancerP[2].y && LancerP[0].y < LancerP[3].y && LancerP[0].y < LancerP[4].y && LancerP[0].y < LancerP[5].y)
 				{
 					LancersPCChoosed = 0;
 				}
-				else if(LancerP[1].y < LancerP[1].y && LancerP[0].y < LancerP[2].y && LancerP[1].y < LancerP[3].y && LancerP[1].y < LancerP[4].y && LancerP[1].y < LancerP[5].y && LancerP[1].y < LancerP[6].y && LancerP[1].y < LancerP[7].y)
+				else if(LancerP[1].y < LancerP[1].y && LancerP[0].y < LancerP[2].y && LancerP[1].y < LancerP[3].y && LancerP[1].y < LancerP[4].y && LancerP[1].y < LancerP[5].y)
 				{
 					LancersPCChoosed = 1;
 				}
-				else if(LancerP[2].y < LancerP[1].y && LancerP[2].y < LancerP[0].y && LancerP[2].y < LancerP[3].y && LancerP[2].y < LancerP[4].y && LancerP[2].y < LancerP[5].y && LancerP[2].y < LancerP[6].y && LancerP[2].y < LancerP[7].y)
+				else if(LancerP[2].y < LancerP[1].y && LancerP[2].y < LancerP[0].y && LancerP[2].y < LancerP[3].y && LancerP[2].y < LancerP[4].y && LancerP[2].y < LancerP[5].y)
 				{
 					LancersPCChoosed = 2;
 				}
-				else if(LancerP[3].y < LancerP[1].y && LancerP[3].y < LancerP[2].y && LancerP[3].y < LancerP[0].y && LancerP[3].y < LancerP[4].y && LancerP[3].y < LancerP[5].y && LancerP[3].y < LancerP[6].y && LancerP[3].y < LancerP[7].y)
+				else if(LancerP[3].y < LancerP[1].y && LancerP[3].y < LancerP[2].y && LancerP[3].y < LancerP[0].y && LancerP[3].y < LancerP[4].y && LancerP[3].y < LancerP[5].y)
 				{
 					LancersPCChoosed = 3;
 				}
-				else if(LancerP[4].y < LancerP[1].y && LancerP[4].y < LancerP[2].y && LancerP[4].y < LancerP[3].y && LancerP[4].y < LancerP[0].y && LancerP[4].y < LancerP[5].y && LancerP[4].y < LancerP[6].y && LancerP[4].y < LancerP[7].y)
+				else if(LancerP[4].y < LancerP[1].y && LancerP[4].y < LancerP[2].y && LancerP[4].y < LancerP[3].y && LancerP[4].y < LancerP[0].y && LancerP[4].y < LancerP[5].y)
 				{
 					LancersPCChoosed = 4;
 				}
-				else if(LancerP[5].y < LancerP[1].y && LancerP[5].y < LancerP[2].y && LancerP[5].y < LancerP[3].y && LancerP[5].y < LancerP[4].y && LancerP[5].y < LancerP[0].y && LancerP[5].y < LancerP[6].y && LancerP[5].y < LancerP[7].y)
+				else if(LancerP[5].y < LancerP[1].y && LancerP[5].y < LancerP[2].y && LancerP[5].y < LancerP[3].y && LancerP[5].y < LancerP[4].y && LancerP[5].y < LancerP[0].y)
 				{
 					LancersPCChoosed = 5;
-				}
-				else if(LancerP[6].y < LancerP[1].y && LancerP[6].y < LancerP[2].y && LancerP[6].y < LancerP[3].y && LancerP[6].y < LancerP[4].y && LancerP[6].y < LancerP[5].y && LancerP[6].y < LancerP[0].y && LancerP[6].y < LancerP[7].y)
-				{
-					LancersPCChoosed = 6;
-				}
-				else if(LancerP[7].y < LancerP[1].y && LancerP[7].y < LancerP[2].y && LancerP[7].y < LancerP[3].y && LancerP[7].y < LancerP[4].y && LancerP[7].y < LancerP[5].y && LancerP[7].y < LancerP[6].y && LancerP[7].y < LancerP[0].y)
-				{
-					LancersPCChoosed = 7;
 				}
 				else
 				{
@@ -77,7 +68,7 @@ function PossibilitiesAILP()
 			}
 			else if(LancersPCChoosed == null && ChooseLP > 75)
 			{
-				LancersPCChoosed = Math.floor(randomRange(0,lancers_number-1));
+				LancersPCChoosed = Math.floor(randomRange(0,5));
 			}
 			
 			if(ChooseP == 2)

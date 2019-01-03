@@ -13,9 +13,7 @@ var CountM = -1;
 var CountOnM = true;
 var Boolean8 = false;
 var limit_down = 451;
-var limit_right = 551;
-var archer_number = 4;
-var lancer_number = 6;
+var limit_right = 351;
 
 function drawAtacksK()
 {
@@ -3776,207 +3774,202 @@ function AtackAI()
 										
 							if(GAChoosed < 8)
 							{
-								if(GAChoosed < 6)
+								if(KingP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KingP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KingP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y + 50 == LancerG[GAChoosed].y || KingP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
 								{
-									if(KingP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KingP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KingP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y + 50 == LancerG[GAChoosed].y || KingP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KingP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+									Boolean8 = false;
+									KntGMove = false;
+									GnrlGMove = false;
+									KingGMove = false;
+									LancerGMove = false;
+									ArcGMove = false;
+									CountTime --;
+									if(GAChoosed != null && CountTime < 100)
 									{
-										Boolean8 = false;
-										KntGMove = false;
-										GnrlGMove = false;
-										KingGMove = false;
-										LancerGMove = false;
-										ArcGMove = false;
 										CountTime --;
-										if(GAChoosed != null && CountTime < 100)
-										{
-											CountTime --;
-											drawAtacksL();
+										drawAtacksL();
 
-											if(CountTime <= 0)
+										if(CountTime <= 0)
+										{
+											if(Math.floor(randomRange(0,99)<20))
 											{
-												if(Math.floor(randomRange(0,99)<20))
+												KingP[AtacadoP].life -= 26;
+												if(PTBR)
 												{
-													KingP[AtacadoP].life -= 26;
-													if(PTBR)
-													{
-														newLine("Golpe Critico! Rei Persa perde 26 pontos de vida.");
-													}
-													else
-														newLine("Critical attack! - Persian General loses 26 life points.");
+													newLine("Golpe Critico! Rei Persa perde 26 pontos de vida.");
 												}
 												else
-												{
-													damage = Math.floor(randomRange(16,21));
-													KingP[AtacadoP].life -= damage;
-													if(PTBR)
-													{
-														newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
-													}
-													else
-														newLine("Normal attack - Persian King loses "+damage+" life points.");
-												}
-												KntGMove = true;
-												GnrlGMove = true;
-												KingGMove = true;
-												LancerGMove = true;
-												ArcGMove = true;
-												
-												Vez_Gregos = false;	
-												Vez_Persas = true;	
-												CountTime = 100;
+													newLine("Critical attack! - Persian General loses 26 life points.");
 											}
+											else
+											{
+												damage = Math.floor(randomRange(16,21));
+												KingP[AtacadoP].life -= damage;
+												if(PTBR)
+												{
+													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
+												}
+												else
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
+											}
+											KntGMove = true;
+											GnrlGMove = true;
+											KingGMove = true;
+											LancerGMove = true;
+											ArcGMove = true;
+											
+											Vez_Gregos = false;	
+											Vez_Persas = true;	
+											CountTime = 100;
 										}
 									}
-								
-									else if(GnrlP[AtacadoP].x - 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y - 50 == LancerG[GAChoosed].y || GnrlP[AtacadoP].x + 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y - 50 == LancerG[GAChoosed].y || GnrlP[AtacadoP].x - 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y + 50 == LancerG[GAChoosed].y || GnrlP[AtacadoP].x + 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+								}
+							
+								else if(GnrlP[AtacadoP].x - 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y - 50 == LancerG[GAChoosed].y || GnrlP[AtacadoP].x + 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y - 50 == LancerG[GAChoosed].y || GnrlP[AtacadoP].x - 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y + 50 == LancerG[GAChoosed].y || GnrlP[AtacadoP].x + 50 == LancerG[GAChoosed].x && GnrlP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+								{
+									Boolean8 = false;
+									KntGMove = false;
+									GnrlGMove = false;
+									KingGMove = false;
+									LancerGMove = false;
+									ArcGMove = false;
+									CountTime --;
+									if(GAChoosed != null && CountTime < 100)
 									{
-										Boolean8 = false;
-										KntGMove = false;
-										GnrlGMove = false;
-										KingGMove = false;
-										LancerGMove = false;
-										ArcGMove = false;
 										CountTime --;
-										if(GAChoosed != null && CountTime < 100)
-										{
-											CountTime --;
-											drawAtacksL();
+										drawAtacksL();
 
-											if(CountTime <= 0)
+										if(CountTime <= 0)
+										{
+											if(Math.floor(randomRange(0,99)<20))
 											{
-												if(Math.floor(randomRange(0,99)<20))
+												GnrlP[AtacadoP].life -= 26;
+												if(PTBR)
 												{
-													GnrlP[AtacadoP].life -= 26;
-													if(PTBR)
-													{
-														newLine("Golpe Critico! General Persa perde 26 pontos de vida.");
-													}
-													else
-														newLine("Critical attack! - Persian General loses 26 life points.");
+													newLine("Golpe Critico! General Persa perde 26 pontos de vida.");
 												}
 												else
-												{
-													damage = Math.floor(randomRange(16,21));
-													GnrlP[AtacadoP].life -= damage;
-													if(PTBR)
-													{
-														newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
-													}
-													else
-														newLine("Normal attack - Persian General loses "+damage+" life points.");
-												}
-												KntGMove = true;
-												GnrlGMove = true;
-												KingGMove = true;
-												LancerGMove = true;
-												ArcGMove = true;
-												
-												Vez_Gregos = false;	
-												Vez_Persas = true;	
-												CountTime = 100;
+													newLine("Critical attack! - Persian General loses 26 life points.");
 											}
+											else
+											{
+												damage = Math.floor(randomRange(16,21));
+												GnrlP[AtacadoP].life -= damage;
+												if(PTBR)
+												{
+													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
+												}
+												else
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
+											}
+											KntGMove = true;
+											GnrlGMove = true;
+											KingGMove = true;
+											LancerGMove = true;
+											ArcGMove = true;
+											
+											Vez_Gregos = false;	
+											Vez_Persas = true;	
+											CountTime = 100;
+										}
+									}
+								}
+							
+								else if(KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y - 50 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y - 100 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y - 150 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y + 50 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y + 100 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y + 150 == ArcG[GAChoosed].y || KingP[AtacadoP].x - 50 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x - 100 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x - 150 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x + 50 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x + 100 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x + 150 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y)
+								{
+									Boolean8 = false;
+									KingGMove = false;
+									GnrlGMove = false;
+									LancerGMove = false;
+									KntGMove = false;
+									ArcGMove = false;
+									CountTime --;
+									
+									if(GAChoosed != null && CountTime < 100)
+									{
+										CountTime --;
+										drawAtacksA();
+										if(CountTime <= 0)
+										{
+											if(Math.floor(randomRange(0,99)<20))
+											{
+												KingP[AtacadoP].life -= 21;
+												if(PTBR)
+												{
+													newLine("Golpe Critico! Rei Persa perde 21 pontos de vida.");
+												}
+												else
+													newLine("Critical attack! - Persian King loses 21 life points.");
+											}
+											else
+											{
+												damage = Math.floor(randomRange(17,21));
+												KingP[AtacadoP].life -= damage;
+												if(PTBR)
+												{
+													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
+												}
+												else
+													newLine("Normal attack - Persian King loses "+damage+" life points.");
+											}
+												
+											KingGMove = true;
+											GnrlGMove = true;
+											KntGMove = true;
+											LancerGMove = true;
+											ArcGMove = true;
+											Vez_Gregos = false;	
+											Vez_Persas = true;	
+											CountTime = 100;
 										}
 									}
 								}
 								
-								else if(GAChoosed < archer_number)
+								else if(GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y - 50 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y - 100 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y - 150 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y + 50 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y + 100 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y + 150 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x - 50 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x - 100 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x - 150 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x + 50 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x + 100 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x + 150 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y)
 								{
-									if(KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y - 50 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y - 100 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y - 150 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y + 50 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y + 100 == ArcG[GAChoosed].y || KingP[AtacadoP].x == ArcG[GAChoosed].x && KingP[AtacadoP].y + 150 == ArcG[GAChoosed].y || KingP[AtacadoP].x - 50 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x - 100 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x - 150 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x + 50 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x + 100 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y || KingP[AtacadoP].x + 150 == ArcG[GAChoosed].x && KingP[AtacadoP].y == ArcG[GAChoosed].y)
+									Boolean8 = false;
+									KingGMove = false;
+									GnrlGMove = false;
+									LancerGMove = false;
+									KntGMove = false;
+									ArcGMove = false;
+									CountTime --;
+									
+									if(GAChoosed != null && CountTime < 100)
 									{
-										Boolean8 = false;
-										KingGMove = false;
-										GnrlGMove = false;
-										LancerGMove = false;
-										KntGMove = false;
-										ArcGMove = false;
 										CountTime --;
-										
-										if(GAChoosed != null && CountTime < 100)
+										drawAtacksA();
+										if(CountTime <= 0)
 										{
-											CountTime --;
-											drawAtacksA();
-											if(CountTime <= 0)
+											if(Math.floor(randomRange(0,99)<20))
 											{
-												if(Math.floor(randomRange(0,99)<20))
+												GnrlP[AtacadoP].life -= 21;
+												if(PTBR)
 												{
-													KingP[AtacadoP].life -= 21;
-													if(PTBR)
-													{
-														newLine("Golpe Critico! Rei Persa perde 21 pontos de vida.");
-													}
-													else
-														newLine("Critical attack! - Persian King loses 21 life points.");
+													newLine("Golpe Critico! General Persa perde 21 pontos de vida.");
 												}
 												else
-												{
-													damage = Math.floor(randomRange(17,21));
-													KingP[AtacadoP].life -= damage;
-													if(PTBR)
-													{
-														newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
-													}
-													else
-														newLine("Normal attack - Persian King loses "+damage+" life points.");
-												}
-													
-												KingGMove = true;
-												GnrlGMove = true;
-												KntGMove = true;
-												LancerGMove = true;
-												ArcGMove = true;
-												Vez_Gregos = false;	
-												Vez_Persas = true;	
-												CountTime = 100;
+													newLine("Critical attack! - Persian General loses 21 life points.");
 											}
-										}
-									}
-									else if(GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y - 50 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y - 100 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y - 150 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y + 50 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y + 100 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x == ArcG[GAChoosed].x && GnrlP[AtacadoP].y + 150 == ArcG[GAChoosed].y || GnrlP[AtacadoP].x - 50 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x - 100 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x - 150 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x + 50 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x + 100 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y || GnrlP[AtacadoP].x + 150 == ArcG[GAChoosed].x && GnrlP[AtacadoP].y == ArcG[GAChoosed].y)
-									{
-										Boolean8 = false;
-										KingGMove = false;
-										GnrlGMove = false;
-										LancerGMove = false;
-										KntGMove = false;
-										ArcGMove = false;
-										CountTime --;
-										
-										if(GAChoosed != null && CountTime < 100)
-										{
-											CountTime --;
-											drawAtacksA();
-											if(CountTime <= 0)
+											else
 											{
-												if(Math.floor(randomRange(0,99)<20))
+												damage = Math.floor(randomRange(11,16));
+												GnrlP[AtacadoP].life -= damage;
+												if(PTBR)
 												{
-													GnrlP[AtacadoP].life -= 21;
-													if(PTBR)
-													{
-														newLine("Golpe Critico! General Persa perde 21 pontos de vida.");
-													}
-													else
-														newLine("Critical attack! - Persian General loses 21 life points.");
+													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
 												else
-												{
-													damage = Math.floor(randomRange(11,16));
-													GnrlP[AtacadoP].life -= damage;
-													if(PTBR)
-													{
-														newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
-													}
-													else
-														newLine("Normal attack - Persian General loses "+damage+" life points.");
-												}
-												
-												KingGMove = true;
-												GnrlGMove = true;
-												KntGMove = true;
-												LancerGMove = true;
-												ArcGMove = true;
-												Vez_Gregos = false;	
-												Vez_Persas = true;	
-												CountTime = 100;
+													newLine("Normal attack - Persian General loses "+damage+" life points.");
 											}
+											
+											KingGMove = true;
+											GnrlGMove = true;
+											KntGMove = true;
+											LancerGMove = true;
+											ArcGMove = true;
+											Vez_Gregos = false;	
+											Vez_Persas = true;	
+											CountTime = 100;
 										}
 									}
 								}
@@ -4188,107 +4181,102 @@ function AtackAI()
 						
 						if(GAChoosed < 8)
 						{
-							if(GAChoosed < lancer_number)
+							if(TorP[AtacadoP].x - 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y - 50 == LancerG[GAChoosed].y || TorP[AtacadoP].x + 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y - 50 == LancerG[GAChoosed].y || TorP[AtacadoP].x - 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y + 50 == LancerG[GAChoosed].y || TorP[AtacadoP].x + 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
 							{
-								if(TorP[AtacadoP].x - 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y - 50 == LancerG[GAChoosed].y || TorP[AtacadoP].x + 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y - 50 == LancerG[GAChoosed].y || TorP[AtacadoP].x - 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y + 50 == LancerG[GAChoosed].y || TorP[AtacadoP].x + 50 == LancerG[GAChoosed].x && TorP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksL();
+									drawAtacksL();
 
-										if(CountTime <= 0)
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											TorP[AtacadoP].life -= 26;
+											if(PTBR)
 											{
-												TorP[AtacadoP].life -= 26;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Torre Persa perde 26 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Tower loses 26 life points.");
+												newLine("Golpe Critico! Torre Persa perde 26 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(16,21));
-												TorP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Tower loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Tower loses 26 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(16,21));
+											TorP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							else if(GAChoosed < archer_number)
+							
+							else if(TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y - 50 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y - 100 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y - 150 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y + 50 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y + 100 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y + 150 == ArcG[GAChoosed].y || TorP[AtacadoP].x - 50 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x - 100 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x - 150 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x + 50 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x + 100 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x + 150 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y)
 							{
-								if(TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y - 50 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y - 100 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y - 150 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y + 50 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y + 100 == ArcG[GAChoosed].y || TorP[AtacadoP].x == ArcG[GAChoosed].x && TorP[AtacadoP].y + 150 == ArcG[GAChoosed].y || TorP[AtacadoP].x - 50 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x - 100 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x - 150 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x + 50 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x + 100 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y || TorP[AtacadoP].x + 150 == ArcG[GAChoosed].x && TorP[AtacadoP].y == ArcG[GAChoosed].y)
+								Boolean8 = false;
+								TorMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									TorMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksA();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksA();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											TorP[AtacadoP].life -= 21;
+											if(PTBR)
 											{
-												TorP[AtacadoP].life -= 21;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Torre Persa perde 21 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Tower loses 21 life points.");
+												newLine("Golpe Critico! Torre Persa perde 21 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(11,16));
-												TorP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Tower loses "+damage+" life points.");
-											}
-											
-											TorMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Tower loses 21 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(11,16));
+											TorP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Tower loses "+damage+" life points.");
+										}
+										
+										TorMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
@@ -4598,107 +4586,102 @@ function AtackAI()
 						
 						if(GAChoosed < 8)
 						{
-							if(GAChoosed < lancer_number)
+							if(KntP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KntP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KntP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y + 50 == LancerG[GAChoosed].y || KntP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
 							{
-								if(KntP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KntP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y - 50 == LancerG[GAChoosed].y || KntP[AtacadoP].x - 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y + 50 == LancerG[GAChoosed].y || KntP[AtacadoP].x + 50 == LancerG[GAChoosed].x && KntP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksL();
+									drawAtacksL();
 
-										if(CountTime <= 0)
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											KntP[AtacadoP].life -= 26;
+											if(PTBR)
 											{
-												KntP[AtacadoP].life -= 26;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Cavaleiro Persa perde 26 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Knight loses 26 life points.");
+												newLine("Golpe Critico! Cavaleiro Persa perde 26 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(16,21));
-												KntP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Knight loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Knight loses 26 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(16,21));
+											KntP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							if(GAChoosed < archer_number)
+							
+							else if(KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y - 50 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y - 100 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y - 150 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y + 50 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y + 100 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y + 150 == ArcG[GAChoosed].y || KntP[AtacadoP].x - 50 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x - 100 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x - 150 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x + 50 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x + 100 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x + 150 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y)
 							{
-								if(KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y - 50 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y - 100 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y - 150 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y + 50 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y + 100 == ArcG[GAChoosed].y || KntP[AtacadoP].x == ArcG[GAChoosed].x && KntP[AtacadoP].y + 150 == ArcG[GAChoosed].y || KntP[AtacadoP].x - 50 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x - 100 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x - 150 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x + 50 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x + 100 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y || KntP[AtacadoP].x + 150 == ArcG[GAChoosed].x && KntP[AtacadoP].y == ArcG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksA();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksA();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											KntP[AtacadoP].life -= 21;
+											if(PTBR)
 											{
-												KntP[AtacadoP].life -= 21;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Cavaleiro Persa perde 21 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Knight loses 21 life points.");
+												newLine("Golpe Critico! Cavaleiro Persa perde 21 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(11,16));
-												KntP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Knight loses "+damage+" life points.");
-											}
-											
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Knight loses 21 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(11,16));
+											KntP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Knight loses "+damage+" life points.");
+										}
+										
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
@@ -4709,829 +4692,787 @@ function AtackAI()
 					{
 						if(GAChoosed == 0)
 						{
-							if(AtacadoP < lancer_number)
+							if(LancerP[AtacadoP].x + 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y == KingG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y == KingG[GAChoosed].y || LancerP[AtacadoP].x == KingG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x == KingG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KingG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x + 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y == KingG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y == KingG[GAChoosed].y || LancerP[AtacadoP].x == KingG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x == KingG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KingG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KingG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksK();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksK();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 32;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 32;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 32 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(21,29));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 32 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(21,29));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							
-							else if(AtacadoP < archer_number)
+							else if(ArcP[AtacadoP].x + 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y == KingG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y == KingG[GAChoosed].y || ArcP[AtacadoP].x == KingG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x == KingG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KingG[GAChoosed].y)
 							{
-								if(ArcP[AtacadoP].x + 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y == KingG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y == KingG[GAChoosed].y || ArcP[AtacadoP].x == KingG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x == KingG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KingG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KingG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksK();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksK();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											ArcP[AtacadoP].life -= 32;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 32;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 32 life points.");
+												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(21,29));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Archer loses 32 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(21,29));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							else if (AtacadoP < lancer_number)
+							else if(LancerP[AtacadoP].x - 50 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x - 100 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x + 50 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x + 100 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x == GnrlG[GAChoosed].x && LancerP[AtacadoP].y - 50 == GnrlG[GAChoosed].y || LancerP[AtacadoP].x == GnrlG[GAChoosed].x && LancerP[AtacadoP].y - 100 == GnrlG[GAChoosed].y || LancerP[AtacadoP].x  == GnrlG[GAChoosed].x && LancerP[AtacadoP].y + 50 == GnrlG[GAChoosed].y || LancerP[AtacadoP].x == GnrlG[GAChoosed].x && LancerP[AtacadoP].y + 100 == GnrlG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x - 50 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x - 100 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x + 50 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x + 100 == GnrlG[GAChoosed].x && LancerP[AtacadoP].y == GnrlG[GAChoosed].y || LancerP[AtacadoP].x == GnrlG[GAChoosed].x && LancerP[AtacadoP].y - 50 == GnrlG[GAChoosed].y || LancerP[AtacadoP].x == GnrlG[GAChoosed].x && LancerP[AtacadoP].y - 100 == GnrlG[GAChoosed].y || LancerP[AtacadoP].x  == GnrlG[GAChoosed].x && LancerP[AtacadoP].y + 50 == GnrlG[GAChoosed].y || LancerP[AtacadoP].x == GnrlG[GAChoosed].x && LancerP[AtacadoP].y + 100 == GnrlG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksG();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksG();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 29;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 29;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 29 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 29 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 29 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(20,24));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 29 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(20,24));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							else if(AtacadoP < archer_number)
+							else if(ArcP[AtacadoP].x - 50 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x - 100 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x + 50 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x + 100 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x == GnrlG[GAChoosed].x && ArcP[AtacadoP].y - 50 == GnrlG[GAChoosed].y || ArcP[AtacadoP].x == GnrlG[GAChoosed].x && ArcP[AtacadoP].y - 100 == GnrlG[GAChoosed].y || ArcP[AtacadoP].x  == GnrlG[GAChoosed].x && ArcP[AtacadoP].y + 50 == GnrlG[GAChoosed].y || ArcP[AtacadoP].x == GnrlG[GAChoosed].x && ArcP[AtacadoP].y + 100 == GnrlG[GAChoosed].y)
 							{
-								if(ArcP[AtacadoP].x - 50 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x - 100 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x + 50 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x + 100 == GnrlG[GAChoosed].x && ArcP[AtacadoP].y == GnrlG[GAChoosed].y || ArcP[AtacadoP].x == GnrlG[GAChoosed].x && ArcP[AtacadoP].y - 50 == GnrlG[GAChoosed].y || ArcP[AtacadoP].x == GnrlG[GAChoosed].x && ArcP[AtacadoP].y - 100 == GnrlG[GAChoosed].y || ArcP[AtacadoP].x  == GnrlG[GAChoosed].x && ArcP[AtacadoP].y + 50 == GnrlG[GAChoosed].y || ArcP[AtacadoP].x == GnrlG[GAChoosed].x && ArcP[AtacadoP].y + 100 == GnrlG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksG()
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksG()
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											ArcP[AtacadoP].life -= 29;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 29;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 29 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 29 life points.");
+												newLine("Golpe Critico! Arqueiro Persa perde 29 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(20,24));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Archer loses 29 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(20,24));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							else if (AtacadoP < lancer_number)
+							else if(LancerP[AtacadoP].x - 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 100 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 100 == KingG[GAChoosed].y || LancerP[AtacadoP].x - 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 100 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 100 == KingG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x - 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 100 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y - 100 == KingG[GAChoosed].y || LancerP[AtacadoP].x - 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 100 == KingG[GAChoosed].y || LancerP[AtacadoP].x + 100 == KingG[GAChoosed].x && LancerP[AtacadoP].y + 100 == KingG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksK();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksK();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 32;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 32;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 32 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(19,23));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 32 life points.");
 										}
-									}
-								} 
-							}
-							else if (AtacadoP < archer_number)
-							{
-								if(ArcP[AtacadoP].x - 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 100 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 100 == KingG[GAChoosed].y || ArcP[AtacadoP].x - 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 100 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 100 == KingG[GAChoosed].y)
-								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
-									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksK();
-										if(CountTime <= 0)
+										else
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											damage = Math.floor(randomRange(19,23));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 32;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 32 life points.");
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(19,23));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
-								} 
-							}
-							
+								}
+							} 
+							else if(ArcP[AtacadoP].x - 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 100 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y - 100 == KingG[GAChoosed].y || ArcP[AtacadoP].x - 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 100 == KingG[GAChoosed].y || ArcP[AtacadoP].x + 100 == KingG[GAChoosed].x && ArcP[AtacadoP].y + 100 == KingG[GAChoosed].y)
+							{
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
+								{
+									CountTime --;
+									drawAtacksK();
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
+										{
+											ArcP[AtacadoP].life -= 32;
+											if(PTBR)
+											{
+												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
+											}
+											else
+												newLine("Critical attack! - Persian Archer loses 32 life points.");
+										}
+										else
+										{
+											damage = Math.floor(randomRange(19,23));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
+									}
+								}
+							} 
 						}
 						
 						if(GAChoosed < 4)
 						{
-							if(AtacadoP < lancer_number)
+							if(LancerP[AtacadoP].x + 50 == KntG[GAChoosed].x && LancerP[AtacadoP].y == KntG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KntG[GAChoosed].x && LancerP[AtacadoP].y == KntG[GAChoosed].y || LancerP[AtacadoP].x == KntG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KntG[GAChoosed].y || LancerP[AtacadoP].x == KntG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KntG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x + 50 == KntG[GAChoosed].x && LancerP[AtacadoP].y == KntG[GAChoosed].y || LancerP[AtacadoP].x - 50 == KntG[GAChoosed].x && LancerP[AtacadoP].y == KntG[GAChoosed].y || LancerP[AtacadoP].x == KntG[GAChoosed].x && LancerP[AtacadoP].y - 50 == KntG[GAChoosed].y || LancerP[AtacadoP].x == KntG[GAChoosed].x && LancerP[AtacadoP].y + 50 == KntG[GAChoosed].y)
+								CountTime --;
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								
+								if(GAChoosed != null && CountTime < 100)
 								{
 									CountTime --;
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
-									
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksC();
+									drawAtacksC();
 
-										if(CountTime <= 0)
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 27;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 27;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 27 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(20,25));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 27 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(20,25));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
 							
-							else if(AtacadoP < archer_number)
+							else if(ArcP[AtacadoP].x + 50 == KntG[GAChoosed].x && ArcP[AtacadoP].y == KntG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KntG[GAChoosed].x && ArcP[AtacadoP].y == KntG[GAChoosed].y || ArcP[AtacadoP].x == KntG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KntG[GAChoosed].y || ArcP[AtacadoP].x == KntG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KntG[GAChoosed].y)
 							{
-								if(ArcP[AtacadoP].x + 50 == KntG[GAChoosed].x && ArcP[AtacadoP].y == KntG[GAChoosed].y || ArcP[AtacadoP].x - 50 == KntG[GAChoosed].x && ArcP[AtacadoP].y == KntG[GAChoosed].y || ArcP[AtacadoP].x == KntG[GAChoosed].x && ArcP[AtacadoP].y - 50 == KntG[GAChoosed].y || ArcP[AtacadoP].x == KntG[GAChoosed].x && ArcP[AtacadoP].y + 50 == KntG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksC();
+									drawAtacksC();
 
-										if(CountTime <= 0)
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											ArcP[AtacadoP].life -= 27;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 27;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 27 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 27 life points.");
+												newLine("Golpe Critico! Arqueiro Persa perde 27 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(18,23));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Archer loses 27 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(18,23));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							
 						
 						}
 				
 						if(GAChoosed < 2)
 						{
-							if(AtacadoP < lancer_number)
+							if(LancerP[AtacadoP].x + 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x - 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed].x && LancerP[AtacadoP].y - 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed].x && LancerP[AtacadoP].y + 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 50 == TorG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x + 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x - 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed].x && LancerP[AtacadoP].y - 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed].x && LancerP[AtacadoP].y + 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 50 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 50 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 50 == TorG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksT();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksT();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 24;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 24;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 24 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(10,20));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 24 life points.");
 										}
-									}
-								}
-								else if(LancerP[AtacadoP].x - 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 100 == TorG[GAChoosed]. x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x + 100 == TorG[GAChoosed]. x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed]. x && LancerP[AtacadoP].y + 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed]. x && LancerP[AtacadoP].y - 100 == TorG[GAChoosed].y)
-								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
-									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksT();
-										if(CountTime <= 0)
+										else
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											damage = Math.floor(randomRange(10,20));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 24;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 24 life points.");
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(6,16));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
 										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							 
-							else if(AtacadoP < archer_number)
+							else if(LancerP[AtacadoP].x - 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y - 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x + 100 == TorG[GAChoosed].x && LancerP[AtacadoP].y + 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x - 100 == TorG[GAChoosed]. x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x + 100 == TorG[GAChoosed]. x && LancerP[AtacadoP].y == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed]. x && LancerP[AtacadoP].y + 100 == TorG[GAChoosed].y || LancerP[AtacadoP].x == TorG[GAChoosed]. x && LancerP[AtacadoP].y - 100 == TorG[GAChoosed].y)
 							{
-								if(ArcP[AtacadoP].x + 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x - 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed].x && ArcP[AtacadoP].y - 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed].x && ArcP[AtacadoP].y + 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 50 == TorG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksT();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksT();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 24;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 24;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 24 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(10,20));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 24 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(6,16));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
-								else if(ArcP[AtacadoP].x - 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 100 == TorG[GAChoosed]. x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x + 100 == TorG[GAChoosed]. x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed]. x && ArcP[AtacadoP].y + 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed]. x && ArcP[AtacadoP].y - 100 == TorG[GAChoosed].y)
+							} 
+							else if(ArcP[AtacadoP].x + 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x - 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed].x && ArcP[AtacadoP].y - 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed].x && ArcP[AtacadoP].y + 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 50 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 50 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 50 == TorG[GAChoosed].y)
+							{
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksT();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksT();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											ArcP[AtacadoP].life -= 24;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 24;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 24 life points.");
+												newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(6,16));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Archer loses 24 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(10,20));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
-								} 
+								}
 							}
+							else if(ArcP[AtacadoP].x - 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y - 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x + 100 == TorG[GAChoosed].x && ArcP[AtacadoP].y + 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x - 100 == TorG[GAChoosed]. x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x + 100 == TorG[GAChoosed]. x && ArcP[AtacadoP].y == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed]. x && ArcP[AtacadoP].y + 100 == TorG[GAChoosed].y || ArcP[AtacadoP].x == TorG[GAChoosed]. x && ArcP[AtacadoP].y - 100 == TorG[GAChoosed].y)
+							{
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
+								{
+									CountTime --;
+									drawAtacksT();
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
+										{
+											ArcP[AtacadoP].life -= 24;
+											if(PTBR)
+											{
+												newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
+											}
+											else
+												newLine("Critical attack! - Persian Archer loses 24 life points.");
+										}
+										else
+										{
+											damage = Math.floor(randomRange(6,16));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
+									}
+								}
+							} 
 						
 						}
 						
 						if(GAChoosed < 8)
 						{
-							if(GAChoosed < lancer_number && AtacadoP < lancer_number)
+							if(LancerP[AtacadoP].x - 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y - 50 == LancerG[GAChoosed].y || LancerP[AtacadoP].x + 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y - 50 == LancerG[GAChoosed].y || LancerP[AtacadoP].x - 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y + 50 == LancerG[GAChoosed].y || LancerP[AtacadoP].x + 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x - 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y - 50 == LancerG[GAChoosed].y || LancerP[AtacadoP].x + 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y - 50 == LancerG[GAChoosed].y || LancerP[AtacadoP].x - 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y + 50 == LancerG[GAChoosed].y || LancerP[AtacadoP].x + 50 == LancerG[GAChoosed].x && LancerP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksL();
+									drawAtacksL();
 
-										if(CountTime <= 0)
+									if(CountTime <= 0)
+									{
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 26;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 26;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 27 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(16,21));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 27 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(16,21));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
-							else if(GAChoosed < archer_number && AtacadoP < lancer_number)
+							else if(LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y - 50 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y - 100 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y - 150 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y + 50 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y + 100 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y + 150 == ArcG[GAChoosed].y || LancerP[AtacadoP].x - 50 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x - 100 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x - 150 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x + 50 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x + 100 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x + 150 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y)
 							{
-								if(LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y - 50 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y - 100 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y - 150 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y + 50 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y + 100 == ArcG[GAChoosed].y || LancerP[AtacadoP].x == ArcG[GAChoosed].x && LancerP[AtacadoP].y + 150 == ArcG[GAChoosed].y || LancerP[AtacadoP].x - 50 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x - 100 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x - 150 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x + 50 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x + 100 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y || LancerP[AtacadoP].x + 150 == ArcG[GAChoosed].x && LancerP[AtacadoP].y == ArcG[GAChoosed].y)
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									drawAtacksA();
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksA();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											LancerP[AtacadoP].life -= 21;
+											if(PTBR)
 											{
-												LancerP[AtacadoP].life -= 21;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Lanceiro Persa perde 21 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Lancer loses 21 life points.");
+												newLine("Golpe Critico! Lanceiro Persa perde 21 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(11,16));
-												LancerP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
-											}
-											
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian Lancer loses 21 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(11,16));
+											LancerP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian Lancer loses "+damage+" life points.");
+										}
+										
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
-								else if(ArcP[AtacadoP].x - 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y - 50 == LancerG[GAChoosed].y || ArcP[AtacadoP].x + 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y - 50 == LancerG[GAChoosed].y || ArcP[AtacadoP].x - 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y + 50 == LancerG[GAChoosed].y || ArcP[AtacadoP].x + 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+							}
+							else if(ArcP[AtacadoP].x - 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y - 50 == LancerG[GAChoosed].y || ArcP[AtacadoP].x + 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y - 50 == LancerG[GAChoosed].y || ArcP[AtacadoP].x - 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y + 50 == LancerG[GAChoosed].y || ArcP[AtacadoP].x + 50 == LancerG[GAChoosed].x && ArcP[AtacadoP].y + 50 == LancerG[GAChoosed].y)
+							{
+								Boolean8 = false;
+								KntGMove = false;
+								GnrlGMove = false;
+								KingGMove = false;
+								LancerGMove = false;
+								ArcGMove = false;
+								CountTime --;
+								if(GAChoosed != null && CountTime < 100)
 								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
 									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
-									{
-										CountTime --;
-										drawAtacksL();
+									drawAtacksL();
 
-										if(CountTime <= 0)
-										{
-											if(Math.floor(randomRange(0,99)<20))
-											{
-												ArcP[AtacadoP].life -= 26;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! General Persa perde 27 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian General loses 27 life points.");
-											}
-											else
-											{
-												damage = Math.floor(randomRange(21,25));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian General loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
-										}
-									}
-								}
-							}
-							else if(AtacadoP < archer_number && GAChoosed < archer_number)
-							{
-								if(ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y - 50 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y - 100 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y - 150 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y + 50 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y + 100 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y + 150 == ArcG[GAChoosed].y || ArcP[AtacadoP].x - 50 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x - 100 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x - 150 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x + 50 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x + 100 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x + 150 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y)
-								{
-									Boolean8 = false;
-									KntGMove = false;
-									GnrlGMove = false;
-									KingGMove = false;
-									LancerGMove = false;
-									ArcGMove = false;
-									CountTime --;
-									if(GAChoosed != null && CountTime < 100)
+									if(CountTime <= 0)
 									{
-										CountTime --;
-										drawAtacksA();
-										if(CountTime <= 0)
+										if(Math.floor(randomRange(0,99)<20))
 										{
-											if(Math.floor(randomRange(0,99)<20))
+											ArcP[AtacadoP].life -= 26;
+											if(PTBR)
 											{
-												ArcP[AtacadoP].life -= 21;
-												if(PTBR)
-												{
-													newLine("Golpe Critico! Arqueiro Persa perde 21 pontos de vida.");
-												}
-												else
-													newLine("Critical attack! - Persian Archer loses 21 life points.");
+												newLine("Golpe Critico! General Persa perde 27 pontos de vida.");
 											}
 											else
-											{
-												damage = Math.floor(randomRange(11,16));
-												ArcP[AtacadoP].life -= damage;
-												if(PTBR)
-												{
-													newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
-												}
-												else
-													newLine("Normal attack - Persian Archer loses "+damage+" life points.");
-											}
-											KntGMove = true;
-											GnrlGMove = true;
-											KingGMove = true;
-											LancerGMove = true;
-											ArcGMove = true;
-											
-											Vez_Gregos = false;	
-											Vez_Persas = true;	
-											CountTime = 100;
+												newLine("Critical attack! - Persian General loses 27 life points.");
 										}
+										else
+										{
+											damage = Math.floor(randomRange(21,25));
+											ArcP[AtacadoP].life -= damage;
+											if(PTBR)
+											{
+												newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
+											}
+											else
+												newLine("Normal attack - Persian General loses "+damage+" life points.");
+										}
+										KntGMove = true;
+										GnrlGMove = true;
+										KingGMove = true;
+										LancerGMove = true;
+										ArcGMove = true;
+										
+										Vez_Gregos = false;	
+										Vez_Persas = true;	
+										CountTime = 100;
 									}
 								}
 							}
+							else if(ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y - 50 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y - 100 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y - 150 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y + 50 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y + 100 == ArcG[GAChoosed].y || ArcP[AtacadoP].x == ArcG[GAChoosed].x && ArcP[AtacadoP].y + 150 == ArcG[GAChoosed].y || ArcP[AtacadoP].x - 50 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x - 100 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x - 150 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x + 50 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x + 100 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y || ArcP[AtacadoP].x + 150 == ArcG[GAChoosed].x && ArcP[AtacadoP].y == ArcG[GAChoosed].y)
+							{
+							Boolean8 = false;
+							KntGMove = false;
+							GnrlGMove = false;
+							KingGMove = false;
+							LancerGMove = false;
+							ArcGMove = false;
+							CountTime --;
+							if(GAChoosed != null && CountTime < 100)
+							{
+								CountTime --;
+								drawAtacksA();
+								if(CountTime <= 0)
+								{
+									if(Math.floor(randomRange(0,99)<20))
+									{
+										ArcP[AtacadoP].life -= 21;
+										if(PTBR)
+										{
+											newLine("Golpe Critico! Arqueiro Persa perde 21 pontos de vida.");
+										}
+										else
+											newLine("Critical attack! - Persian Archer loses 21 life points.");
+									}
+									else
+									{
+										damage = Math.floor(randomRange(11,16));
+										ArcP[AtacadoP].life -= damage;
+										if(PTBR)
+										{
+											newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
+										}
+										else
+											newLine("Normal attack - Persian Archer loses "+damage+" life points.");
+									}
+									KntGMove = true;
+									GnrlGMove = true;
+									KingGMove = true;
+									LancerGMove = true;
+									ArcGMove = true;
+									
+									Vez_Gregos = false;	
+									Vez_Persas = true;	
+									CountTime = 100;
+								}
+							}
+						}
+						
 					}
 				}
 			

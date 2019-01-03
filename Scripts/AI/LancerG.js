@@ -25,9 +25,7 @@ var POSMLG4 = 0;
 var POSMLG5 = 0;
 var POSMLG6 = 0;
 var limit_down = 451;
-var limit_right = 551;
-var lancers_number = 8;
-var archers_number = 8;
+var limit_right = 351;
 
 
 function PossibilitiesAILG()
@@ -40,37 +38,29 @@ function PossibilitiesAILG()
 			ChooseLG = Math.floor(randomRange(0,99));
 			if(LancersGCChoosed == null && ChooseLG <= 75)
 			{
-				if(LancerG[0].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[0].y < LancerG[3].y && LancerG[0].y < LancerG[4].y && LancerG[0].y < LancerG[5].y && LancerG[0].y < LancerG[6].y && LancerG[0].y < LancerG[7].y)
+				if(LancerG[0].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[0].y < LancerG[3].y && LancerG[0].y < LancerG[4].y && LancerG[0].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 0;
 				}
-				else if(LancerG[1].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[1].y < LancerG[3].y && LancerG[1].y < LancerG[4].y && LancerG[1].y < LancerG[5].y && LancerG[1].y < LancerG[6].y && LancerG[1].y < LancerG[7].y)
+				else if(LancerG[1].y < LancerG[1].y && LancerG[0].y < LancerG[2].y && LancerG[1].y < LancerG[3].y && LancerG[1].y < LancerG[4].y && LancerG[1].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 1;
 				}
-				else if(LancerG[2].y < LancerG[1].y && LancerG[2].y < LancerG[0].y && LancerG[2].y < LancerG[3].y && LancerG[2].y < LancerG[4].y && LancerG[2].y < LancerG[5].y && LancerG[2].y < LancerG[6].y && LancerG[2].y < LancerG[7].y)
+				else if(LancerG[2].y < LancerG[1].y && LancerG[2].y < LancerG[0].y && LancerG[2].y < LancerG[3].y && LancerG[2].y < LancerG[4].y && LancerG[2].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 2;
 				}
-				else if(LancerG[3].y < LancerG[1].y && LancerG[3].y < LancerG[2].y && LancerG[3].y < LancerG[0].y && LancerG[3].y < LancerG[4].y && LancerG[3].y < LancerG[5].y && LancerG[3].y < LancerG[6].y && LancerG[3].y < LancerG[7].y)
+				else if(LancerG[3].y < LancerG[1].y && LancerG[3].y < LancerG[2].y && LancerG[3].y < LancerG[0].y && LancerG[3].y < LancerG[4].y && LancerG[3].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 3;
 				}
-				else if(LancerG[4].y < LancerG[1].y && LancerG[4].y < LancerG[2].y && LancerG[4].y < LancerG[3].y && LancerG[4].y < LancerG[0].y && LancerG[4].y < LancerG[5].y && LancerG[4].y < LancerG[6].y && LancerG[4].y < LancerG[7].y)
+				else if(LancerG[4].y < LancerG[1].y && LancerG[4].y < LancerG[2].y && LancerG[4].y < LancerG[3].y && LancerG[4].y < LancerG[0].y && LancerG[4].y < LancerG[5].y)
 				{
 					LancersGCChoosed = 4;
 				}
-				else if(LancerG[5].y < LancerG[1].y && LancerG[5].y < LancerG[2].y && LancerG[5].y < LancerG[3].y && LancerG[5].y < LancerG[4].y && LancerG[5].y < LancerG[0].y && LancerG[5].y < LancerG[6].y && LancerG[5].y < LancerG[7].y)
+				else if(LancerG[5].y < LancerG[1].y && LancerG[5].y < LancerG[2].y && LancerG[5].y < LancerG[3].y && LancerG[5].y < LancerG[4].y && LancerG[5].y < LancerG[0].y)
 				{
 					LancersGCChoosed = 5;
-				}
-				else if(LancerG[6].y < LancerG[1].y && LancerG[6].y < LancerG[2].y && LancerG[6].y < LancerG[3].y && LancerG[6].y < LancerG[4].y && LancerG[6].y < LancerG[5].y && LancerG[6].y < LancerG[0].y && LancerG[6].y < LancerG[7].y)
-				{
-					LancersGCChoosed = 6;
-				}
-				else if(LancerG[7].y < LancerG[1].y && LancerG[7].y < LancerG[2].y && LancerG[7].y < LancerG[3].y && LancerG[7].y < LancerG[4].y && LancerG[7].y < LancerG[5].y && LancerG[7].y < LancerG[6].y && LancerG[7].y < LancerG[0].y)
-				{
-					LancersGCChoosed = 7;
 				}
 				else
 				{
@@ -79,7 +69,7 @@ function PossibilitiesAILG()
 			}
 			else if(LancersGCChoosed == null && ChooseLG > 75)
 			{
-				LancersGCChoosed = Math.floor(randomRange(0,lancers_number-1));
+				LancersGCChoosed = Math.floor(randomRange(0,5));
 			}
 			
 			if(ChooseG == 2)
@@ -248,7 +238,6 @@ function PossibilitiesAILG()
 							}
 							if(POSMLG1 != LancersGCChoosed && POSMLG1 < 8)
 							{
-								if(LancerG)
 								if(LancerG[LancersGCChoosed].x == LancerG[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == LancerG[POSMLG1].y)
 								{
 									MOVMLG1 = false;
@@ -265,16 +254,13 @@ function PossibilitiesAILG()
 								{
 									MOVMLG1 = false;
 								}
-								if(POSMLG1 < archers_number)
-								{
-									if((LancerG[LancersGCChoosed].x == LancerP[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == LancerP[POSMLG1].y)||
-									(LancerG[LancersGCChoosed].x == ArcP[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == ArcP[POSMLG1].y) ||
-									(LancerG[LancersGCChoosed].x == ArcG[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == ArcG[POSMLG1].y))
-									{
-										MOVMLG1 = false;
-									}
-								}
 								
+								if((LancerG[LancersGCChoosed].x == LancerP[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == LancerP[POSMLG1].y)||
+								(LancerG[LancersGCChoosed].x == ArcP[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == ArcP[POSMLG1].y) ||
+								(LancerG[LancersGCChoosed].x == ArcG[POSMLG1].x + 50 && LancerG[LancersGCChoosed].y == ArcG[POSMLG1].y))
+								{
+									MOVMLG1 = false;
+								}
 							}	
 						}
 						
@@ -467,28 +453,21 @@ function PossibilitiesAILG()
 								{
 									MOVMLG5 = false;
 								}
-								if(POSMLG5 < archers_number)
-								{
-									if((LancerG[LancersGCChoosed].x == LancerP[POSMLG5].x  && LancerG[LancersGCChoosed].y == LancerP[POSMLG5].y + 50)||
-									(LancerG[LancersGCChoosed].x == ArcP[POSMLG5].x  && LancerG[LancersGCChoosed].y == ArcP[POSMLG5].y + 50) ||
-									(LancerG[LancersGCChoosed].x == ArcG[POSMLG5].x  && LancerG[LancersGCChoosed].y == ArcG[POSMLG5].y + 50))
-									{
-										MOVMLG5 = false;
-									}
-								}
 								
-							}
-							if(POSMLG5 < lancers_number)
-							{
-								if(POSMLG5 != LancersGCChoosed && POSMLG5 < 8)
+								if((LancerG[LancersGCChoosed].x == LancerP[POSMLG5].x  && LancerG[LancersGCChoosed].y == LancerP[POSMLG5].y + 50)||
+								(LancerG[LancersGCChoosed].x == ArcP[POSMLG5].x  && LancerG[LancersGCChoosed].y == ArcP[POSMLG5].y + 50) ||
+								(LancerG[LancersGCChoosed].x == ArcG[POSMLG5].x  && LancerG[LancersGCChoosed].y == ArcG[POSMLG5].y + 50))
 								{
-									if(LancerG[LancersGCChoosed].x == LancerG[POSMLG5].x  && LancerG[LancersGCChoosed].y == LancerG[POSMLG5].y + 50)
-									{
-										MOVMLG5 = false;
-									}
+									MOVMLG5 = false;
 								}
 							}
-							
+							if(POSMLG5 != LancersGCChoosed && POSMLG5 < 8)
+							{
+								if(LancerG[LancersGCChoosed].x == LancerG[POSMLG5].x  && LancerG[LancersGCChoosed].y == LancerG[POSMLG5].y + 50)
+								{
+									MOVMLG5 = false;
+								}
+							}
 							if(POSMLG5 < 4)
 							{
 								if((LancerG[LancersGCChoosed].x == KntG[POSMLG5].x  && LancerG[LancersGCChoosed].y == KntG[POSMLG5].y + 50) ||
@@ -537,27 +516,20 @@ function PossibilitiesAILG()
 								{
 									MOVMLG6 = false;
 								}
-								if(POSMLG6 < archers_number)
-								{
-									if((LancerG[LancersGCChoosed].x == LancerP[POSMLG6].x  && LancerG[LancersGCChoosed].y == LancerP[POSMLG6].y + 100)||
-									(LancerG[LancersGCChoosed].x == ArcP[POSMLG6].x  && LancerG[LancersGCChoosed].y == ArcP[POSMLG6].y + 100) ||
-									(LancerG[LancersGCChoosed].x == ArcG[POSMLG6].x  && LancerG[LancersGCChoosed].y == ArcG[POSMLG6].y + 100))
-									{
-										MOVMLG6 = false;
-									}
-								}
 								
+								if((LancerG[LancersGCChoosed].x == LancerP[POSMLG6].x  && LancerG[LancersGCChoosed].y == LancerP[POSMLG6].y + 100)||
+								(LancerG[LancersGCChoosed].x == ArcP[POSMLG6].x  && LancerG[LancersGCChoosed].y == ArcP[POSMLG6].y + 100) ||
+								(LancerG[LancersGCChoosed].x == ArcG[POSMLG6].x  && LancerG[LancersGCChoosed].y == ArcG[POSMLG6].y + 100))
+								{
+									MOVMLG6 = false;
+								}
 							}
 							if(POSMLG6 != LancersGCChoosed && POSMLG6 < 8)
 							{
-								if(POSMLG6 < lancers_number)
+								if(LancerG[LancersGCChoosed].x == LancerG[POSMLG6].x  && LancerG[LancersGCChoosed].y == LancerG[POSMLG6].y + 100)
 								{
-									if(LancerG[LancersGCChoosed].x == LancerG[POSMLG6].x  && LancerG[LancersGCChoosed].y == LancerG[POSMLG6].y + 100)
-									{
-										MOVMLG6 = false;
-									}
+									MOVMLG6 = false;
 								}
-								
 							}
 							if(POSMLG6 < 4)
 							{

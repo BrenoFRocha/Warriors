@@ -27,7 +27,7 @@ var POSMKG5 = 0;
 var POSMKG6 = 0;
 
 var limit_down = 451;
-var limit_right = 551;
+var limit_right = 351;
 
 function PossibilitiesAIKG()
 {

@@ -1,7 +1,7 @@
 var PTBR = true;
 var ENUS = false;
 var limit_down = 451;
-var limit_right = 551;
+var limit_right = 351;
 
 function KntsP(KntP_x, KntP_y, KntP_w, KntP_h, KntP_l)
 {	
@@ -65,7 +65,7 @@ function KntsG(KntG_x, KntG_y, KntG_w, KntG_h, KntG_l)
 }
 
 {//Cavaleiros Persas
-	var KntP_x = [1,1,limit_right,limit_right];
+	var KntP_x = [1,1,351,351];
 	var KntP_y = [101,151,101,151];	
 	var Click_CP = 0;	
 	var KntP = [];
@@ -78,7 +78,7 @@ function KntsG(KntG_x, KntG_y, KntG_w, KntG_h, KntG_l)
 }
 	
 {//Cavaleiros Gregas
-	var KntG_x = [1,1,limit_right, limit_right];
+	var KntG_x = [1,1,351,351];
 	var KntG_y = [limit_down,limit_down-50,limit_down,limit_down-50];		
 	var KntG = [];
 	var Click_CG = 0;

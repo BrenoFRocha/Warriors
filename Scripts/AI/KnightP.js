@@ -13,7 +13,7 @@ var ChooseKP = 0;
 var Mov1CP = false;
 var Mov2CP = false;
 var limit_down = 451;
-var limit_right = 551;
+var limit_right = 351;
 
 
 function PossibilitiesAICP()

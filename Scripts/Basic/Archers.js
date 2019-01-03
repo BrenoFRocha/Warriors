@@ -1,8 +1,8 @@
 var PTBR = true;
 var ENUS = false;
-var archer_number = 8;
+var archer_number = 4;
 var limit_down = 451;
-var limit_right = 551;
+var limit_right = 351;
 
 function ArchersP(ArcherP_x, ArcherP_y, ArcherP_w, ArcherP_h, ArcherP_l)
 {	
@@ -71,7 +71,7 @@ function ArchersG(ArcherG_x, ArcherG_y, ArcherG_w, ArcherG_h, ArcherG_l)
 }
 
 {//instanciando Arqueiros Persas
-	var ArcP_x = [51, 101, 151 , 201, 351, 401, 451, 501];		
+	var ArcP_x = [51, 101,  251, 301];	
 	var ArcP = [];
 	var Click_AP = 0;		
 	var OrdemAP = ArcsPChoosed;
@@ -83,7 +83,7 @@ function ArchersG(ArcherG_x, ArcherG_y, ArcherG_w, ArcherG_h, ArcherG_l)
 }
 	
 {//instanciando Arqueiros Gregos
-	var ArcG_x = [51, 101, 151 , 201, 351, 401, 451, 501];
+	var ArcG_x = [51, 101, 251, 301];	
 	var ArcG = [];
 	var Click_AG = 0;
 	var OrdemAG = ArcsGChoosed;
