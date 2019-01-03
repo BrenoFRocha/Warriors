@@ -65,7 +65,7 @@ function TorsG(TorG_x, TorG_y, TorG_w, TorG_h, TorG_l)
 }
 
 {//Torres Persas
-	var TorP_x = [1,351];
+	var TorP_x = [101,451];
 	var TorP = [];
 	var Click_TP = 0;
 	var OrdemTP = TorsPChoosed;
@@ -76,7 +76,7 @@ function TorsG(TorG_x, TorG_y, TorG_w, TorG_h, TorG_l)
 }
 	
 {//Torres Gregas
-	var TorG_x = [1,351];
+	var TorG_x = [101,451];
 	var TorG = [];
 	var Click_TG = 0;
 	var OrdemTG = TorsGChoosed;
