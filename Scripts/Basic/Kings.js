@@ -13,14 +13,8 @@ var limit_right = 551;
 	this.dead = false;
 	this.onClicked = false;;
 	this.KingsP = new Image;
-	if(PTBR)
-	{
-		this.KingsP.src = "Images/Rei_PersaPT.png";	
-	}
-	if(ENUS)
-	{
-		this.KingsP.src = "Images/Rei_PersaEN.png";	
-	}
+	this.KingsP.src = "Images/Persian_King.png";	
+	
 	this.update = function()
 	{
 		
@@ -50,15 +44,8 @@ function KingsG(KingG_x, KingG_y, KingG_w, KingG_h, KingG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.KingsG = new Image;
+	this.KingsG.src = "Images/Greek_King.png";
 	
-	if(PTBR)
-	{
-		this.KingsG.src = "Images/Rei_GregoPT.png";	
-	}
-	if(ENUS)
-	{
-		this.KingsG.src = "Images/Rei_GregoEN.png";
-	}
 	this.update = function()
 	{
 		

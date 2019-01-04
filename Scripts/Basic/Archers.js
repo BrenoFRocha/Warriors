@@ -13,15 +13,9 @@ function ArchersP(ArcherP_x, ArcherP_y, ArcherP_w, ArcherP_h, ArcherP_l)
 	this.life = ArcherP_l;
 	this.dead = false;
 	this.onClicked = false;;
-	this.ArcsP = new Image;
-	if(PTBR)
-	{
-		this.ArcsP.src = "Images/Arqueiro_PersaPT.png";	
-	}
-	if(ENUS)
-	{
-		this.ArcsP.src = "Images/Arqueiro_PersaEN.png";	
-	}
+	this.ArcsP = new Image;	
+	this.ArcsP.src = "Images/Persian_Archer.png";	
+	
 	this.update = function()
 	{
 		
@@ -51,14 +45,8 @@ function ArchersG(ArcherG_x, ArcherG_y, ArcherG_w, ArcherG_h, ArcherG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.ArcsG = new Image;
-	if(PTBR)
-	{
-		this.ArcsG.src = "Images/Arqueiro_GregoPT.png";	
-	}
-	if(ENUS)
-	{
-		this.ArcsG.src = "Images/Arqueiro_GregoEN.png";	
-	}
+	this.ArcsG.src = "Images/Greek_Archer.png";	
+	
 	this.update = function()
 	{
 		

@@ -150,36 +150,20 @@ var TorsGS = new Image();
 var TorsPS = new Image();
 var LancersGS = new Image();
 var LancersPS = new Image();
-if(PTBR)
-{
-	GnrlsGS.src = "Images/General_GregoPT.png";
-	GnrlsPS.src = "Images/General_PersaPT.png";
-	KingsGS.src = "Images/Rei_GregoPT.png";
-	KingsPS.src = "Images/Rei_PersaPT.png";
-	KntsGS.src = "Images/Cavaleiro_GregaPT.png";
-	KntsPS.src = "Images/Cavaleiro_PersaPT.png";
-	ArcsGS.src = "Images/Arqueiro_GregoPT.png";
-	ArcsPS.src = "Images/Arqueiro_PersaPT.png";
-	TorsGS.src = "Images/Torre_GregaPT.png";
-	TorsPS.src = "Images/Torre_PersaPT.png";
-	LancersGS.src = "Images/Lanceiro_GregoPT.png";
-	LancersPS.src = "Images/Lanceiro_PersaPT.png";
-}
-if(ENUS)
-{
-	GnrlsGS.src = "Images/General_GregoEN.png";
-	GnrlsPS.src = "Images/General_PersaEN.png";
-	KingsGS.src = "Images/Rei_GregoEN.png";
-	KingsPS.src = "Images/Rei_PersaEN.png";
-	KntsGS.src = "Images/Cavaleiro_GregaEN.png";
-	KntsPS.src = "Images/Cavaleiro_PersaEN.png";
-	ArcsGS.src = "Images/Arqueiro_GregoEN.png";
-	ArcsPS.src = "Images/Arqueiro_PersaEN.png";
-	TorsGS.src = "Images/Torre_GregaEN.png";
-	TorsPS.src = "Images/Torre_PersaEN.png";
-	LancersGS.src = "Images/Lanceiro_GregoEN.png";
-	LancersPS.src = "Images/Lanceiro_PersaEN.png";
-}
+
+GnrlsGS.src = "Images/Greek_General.png";
+GnrlsPS.src = "Images/Persian_General_Info.png";
+KingsGS.src = "Images/Greek_King.png";
+KingsPS.src = "Images/Persian_King_Info.png";
+KntsGS.src = "Images/Greek_Knight.png";
+KntsPS.src = "Images/Persian_Knight_Info.png";
+ArcsGS.src = "Images/Greek_Archer.png";
+ArcsPS.src = "Images/Persian_Archer_Info.png";
+TorsGS.src = "Images/Greek_Tower.png";
+TorsPS.src = "Images/Persian_Tower.png";
+LancersGS.src = "Images/Greek_Lancer.png";
+LancersPS.src = "Images/Persian_Lancer_Info.png";
+
 function DrawInfos()
 {
 	StatsWalls();

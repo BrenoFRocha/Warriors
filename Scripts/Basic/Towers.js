@@ -10,15 +10,9 @@ function TorsP(TorP_x, TorP_y, TorP_w, TorP_h, TorP_l)
 	this.life = TorP_l;
 	this.dead = false;
 	this.onClicked = false;;
-	this.TorsP = new Image;
-	if(PTBR)
-	{
-		this.TorsP.src = "Images/Torre_PersaPT.png";	
-	}
-	if(ENUS)
-	{
-		this.TorsP.src = "Images/Torre_PersaEN.png";	
-	}
+	this.TorsP = new Image;	
+	this.TorsP.src = "Images/Persian_Tower.png";	
+	
 	this.update = function()
 	{
 		
@@ -33,7 +27,6 @@ function TorsP(TorP_x, TorP_y, TorP_w, TorP_h, TorP_l)
 var TorsGChoosed;
 var TorsPChoosed;
 var AtkT = new Image;
-//AtkT.src = "Images/Celula_A.png";
 
 function TorsG(TorG_x, TorG_y, TorG_w, TorG_h, TorG_l)
 {	
@@ -45,14 +38,8 @@ function TorsG(TorG_x, TorG_y, TorG_w, TorG_h, TorG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.TorsG = new Image;
-	if(PTBR)
-	{
-		this.TorsG.src = "Images/Torre_GregaPT.png";	
-	}
-	if(ENUS)
-	{
-		this.TorsG.src = "Images/Torre_GregaEN.png";	
-	}
+	this.TorsG.src = "Images/Greek_Tower.png";	
+
 	this.update = function()
 	{
 		

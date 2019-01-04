@@ -13,14 +13,8 @@ function GnrlsP(GnrlP_x, GnrlP_y, GnrlP_w, GnrlP_h, GnrlP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.GnrlP = new Image;
-	if(PTBR)
-	{
-		this.GnrlP.src = "Images/General_PersaPT.png";	
-	}
-	if(ENUS)
-	{
-		this.GnrlP.src = "Images/General_PersaEN.png";
-	}
+	this.GnrlP.src = "Images/Persian_General.png";
+	
 	this.update = function()
 	{
 		
@@ -49,14 +43,8 @@ function GnrlsG(GnrlG_x, GnrlG_y, GnrlG_w, GnrlG_h, GnrlG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.GnrlG = new Image;
-	if(PTBR)
-	{
-		this.GnrlG.src = "Images/General_GregoPT.png";	
-	}
-	if(ENUS)
-	{
-		this.GnrlG.src = "Images/General_GregoEN.png";	
-	}
+	this.GnrlG.src = "Images/Greek_General.png";	
+	
 	this.update = function()
 	{
 		

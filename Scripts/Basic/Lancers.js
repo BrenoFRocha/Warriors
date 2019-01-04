@@ -14,14 +14,7 @@ function LancersP(LancerP_x, LancerP_y, LancerP_w, LancerP_h, LancerP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.LancersP = new Image;
-	if(PTBR)
-	{
-		this.LancersP.src = "Images/Lanceiro_PersaPT.png";	
-	}
-	if(ENUS)
-	{
-		this.LancersP.src = "Images/Lanceiro_PersaEN.png";	
-	}
+	this.LancersP.src = "Images/Persian_Lancer.png";	
 	this.update = function()
 	{
 		
@@ -50,14 +43,8 @@ function LancersG(LancerG_x, LancerG_y, LancerG_w, LancerG_h, LancerG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.LancersG = new Image;
-	if(PTBR)
-	{
-		this.LancersG.src = "Images/Lanceiro_GregoPT.png";	
-	}
-	if(ENUS)
-	{
-		this.LancersG.src = "Images/Lanceiro_GregoEN.png";
-	}
+	this.LancersG.src = "Images/Greek_Lancer.png";
+	
 	this.update = function()
 	{
 		
