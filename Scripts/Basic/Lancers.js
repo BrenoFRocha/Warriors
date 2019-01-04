@@ -449,7 +449,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 					{
 						WallP_life -= 26;
-						if(PTBR)
+						if(!PTBR)
 						{
 							newLine("Golpe Critico! Muralha Persa perde 26 pontos de vida.");
 						}
@@ -460,7 +460,7 @@ function PossibilitiesL()
 					{
 						damage =  Math.floor(randomRange(16,21));
 						WallP_life -= damage;
-						if(PTBR)
+						if(!PTBR)
 						{
 							newLine("Golpe Normal - Muralha Persa perde "+damage+" pontos de vida.");
 						}
@@ -510,7 +510,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							ArcP[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Arqueiro Persa perde 26 pontos de vida.");
 							}
@@ -521,7 +521,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(21,25));
 							ArcP[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 							}
@@ -571,7 +571,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							TorP[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Torre Persa perde 26 pontos de vida.");
 							}
@@ -582,7 +582,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							TorP[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Torre Persa perde "+damage+ " pontos de vida.");
 							}
@@ -632,7 +632,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							GnrlP[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! General Persa perde 26 pontos de vida.");
 							}
@@ -643,7 +643,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							GnrlP[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 							}
@@ -693,7 +693,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							KingP[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Rei Persa perde 26 pontos de vida.");
 							}
@@ -704,7 +704,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							KingP[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Rei Persa perde "+damage+ " pontos de vida.");
 							}
@@ -754,7 +754,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							KntP[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Cavaleiro Persa perde 26 pontos de vida.");
 							}
@@ -765,7 +765,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							KntP[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{	
 								newLine("Golpe Normal - Cavaleiro Persa perde "+damage+ " pontos de vida.");
 							}
@@ -815,7 +815,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							LancerP[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Lanceiro Persa perde 26 pontos de vida.");
 							}
@@ -826,7 +826,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							LancerP[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 							}
@@ -1093,7 +1093,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 					{
 						WallG_life -= 26;
-						if(PTBR)
+						if(!PTBR)
 						{
 							newLine("Golpe Critico! Muralha Grega perde 26 pontos de vida.");
 						}
@@ -1104,7 +1104,7 @@ function PossibilitiesL()
 					{
 						damage =  Math.floor(randomRange(16,21));
 						WallG_life -= damage;
-						if(PTBR)
+						if(!PTBR)
 						{
 							newLine("Golpe Normal - Muralha Grega perde "+damage+" pontos de vida.");
 						}
@@ -1154,7 +1154,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							ArcG[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Arqueiro Grego perde 26 pontos de vida.");
 							}
@@ -1165,7 +1165,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(21,25));
 							ArcG[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 							}
@@ -1215,7 +1215,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							TorG[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Torre Grega perde 26 pontos de vida.");
 							}
@@ -1226,7 +1226,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							TorG[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Torre Grega perde "+damage+ " pontos de vida.");
 							}
@@ -1276,7 +1276,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							GnrlG[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! General Grego perde 26 pontos de vida.");
 							}
@@ -1287,7 +1287,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							GnrlG[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 							}
@@ -1337,7 +1337,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							KingG[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Rei Grego perde 26 pontos de vida.");
 							}
@@ -1348,7 +1348,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							KingG[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Rei Grego perde "+damage+ " pontos de vida.");
 							}
@@ -1398,7 +1398,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							KntG[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Cavaleiro Grego perde 26 pontos de vida.");
 							}
@@ -1409,7 +1409,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							KntG[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Cavaleiro Grego perde "+damage+ " pontos de vida.");
 							}
@@ -1459,7 +1459,7 @@ function PossibilitiesL()
 					if(Math.floor(randomRange(0,99)<20))
 						{
 							LancerG[i].life -= 26;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Critico! Lanceiro Grego perde 26 pontos de vida.");
 							}
@@ -1470,7 +1470,7 @@ function PossibilitiesL()
 						{
 							damage =  Math.floor(randomRange(16,21));
 							LancerG[i].life -= damage;
-							if(PTBR)
+							if(!PTBR)
 							{
 								newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 							}

@@ -232,7 +232,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallG_life -= 32;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Grega perde 32 pontos de vida.");
 								}
@@ -244,7 +244,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(25,32));
 								WallG_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
@@ -279,7 +279,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallG_life -= 32;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Grega perde 32 pontos de vida.");
 								}
@@ -291,7 +291,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(16,20));
 								WallG_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
@@ -330,7 +330,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallG_life -= 32;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Grega perde 32 pontos de vida.");
 								}
@@ -342,7 +342,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(23,27));
 								WallG_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
@@ -375,7 +375,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallG_life -= 27;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Grega perde 27 pontos de vida.");
 								}
@@ -387,7 +387,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(18,23));
 								WallG_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
@@ -420,7 +420,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallG_life -= 26;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Grega perde 26 pontos de vida.");
 								}
@@ -432,7 +432,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(16,21));
 								WallG_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
@@ -470,7 +470,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallG_life -= 21;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Grega perde 21 pontos de vida.");
 								}
@@ -482,7 +482,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(11,16));
 								WallG_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Grega perde "+damage+ " pontos de vida.");
 								}
@@ -548,7 +548,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{		
 													newLine("Golpe Critico! Rei Grego perde 32 pontos de vida.");
 												}
@@ -559,7 +559,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(21,29));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -596,7 +596,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 32 pontos de vida.");
 												}
@@ -607,7 +607,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(21,29));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -643,7 +643,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 29;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Grego perde 29 pontos de vida.");
 												}
@@ -654,7 +654,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(20,24));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -690,7 +690,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 29;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 29 pontos de vida.");
 												}
@@ -701,7 +701,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(20,24));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -737,7 +737,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Grego perde 32 pontos de vida.");
 												}
@@ -748,7 +748,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(19,23));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -784,7 +784,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 32 pontos de vida.");
 												}
@@ -795,7 +795,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(19,23));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -837,7 +837,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 27;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Grego perde 27 pontos de vida.");
 												}
@@ -848,7 +848,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(18,23));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -887,7 +887,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 27;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 27 pontos de vida.");
 												}
@@ -898,7 +898,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(18,23));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -940,7 +940,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Grego perde 24 pontos de vida.");
 												}
@@ -951,7 +951,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(10,20));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -987,7 +987,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{	
 													newLine("Golpe Critico! Rei Grego perde 24 pontos de vida.");
 												}
@@ -998,7 +998,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(6,16));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -1034,7 +1034,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 24 pontos de vida.");
 												}
@@ -1045,7 +1045,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(10,20));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -1081,7 +1081,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 24 pontos de vida.");
 												}
@@ -1092,7 +1092,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(6,16));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -1134,7 +1134,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 26;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Grego perde 26 pontos de vida.");
 												}
@@ -1145,7 +1145,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(16,21));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -1184,7 +1184,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 26;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 26 pontos de vida.");
 												}
@@ -1195,7 +1195,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(16,21));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -1234,7 +1234,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingG[AtacadoG].life -= 21;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Grego perde 21 pontos de vida.");
 												}
@@ -1245,7 +1245,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(17,21));
 												KingG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Grego perde "+damage+" pontos de vida.");
 												}
@@ -1284,7 +1284,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlG[AtacadoG].life -= 21;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Grego perde 21 pontos de vida.");
 												}
@@ -1295,7 +1295,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(11,16));
 												GnrlG[AtacadoG].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 												}
@@ -1340,7 +1340,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Grega perde 32 pontos de vida.");
 											}
@@ -1351,7 +1351,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											TorG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
@@ -1387,7 +1387,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorG[AtacadoG].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Grega perde 29 pontos de vida.");
 											}
@@ -1398,7 +1398,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(23,27));
 											TorG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
@@ -1435,7 +1435,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Grega perde 32 pontos de vida.");
 											}
@@ -1446,7 +1446,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											TorG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
@@ -1488,7 +1488,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorG[AtacadoG].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Grega perde 27 pontos de vida.");
 											}
@@ -1499,7 +1499,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(18,23));
 											TorG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
@@ -1541,7 +1541,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorG[AtacadoG].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Grega perde 26 pontos de vida.");
 											}
@@ -1552,7 +1552,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(16,21));
 											TorG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
@@ -1591,7 +1591,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorG[AtacadoG].life -= 21;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Grega perde 21 pontos de vida.");
 											}
@@ -1602,7 +1602,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(11,16));
 											TorG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Grega perde "+damage+" pontos de vida.");
 											}
@@ -1645,7 +1645,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
@@ -1656,7 +1656,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1692,7 +1692,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Grego perde 29 pontos de vida.");
 											}
@@ -1703,7 +1703,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,24));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1740,7 +1740,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
@@ -1751,7 +1751,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1792,7 +1792,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Grego perde 27 pontos de vida.");
 											}
@@ -1803,7 +1803,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(18,23));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1845,7 +1845,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
@@ -1856,7 +1856,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(13,23));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1892,7 +1892,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
@@ -1903,7 +1903,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(9,19));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1945,7 +1945,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Grego perde 26 pontos de vida.");
 											}
@@ -1956,7 +1956,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(16,21));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -1995,7 +1995,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntG[AtacadoG].life -= 21;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Grego perde 21 pontos de vida.");
 											}
@@ -2006,7 +2006,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(11,16));
 											KntG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2050,7 +2050,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 32 pontos de vida.");
 											}
@@ -2061,7 +2061,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2097,7 +2097,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
@@ -2108,7 +2108,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2144,7 +2144,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 29 pontos de vida.");
 											}
@@ -2155,7 +2155,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,24));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2192,7 +2192,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 29 pontos de vida.");
 											}
@@ -2203,7 +2203,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,24));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2240,7 +2240,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 32 pontos de vida.");
 											}
@@ -2251,7 +2251,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2287,7 +2287,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 32 pontos de vida.");
 											}
@@ -2298,7 +2298,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2340,7 +2340,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 27 pontos de vida.");
 											}
@@ -2351,7 +2351,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,25));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2390,7 +2390,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 27 pontos de vida.");
 											}
@@ -2401,7 +2401,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(18,23));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2443,7 +2443,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
@@ -2453,7 +2453,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(10,20));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2489,7 +2489,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 24 pontos de vida.");
 											}
@@ -2500,7 +2500,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(6,16));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2536,7 +2536,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 24 pontos de vida.");
 											}
@@ -2547,7 +2547,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(10,20));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2583,7 +2583,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Grego perde 24 pontos de vida.");
 											}
@@ -2594,7 +2594,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(6,16));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2636,7 +2636,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 27 pontos de vida.");
 											}
@@ -2647,7 +2647,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(16,21));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2684,7 +2684,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerG[AtacadoG].life -= 21;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Grego perde 21 pontos de vida.");
 											}
@@ -2695,7 +2695,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(11,16));
 											LancerG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Grego perde "+damage+" pontos de vida.");
 											}
@@ -2733,7 +2733,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcG[AtacadoG].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! General Grego perde 27 pontos de vida.");
 											}
@@ -2744,7 +2744,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,25));
 											ArcG[AtacadoG].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - General Grego perde "+damage+" pontos de vida.");
 											}
@@ -2781,7 +2781,7 @@ function AtackAI()
 									if(Math.floor(randomRange(0,99)<20))
 									{
 										ArcG[AtacadoG].life -= 21;
-										if(PTBR)
+										if(!PTBR)
 										{
 											newLine("Golpe Critico! Arqueiro Grego perde 21 pontos de vida.");
 										}
@@ -2792,7 +2792,7 @@ function AtackAI()
 									{
 										damage = Math.floor(randomRange(11,16));
 										ArcG[AtacadoG].life -= damage;
-										if(PTBR)
+										if(!PTBR)
 										{
 											newLine("Golpe Normal - Arqueiro Grego perde "+damage+" pontos de vida.");
 										}
@@ -2893,7 +2893,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallP_life -= 32;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Persa perde 32 pontos de vida.");
 								}
@@ -2905,7 +2905,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(25,32));
 								WallP_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
@@ -2940,7 +2940,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallP_life -= 32;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Persa perde 32 pontos de vida.");
 								}
@@ -2952,7 +2952,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(16,20));
 								WallP_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
@@ -2991,7 +2991,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallP_life -= 32;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Persa perde 32 pontos de vida.");
 								}
@@ -3003,7 +3003,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(23,27));
 								WallP_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
@@ -3036,7 +3036,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallP_life -= 27;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Persa perde 27 pontos de vida.");
 								}
@@ -3048,7 +3048,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(18,23));
 								WallP_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
@@ -3079,7 +3079,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallP_life -= 26;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Persa perde 26 pontos de vida.");
 								}
@@ -3091,7 +3091,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(16,21));
 								WallP_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
@@ -3129,7 +3129,7 @@ function AtackAI()
 							if(Math.floor(randomRange(0,99)<20))
 							{
 								WallP_life -= 21;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Critico! Muralha Persa perde 21 pontos de vida.");
 								}
@@ -3141,7 +3141,7 @@ function AtackAI()
 							{
 								damage = Math.floor(randomRange(11,16));
 								WallP_life -= damage;
-								if(PTBR)
+								if(!PTBR)
 								{
 									newLine("Golpe Normal - Muralha Persa perde "+damage+ " pontos de vida.");
 								}
@@ -3207,7 +3207,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 32 pontos de vida.");
 												}
@@ -3218,7 +3218,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(21,29));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3255,7 +3255,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 32 pontos de vida.");
 												}
@@ -3266,7 +3266,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(21,29));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3302,7 +3302,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 29;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 29 pontos de vida.");
 												}
@@ -3313,7 +3313,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(20,24));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3349,7 +3349,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 29;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 29 pontos de vida.");
 												}
@@ -3360,7 +3360,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(20,24));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3396,7 +3396,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 32 pontos de vida.");
 												}
@@ -3407,7 +3407,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(19,23));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3443,7 +3443,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 32;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 32 pontos de vida.");
 												}
@@ -3454,7 +3454,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(19,23));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3496,7 +3496,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 27;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 27 pontos de vida.");
 												}
@@ -3507,7 +3507,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(18,23));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3546,7 +3546,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 27;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 27 pontos de vida.");
 												}
@@ -3557,7 +3557,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(18,23));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3599,7 +3599,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 24 pontos de vida.");
 												}
@@ -3610,7 +3610,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(10,20));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3646,7 +3646,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 24 pontos de vida.");
 												}
@@ -3657,7 +3657,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(6,16));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3693,7 +3693,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 24 pontos de vida.");
 												}
@@ -3704,7 +3704,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(10,20));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3740,7 +3740,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 24;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 24 pontos de vida.");
 												}
@@ -3751,7 +3751,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(6,16));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3793,7 +3793,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 26;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 26 pontos de vida.");
 												}
@@ -3804,7 +3804,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(16,21));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3843,7 +3843,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 26;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 26 pontos de vida.");
 												}
@@ -3854,7 +3854,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(16,21));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3893,7 +3893,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												KingP[AtacadoP].life -= 21;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! Rei Persa perde 21 pontos de vida.");
 												}
@@ -3904,7 +3904,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(17,21));
 												KingP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - Rei Persa perde "+damage+" pontos de vida.");
 												}
@@ -3943,7 +3943,7 @@ function AtackAI()
 											if(Math.floor(randomRange(0,99)<20))
 											{
 												GnrlP[AtacadoP].life -= 21;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Critico! General Persa perde 21 pontos de vida.");
 												}
@@ -3954,7 +3954,7 @@ function AtackAI()
 											{
 												damage = Math.floor(randomRange(11,16));
 												GnrlP[AtacadoP].life -= damage;
-												if(PTBR)
+												if(!PTBR)
 												{
 													newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 												}
@@ -3999,7 +3999,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Persa perde 32 pontos de vida.");
 											}
@@ -4010,7 +4010,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											TorP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
@@ -4046,7 +4046,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorP[AtacadoP].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Persa perde 29 pontos de vida.");
 											}
@@ -4057,7 +4057,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(23,27));
 											TorP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
@@ -4094,7 +4094,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Persa perde 32 pontos de vida.");
 											}
@@ -4105,7 +4105,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											TorP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
@@ -4147,7 +4147,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorP[AtacadoP].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Persa perde 27 pontos de vida.");
 											}
@@ -4158,7 +4158,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(18,23));
 											TorP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
@@ -4200,7 +4200,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorP[AtacadoP].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Persa perde 26 pontos de vida.");
 											}
@@ -4211,7 +4211,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(16,21));
 											TorP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
@@ -4250,7 +4250,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											TorP[AtacadoP].life -= 21;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Torre Persa perde 21 pontos de vida.");
 											}
@@ -4261,7 +4261,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(11,16));
 											TorP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Torre Persa perde "+damage+" pontos de vida.");
 											}
@@ -4305,7 +4305,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
@@ -4316,7 +4316,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4352,7 +4352,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Persa perde 29 pontos de vida.");
 											}
@@ -4363,7 +4363,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,24));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4400,7 +4400,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
@@ -4411,7 +4411,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4452,7 +4452,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Persa perde 27 pontos de vida.");
 											}
@@ -4463,7 +4463,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(18,23));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4505,7 +4505,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
@@ -4516,7 +4516,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(13,23));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4552,7 +4552,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
@@ -4563,7 +4563,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(9,19));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4605,7 +4605,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Persa perde 26 pontos de vida.");
 											}
@@ -4616,7 +4616,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(16,21));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4655,7 +4655,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											KntP[AtacadoP].life -= 21;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Cavaleiro Persa perde 21 pontos de vida.");
 											}
@@ -4666,7 +4666,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(11,16));
 											KntP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Cavaleiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4710,7 +4710,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
 											}
@@ -4721,7 +4721,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4757,7 +4757,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
@@ -4768,7 +4768,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,29));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4804,7 +4804,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 29 pontos de vida.");
 											}
@@ -4815,7 +4815,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,24));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4852,7 +4852,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 29;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 29 pontos de vida.");
 											}
@@ -4863,7 +4863,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,24));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4900,7 +4900,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 32 pontos de vida.");
 											}
@@ -4911,7 +4911,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -4947,7 +4947,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 32;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 32 pontos de vida.");
 											}
@@ -4958,7 +4958,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(19,23));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5000,7 +5000,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
 											}
@@ -5011,7 +5011,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(20,25));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5050,7 +5050,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 27;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 27 pontos de vida.");
 											}
@@ -5061,7 +5061,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(18,23));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5103,7 +5103,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
@@ -5114,7 +5114,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(10,20));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5150,7 +5150,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 24 pontos de vida.");
 											}
@@ -5161,7 +5161,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(6,16));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5197,7 +5197,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
 											}
@@ -5208,7 +5208,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(10,20));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5244,7 +5244,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 24;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Arqueiro Persa perde 24 pontos de vida.");
 											}
@@ -5255,7 +5255,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(6,16));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5297,7 +5297,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 27 pontos de vida.");
 											}
@@ -5308,7 +5308,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(16,21));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5345,7 +5345,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											LancerP[AtacadoP].life -= 21;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! Lanceiro Persa perde 21 pontos de vida.");
 											}
@@ -5356,7 +5356,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(11,16));
 											LancerP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - Lanceiro Persa perde "+damage+" pontos de vida.");
 											}
@@ -5394,7 +5394,7 @@ function AtackAI()
 										if(Math.floor(randomRange(0,99)<20))
 										{
 											ArcP[AtacadoP].life -= 26;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Critico! General Persa perde 27 pontos de vida.");
 											}
@@ -5405,7 +5405,7 @@ function AtackAI()
 										{
 											damage = Math.floor(randomRange(21,25));
 											ArcP[AtacadoP].life -= damage;
-											if(PTBR)
+											if(!PTBR)
 											{
 												newLine("Golpe Normal - General Persa perde "+damage+" pontos de vida.");
 											}
@@ -5442,7 +5442,7 @@ function AtackAI()
 									if(Math.floor(randomRange(0,99)<20))
 									{
 										ArcP[AtacadoP].life -= 21;
-										if(PTBR)
+										if(!PTBR)
 										{
 											newLine("Golpe Critico! Arqueiro Persa perde 21 pontos de vida.");
 										}
@@ -5453,7 +5453,7 @@ function AtackAI()
 									{
 										damage = Math.floor(randomRange(11,16));
 										ArcP[AtacadoP].life -= damage;
-										if(PTBR)
+										if(!PTBR)
 										{
 											newLine("Golpe Normal - Arqueiro Persa perde "+damage+" pontos de vida.");
 										}
