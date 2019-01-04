@@ -2,6 +2,12 @@
 <link rel="shortcut icon" href="Images/Icon.png" type="image/png"/>
 <center>
 <head>
+	<style type="text/css">
+		@font-face {
+			font-family: 'Dirty_War';
+			src: url("Images/Dirty_War.otf");
+		}
+	</style>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Warriors</title>
@@ -40,8 +46,7 @@
 <script src = "Scripts/Windows/PersasV.js"></script>
 <script>
 	var canvas = document.getElementById("Oficina");
-	var context = canvas.getContext("2d");	
-	
+	var context = canvas.getContext("2d");		
 
 	var Scene = "Jogo";
 	var auxScene = Scene;
@@ -2444,22 +2449,23 @@
 	{
 		return (Math.random() * (max - min + 1)) + min;
 	}
+	var FONT_NAME = 'Dirty_War';
 	function Text(x,y,text)
 	{
 		context.fillStyle = "#000000";
-		context.font = "7px Myriad Pro";
+		context.font = '6px Dirty_War';
 		context.fillText(text, x, y);		
 	}
 	function TextLife(text,x,y)
 	{
 		context.fillStyle = "#cf5761";
-		context.font = "20px Old English Text MT";
+		context.font = '20px Dirty_War';
 		context.fillText(text, x, y);		
 	}
 	function TextLifeG(text,x,y)
 	{
 		context.fillStyle = "#2774ab";
-		context.font = "20px Old English Text MT";
+		context.font = "20px Dirty_War";
 		context.fillText(text, x, y);		
 	}
 	function newLine(x)
@@ -2605,6 +2611,7 @@
 		setTimeout(RealLoop, 1);
 	}
 	RealLoop();
+
 </script>
 </body>
 </html>
