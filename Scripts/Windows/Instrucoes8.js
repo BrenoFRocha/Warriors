@@ -11,7 +11,7 @@ function SetInstru8()
 	}
 	
 	var bottonM = {x:canvas.width - 200, y:canvas.height - 100, w:150, h:50};
-	context.drawImage(Back,bottonM.x,bottonM.y,bottonM.w,bottonM.h);
+	context.drawImage(exit_button_image,bottonM.x,bottonM.y,bottonM.w,bottonM.h);
 	
 	if(mouse.x >= bottonM.x &&
 	mouse.x <= bottonM.x + bottonM.w &&

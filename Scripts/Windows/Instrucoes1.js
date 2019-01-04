@@ -21,7 +21,7 @@ function SetInstru1()
 	
 	context.drawImage(setinha,bottonI.x,bottonI.y,bottonI.w,bottonI.h);
 
-	context.drawImage(Back,bottonM.x,bottonM.y,bottonM.w,bottonM.h);
+	context.drawImage(exit_button_image,bottonM.x,bottonM.y,bottonM.w,bottonM.h);
 	
 	if(mouse.x >= bottonI.x &&
 	mouse.x <= bottonI.x + bottonI.w &&
