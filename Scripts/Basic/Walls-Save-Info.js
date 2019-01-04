@@ -268,87 +268,25 @@ var InfoKingP = false;
 var InfoGnrlP = false;
 var InfoKntP = false;
 
-
-var Movimentacao = new Image();
-if(PTBR)
-{
-	Movimentacao.src = "Images/MovimentacaoPT.png";
-}
-if(ENUS)
-{
-	Movimentacao.src = "Images/MovimentacaoEN.png";
-}
-var Movimentacao_x = 405;
-var Movimentacao_y = 150;
-var Movimentacao_w = 100;
-var Movimentacao_h = 25;
-
-var Ataque = new Image();
-if(PTBR)
-{
-	Ataque.src = "Images/AtaquePT.png";
-}
-if(ENUS)
-{
-	Ataque.src = "Images/AtaqueEN.png";
-}
-var Ataque_x = 405;
-var Ataque_y = 200;
-var Ataque_w = 115;
-var Ataque_h = 25;
-
-var Vida = new Image();
-if(PTBR)
-{
-	Vida.src = "Images/VidaPT.png";
-}
-if(ENUS)
-{
-	Vida.src = "Images/VidaEN.png";
-}
-var Vida_x = 413;
-var Vida_y = 255;
-var Vida_w = 40;
-var Vida_h = 20;
-
-var Unidade = new Image();
-if(PTBR)
-{
-	Unidade.src = "Images/UnidadePT.png";
-}
-if(ENUS)
-{
-	Unidade.src = "Images/UnidadeEN.png";
-}
-var Unidade_x = 405;
-var Unidade_y = 100;
-var Unidade_w = 125;
-var Unidade_h = 20;
-
-var InfoU_x = 455;
-var InfoU_y = 100;
+var InfoU_x = 620;
+var InfoU_y = 180;
 var InfoU_w = 25;
 var InfoU_h = 25;
 
-var InfoM_x = 505;
-var InfoM_y = 150;
+var InfoM_x = 620;
+var InfoM_y = 210;
 var InfoM_w = 25;
 var InfoM_h = 25;
 
-var InfoA_x = 530;
-var InfoA_y = 200;
+var InfoA_x = 665;
+var InfoA_y = 210;
 var InfoA_w = 25;
 var InfoA_h = 25;
 
-var InfoV_x = 493;
-var InfoV_y = 289;
+var InfoV_x = 667.5;
+var InfoV_y = 197.5;
 var InfoV_w = 25;
 var InfoV_h = 25;
-
-
-
-		
-
 
 function InfoLancerPS()
 {
@@ -396,23 +334,23 @@ function InfoTorPS()
 	context.drawImage(TorPM,InfoM_x,InfoM_y,InfoM_w,InfoM_h)
 	TextLife(TorP[TorsPChoosed].life,InfoV_x,InfoV_y)
 }
-var InfoUG_x = 580;
-var InfoUG_y = 100;
+var InfoUG_x = 715;
+var InfoUG_y = 180;
 var InfoUG_w = 25;
 var InfoUG_h = 25;
 
-var InfoMG_x = 630;
-var InfoMG_y = 150;
+var InfoMG_x = 760;
+var InfoMG_y = 210;
 var InfoMG_w = 25;
 var InfoMG_h = 25;
 
-var InfoAG_x = 650;
-var InfoAG_y = 200;
+var InfoAG_x = 715;
+var InfoAG_y = 210;
 var InfoAG_w = 25;
 var InfoAG_h = 25;
 
-var InfoVG_x = 618;
-var InfoVG_y = 289;
+var InfoVG_x = 762.5;
+var InfoVG_y = 197.5;
 var InfoVG_w = 25;
 var InfoVG_h = 25;
 

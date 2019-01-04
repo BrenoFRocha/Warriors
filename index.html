@@ -113,7 +113,6 @@
 	var lancer_number = 8;
 	var archer_number = 8;
 	var GI_background_image = new Image();
-	GI_background_image.src = "Images/GI_background.png";
 	var Greek_s_Turn_image = new Image();
 	Greek_s_Turn_image.src = "Images/Greek_s_Turn.png";
 	var Persian_s_Turn_image = new Image();
@@ -122,7 +121,8 @@
 	Turno_dos_Gregos_image.src = "Images/Turno_dos_Gregos.png";
 	var Turno_dos_Persas_image = new Image();
 	Turno_dos_Persas_image.src = "Images/Turno_dos_Persas.png";
-	
+	var M_settings = {x:canvas.width - 80,y:16 ,w: 64, h: 64};
+
 	//RandomAIG
 	var SourceCharG;
 	
@@ -390,8 +390,8 @@
 			music1.pause("Music1Game");
 			music2.pause("Music2Game");
 			
-			var bottonB = {x:10,y:25,w:150,h:50};			
-			
+			var bottonB = {x:16,y:16,w:64,h:64, image: new Image()};			
+			bottonB.image.src = "Images/back.png";
 			//Button New Game
 			var M_button_NG = {x:canvas.width/2 - 125, y:212.5, w:250, h:50};
 			if(PTBR)
@@ -582,7 +582,7 @@
 
 			if(Backon)
 			{
-				context.drawImage(exit_button_image,bottonB.x,bottonB.y,bottonB.w,bottonB.h);
+				context.drawImage(bottonB.image,bottonB.x,bottonB.y,bottonB.w,bottonB.h);
 				
 				if(mouse.x >= bottonB.x &&
 				mouse.x <= bottonB.x + bottonB.w &&
@@ -596,8 +596,6 @@
 					auxScene = "Jogo";
 				}
 			}
-			
-			var M_settings = {x:canvas.width - 80,y:16 ,w: 64, h: 64};
 
 			if(mouse.x >= M_settings.x &&
 			mouse.x <= M_settings.x + M_settings.w &&
@@ -2099,29 +2097,29 @@
 				
 				
 				{//Draws ded info
+					if(PTBR)
+					{
+						GI_background_image.src = "Images/GI_background_EN.png";
+					}
+					else 
+					{
+						GI_background_image.src = "Images/GI_background_PT.png";
+					}
 					context.drawImage(GI_background_image,600,0,200,600);
 					/*context.fillStyle = "#FFFFFF";
 					context.fillRect(600,0,601,700);*/
-					Text(405, 584, StringDano1);
-					Text(405, 554, StringDano2);
-					Text(405, 524, StringDano3);
-					Text(405, 494, StringDano4);
-					Text(405, 464, StringDano5);
-					Text(405, 434, StringDano6);
-					Text(405, 404, StringDano7);
-					Text(405, 374, StringDano8);
-					Text(405, 344, StringDano9);
-					Text(405, 314, StringDano10);
+					Text(620, 525, StringDano1);
+					Text(620, 505, StringDano2);
+					Text(620, 485, StringDano3);
+					Text(620, 465, StringDano4);
+					Text(620, 445, StringDano5);
+					Text(620, 425, StringDano6);
+					Text(620, 405, StringDano7);
+					Text(620, 385, StringDano8);
+					Text(620, 365, StringDano9);
+					Text(620, 345, StringDano10);
 					
 					//Page Info
-					/*context.drawImage(Ataque,Ataque_x,Ataque_y,Ataque_w,Ataque_h);
-					context.drawImage(Movimentacao,Movimentacao_x,Movimentacao_y,Movimentacao_w,Movimentacao_h);
-					context.drawImage(Unidade,Unidade_x,Unidade_y,Unidade_w,Unidade_h);
-					context.drawImage(Vida,Vida_x,Vida_y,Vida_w,Vida_h)
-					context.drawImage(Ataque,Ataque_x + 125,Ataque_y,Ataque_w,Ataque_h);
-					context.drawImage(Movimentacao,Movimentacao_x +125,Movimentacao_y,Movimentacao_w,Movimentacao_h);
-					context.drawImage(Unidade,Unidade_x + 125,Unidade_y,Unidade_w,Unidade_h);
-					context.drawImage(Vida,Vida_x + 125,Vida_y,Vida_w,Vida_h)*/
 					DrawInfos();
 					DieKnts();
 					DieLancers();
@@ -2158,22 +2156,22 @@
 				{
 					if(PTBR)
 					{
-						context.drawImage(Persian_s_Turn_image, 612.5,75);		
+						context.drawImage(Persian_s_Turn_image, 612.5,92);		
 					}
 					else
 					{
-						context.drawImage(Turno_dos_Persas_image, 612.5,75);		
+						context.drawImage(Turno_dos_Persas_image, 612.5,92);		
 					}
 				}
 				else if(Vez_Gregos)
 				{
 					if(PTBR)
 					{
-						context.drawImage(Greek_s_Turn_image, 612.5,75);		
+						context.drawImage(Greek_s_Turn_image, 612.5,92);		
 					}
 					else
 					{
-						context.drawImage(Turno_dos_Gregos_image, 612.5,75);
+						context.drawImage(Turno_dos_Gregos_image, 612.5,92);
 					}
 				}
 				
@@ -2449,19 +2447,19 @@
 	function Text(x,y,text)
 	{
 		context.fillStyle = "#000000";
-		context.font = "15px Myriad Pro";
+		context.font = "7px Myriad Pro";
 		context.fillText(text, x, y);		
 	}
 	function TextLife(text,x,y)
 	{
-		context.fillStyle = "#000000";
-		context.font = "40px Old English Text MT";
+		context.fillStyle = "#cf5761";
+		context.font = "20px Old English Text MT";
 		context.fillText(text, x, y);		
 	}
 	function TextLifeG(text,x,y)
 	{
-		context.fillStyle = "#000000";
-		context.font = "40px Old English Text MT";
+		context.fillStyle = "#2774ab";
+		context.font = "20px Old English Text MT";
 		context.fillText(text, x, y);		
 	}
 	function newLine(x)
