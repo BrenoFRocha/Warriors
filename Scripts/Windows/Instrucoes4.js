@@ -1,39 +1,52 @@
+var I_background_image = new Image();
+
+
+var I_next_image = new Image();
+I_next_image.src = "Images/next.png";
+
+var I_exit_button = {x: 60, y: 60, w: 48, h: 48};
+var I_next_button = {x: 680, y: 485, w: 64, h: 64};
+
 function SetInstru4()
 {
+	if(PTBR)
+	{
+		I_background_image.src = "Images/Instructions_4_Background.png";
+	}
+	else
+	{
+		I_background_image.src = "Images/Instrucoes_4_Background.png";
+	}
+	context.drawImage(I_background_image,0,0);
 	if(fadeOut)
 	{
 		fadeIn = true;
 		fadeOut = false;
 	}
-	context.fillStyle = "LIME";
-	context.fillRect(0,0,canvas.width,canvas.height);
 	
-	var bottonI = {x:canvas.width - 200, y:50, w:150, h:50};
-	var bottonM = {x:canvas.width - 200, y:canvas.height - 100, w:150, h:50};
-	context.fillStyle = "BLACK";
-	context.fillRect(bottonI.x,bottonI.y,bottonI.w,bottonI.h);
-	context.fillStyle = "BLACK";
-	context.fillRect(bottonM.x,bottonM.y,bottonM.w,bottonM.h);
+	context.drawImage(I_next_image,I_next_button.x,I_next_button.y,I_next_button.w,I_next_button.h);
+
+	context.drawImage(exit_button_image,I_exit_button.x,I_exit_button.y,I_exit_button.w,I_exit_button.h);
 	
-	if(mouse.x >= bottonI.x &&
-	mouse.x <= bottonI.x + bottonI.w &&
-	mouse.y >= bottonI.y &&
-	mouse.y <= bottonI.y + bottonI.h &&
+	if(mouse.x >= I_next_button.x &&
+	mouse.x <= I_next_button.x + I_next_button.w &&
+	mouse.y >= I_next_button.y &&
+	mouse.y <= I_next_button.y + I_next_button.h &&
 	mouse.press)
-	{	
-		fadeOut = true;
+	{
 		mouse.press = false;
-		Scene = "Instrucoes5";
+		fadeOut = true;
+		auxScene = "Instrucoes5";
 	}
 	
-	if(mouse.x >= bottonM.x &&
-	mouse.x <= bottonM.x + bottonM.w &&
-	mouse.y >= bottonM.y &&
-	mouse.y <= bottonM.y + bottonM.h &&
+	if(mouse.x >= I_exit_button.x &&
+	mouse.x <= I_exit_button.x + I_exit_button.w &&
+	mouse.y >= I_exit_button.y &&
+	mouse.y <= I_exit_button.y + I_exit_button.h &&
 	mouse.press)
 	{
 		fadeOut = true;
 		mouse.press = false;
-		Scene = "Menu";
+		auxScene = "Menu";
 	}
 }

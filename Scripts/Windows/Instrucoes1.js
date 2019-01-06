@@ -4,8 +4,8 @@ var I_background_image = new Image();
 var I_next_image = new Image();
 I_next_image.src = "Images/next.png";
 
-var I_exit_button = {x:72.5, y:80, w: 64, h: 64};
-var I_next_button = {x:667.5, y:475, w:64, h:64};
+var I_exit_button = {x: 60, y: 60, w: 48, h: 48};
+var I_next_button = {x: 680, y: 485, w: 64, h: 64};
 
 function SetInstru1()
 {
@@ -34,9 +34,9 @@ function SetInstru1()
 	mouse.y <= I_next_button.y + I_next_button.h &&
 	mouse.press)
 	{
-		fadeOut = true;
 		mouse.press = false;
-		auxScene = "Instrucoes8";
+		fadeOut = true;
+		auxScene = "Instrucoes2";
 	}
 	
 	if(mouse.x >= I_exit_button.x &&

@@ -20,9 +20,6 @@
 <script src = "Scripts/Windows/Instrucoes3.js"></script>
 <script src = "Scripts/Windows/Instrucoes4.js"></script>
 <script src = "Scripts/Windows/Instrucoes5.js"></script>
-<script src = "Scripts/Windows/Instrucoes6.js"></script>
-<script src = "Scripts/Windows/Instrucoes7.js"></script>
-<script src = "Scripts/Windows/Instrucoes8.js"></script>
 <script src = "Scripts/Basic/Reload.js"></script>
 <script src = "Scripts/Basic/Archers.js"></script>
 <script src = "Scripts/Basic/Lancers.js"></script>
@@ -70,9 +67,6 @@
 	var Instrucoes3 = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var Instrucoes4 = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var Instrucoes5 = {x:0, y:0, w:canvas.width, h:canvas.height};
-	var Instrucoes6 = {x:0, y:0, w:canvas.width, h:canvas.height};
-	var Instrucoes7 = {x:0, y:0, w:canvas.width, h:canvas.height};
-	var Instrucoes8 = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var Creditos = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var CTeam = {x:0, y:0, w:canvas.width, h:canvas.height};
 	var WinG = {x:0, y:0, w:canvas.width, h:canvas.height};
@@ -108,6 +102,7 @@
 	var G_exit_button = {x: canvas.width - 188, y: 15, w: 48, h:48};
 	var G_audio_button = {x: canvas.width - 60, y: 18, w: 45, h:45};
 	var G_language_button = {x: canvas.width - 126, y: 15, w: 48, h:48};
+	var M_button_NG = {x:canvas.width/2 - 125, y:212.5, w:250, h:50};
 	var M_button_NG_image = new Image();
 	var M_button_I_image = new Image();
 	var M_button_C_image = new Image();
@@ -122,10 +117,6 @@
 	Greek_s_Turn_image.src = "Images/Greek_s_Turn.png";
 	var Persian_s_Turn_image = new Image();
 	Persian_s_Turn_image.src = "Images/Persian_s_Turn.png";
-	var Turno_dos_Gregos_image = new Image();
-	Turno_dos_Gregos_image.src = "Images/Turno_dos_Gregos.png";
-	var Turno_dos_Persas_image = new Image();
-	Turno_dos_Persas_image.src = "Images/Turno_dos_Persas.png";
 	var M_settings = {x:canvas.width - 80,y:16 ,w: 64, h: 64};
 
 	//RandomAIG
@@ -398,7 +389,6 @@
 			var bottonB = {x:16,y:16,w:64,h:64, image: new Image()};			
 			bottonB.image.src = "Images/back.png";
 			//Button New Game
-			var M_button_NG = {x:canvas.width/2 - 125, y:212.5, w:250, h:50};
 			if(PTBR)
 			{
 				M_button_NG_image.src = "Images/New_Game_Button.png";
@@ -856,18 +846,6 @@
 			
 			case "Instrucoes5":
 			SetInstru5();
-			break;
-			
-			case "Instrucoes6":
-			SetInstru6();
-			break;
-			
-			case "Instrucoes7":
-			SetInstru7();
-			break;
-			
-			case "Instrucoes8":
-			SetInstru8();
 			break;
 			
 			case "Credits":
