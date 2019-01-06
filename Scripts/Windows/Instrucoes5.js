@@ -4,7 +4,7 @@ var I_background_image = new Image();
 var I_war_image = new Image();
 
 var I_exit_button = {x: 60, y: 60, w: 48, h: 48};
-var I_war_button = {x: 185, y: 350, w: 430, h: 50};
+var I_war_button = {x: 185, y: 430, w: 430, h: 50};
 
 function SetInstru5()
 {

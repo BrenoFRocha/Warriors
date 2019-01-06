@@ -691,49 +691,13 @@
 			break;
 			
 			case "WinG":
-			WinGW1 = new Image();
-			if(PTBR)
-			{
-				WinGW1.src = "Images/Gregos_WINPT.png";
-			}
-			if(ENUS)
-			{
-				WinGW1.src = "Images/Gregos_WINEN.png";
-			}
-			NewG1 = new Image();
-			if(PTBR)
-			{
-				NewG1.src = "Images/Novo_JogoPT.png";
-			}
-			if(ENUS)
-			{
-				NewG1.src = "Images/Novo_JogoEN.png";
-			}
-			SetWinG();
 			Backon = false;
+			GVictory();
 			break;
 			
 			case "WinP":
-			WinPW1 = new Image();
-			if(PTBR)
-			{
-				WinPW1.src = "Images/Persas_WINPT.png";
-			}
-			if(ENUS)
-			{
-				WinPW1.src = "Images/Persas_WINEN.png";
-			}
-			NewG1 = new Image();
-			if(PTBR)
-			{
-				NewG1.src = "Images/Novo_JogoPT.png";
-			}
-			if(ENUS)
-			{
-				NewG1.src = "Images/Novo_JogoEN.png";
-			}
-			SetWinP();
 			Backon = false;
+			PVictory();
 			break;
 			
 			case "Options":
@@ -1384,6 +1348,7 @@
 						WallP_life = 0;
 						GT = false;
 						PT = false;
+						fadeOut = true;
 						auxScene = "WinG";
 					}
 					if(WallG_life <= 0)
@@ -1391,6 +1356,7 @@
 						WallG_life = 0;
 						GT = false;
 						PT = false;
+						fadeOut = true;
 						auxScene = "WinP";
 					}
 					if(LancerG[0].dead && LancersGCChoosed == 0)
@@ -1742,6 +1708,7 @@
 						WallP_life = 0;
 						GT = false;
 						PT = false;
+						fadeOut = true;
 						auxScene = "WinG";
 					}
 					if(WallG_life <= 0)
@@ -1749,6 +1716,7 @@
 						WallG_life = 0;
 						GT = false;
 						PT = false;
+						fadeOut = true;
 						auxScene = "WinP";
 					}
 					if(LancerP[0].dead && LancersPCChoosed == 0)
@@ -2196,6 +2164,7 @@
 					
 					if(TORREDP && GNRLDP && REIDP && KntDP && LANCERDP && ARCDP)
 					{
+						fadeOut = true;
 						auxScene = "WinG";
 						GT = false;
 						PT = false;
@@ -2238,6 +2207,7 @@
 					
 					if(TORREDG && GNRLDG && REIDG && KntDG && LANCERDG && ARCDG)
 					{
+						fadeOut = true;
 						auxScene = "WinP";
 						PT = false;
 						GT = false;

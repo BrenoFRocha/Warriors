@@ -27,11 +27,7 @@ var InfoWallP = false;
 var SWG = new Image();
 SWG.src = "Images/MS_G.png";
 var SWP = new Image();
-SWP.src = "Images/MS_P.png"
-var MWG = new Image();
-MWG.src = "Images/MSGM.png"
-var MWP = new Image();
-MWP.src = "Images/MSPM.png";
+SWP.src = "Images/MS_P.png";
 function StatsWalls()
 {
 	if(WallP_life <= 0)
@@ -82,9 +78,7 @@ function StatsWalls()
 	}
 	if(InfoWallP)
 	{
-		context.drawImage(MWP,InfoA_x,InfoA_y,InfoA_w,InfoA_h)
 		context.drawImage(SWP,InfoU_x,InfoU_y,InfoU_w,InfoU_h)
-		context.drawImage(MWP,InfoM_x,InfoM_y,InfoM_w,InfoM_h)
 		TextLife(WallP_life,InfoV_x,InfoV_y)
 	}
 }
@@ -233,9 +227,7 @@ function DrawInfos()
 	}
 	if(InfoWallG)
 		{
-			context.drawImage(MWG,InfoAG_x,InfoAG_y,InfoAG_w,InfoAG_h)
 			context.drawImage(SWG,InfoUG_x,InfoUG_y,InfoUG_w,InfoUG_h)
-			context.drawImage(MWG,InfoMG_x,InfoMG_y,InfoMG_w,InfoMG_h)
 			TextLife(WallG_life,InfoVG_x,InfoVG_y)
 		}
 }
