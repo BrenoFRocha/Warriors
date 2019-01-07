@@ -11,7 +11,7 @@ function TorsP(TorP_x, TorP_y, TorP_w, TorP_h, TorP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.TorsP = new Image;	
-	this.TorsP.src = "Images/Persian_Tower.png";	
+	this.TorsP.src = "Images/Units/Persian_Tower.png";	
 	
 	this.update = function()
 	{
@@ -38,7 +38,7 @@ function TorsG(TorG_x, TorG_y, TorG_w, TorG_h, TorG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.TorsG = new Image;
-	this.TorsG.src = "Images/Greek_Tower.png";	
+	this.TorsG.src = "Images/Units/Greek_Tower.png";	
 
 	this.update = function()
 	{

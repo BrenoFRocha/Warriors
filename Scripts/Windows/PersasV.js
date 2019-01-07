@@ -10,11 +10,11 @@ function PVictory()
 {
 	if(PTBR)
 	{
-		V_persian_background_image.src = "Images/Persian_Victory.png"
+		V_persian_background_image.src = "Images/Background/Persian_Victory.png"
 	}
 	else
 	{
-		V_persian_background_image.src = "Images/Vitoria_Persa.png"
+		V_persian_background_image.src = "Images/Background/Vitoria_Persa.png"
 	}
 	context.drawImage(V_persian_background_image,0,0);
 	if(fadeOut)

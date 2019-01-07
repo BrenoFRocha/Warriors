@@ -11,11 +11,11 @@ function SetInstru3()
 {
 	if(PTBR)
 	{
-		I_background_image.src = "Images/Instructions_3_Background.png";
+		I_background_image.src = "Images/Background/Instructions_3_Background.png";
 	}
 	else
 	{
-		I_background_image.src = "Images/Instrucoes_3_Background.png";
+		I_background_image.src = "Images/Background/Instrucoes_3_Background.png";
 	}
 	context.drawImage(I_background_image,0,0);
 	if(fadeOut)

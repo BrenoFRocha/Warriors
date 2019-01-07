@@ -10,12 +10,12 @@ function SetInstru5()
 {
 	if(PTBR)
 	{
-		I_background_image.src = "Images/Instructions_5_Background.png";
+		I_background_image.src = "Images/Background/Instructions_5_Background.png";
 		I_war_image.src = "Images/Start_War_Button.png";
 	}
 	else
 	{
-		I_background_image.src = "Images/Instrucoes_5_Background.png";
+		I_background_image.src = "Images/Background/Instrucoes_5_Background.png";
 		I_war_image.src = "Images/Comecar_Guerra_Botao.png";
 	}
 	context.drawImage(I_background_image,0,0);

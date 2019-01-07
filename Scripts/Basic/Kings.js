@@ -13,7 +13,7 @@ var limit_right = 551;
 	this.dead = false;
 	this.onClicked = false;;
 	this.KingsP = new Image;
-	this.KingsP.src = "Images/Persian_King.png";	
+	this.KingsP.src = "Images/Units/Persian_King.png";	
 	
 	this.update = function()
 	{
@@ -44,7 +44,7 @@ function KingsG(KingG_x, KingG_y, KingG_w, KingG_h, KingG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.KingsG = new Image;
-	this.KingsG.src = "Images/Greek_King.png";
+	this.KingsG.src = "Images/Units/Greek_King.png";
 	
 	this.update = function()
 	{

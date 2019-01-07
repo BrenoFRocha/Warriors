@@ -13,7 +13,7 @@ function KntsP(KntP_x, KntP_y, KntP_w, KntP_h, KntP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.KntsP = new Image;
-	this.KntsP.src = "Images/Persian_Knight.png";	
+	this.KntsP.src = "Images/Units/Persian_Knight.png";	
 	this.draw = function(ctx)
 	{					
 		ctx.drawImage(this.KntsP, this.x, this.y, this.w, this.h);	
@@ -38,7 +38,7 @@ function KntsG(KntG_x, KntG_y, KntG_w, KntG_h, KntG_l)
 	this.life = KntG_l;
 	this.dead = false;	
 	this.KntsG = new Image;
-	this.KntsG.src = "Images/Greek_Knight.png";	
+	this.KntsG.src = "Images/Units/Greek_Knight.png";	
 	
 	this.update = function()
 	{

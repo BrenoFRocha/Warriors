@@ -13,7 +13,7 @@ function GnrlsP(GnrlP_x, GnrlP_y, GnrlP_w, GnrlP_h, GnrlP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.GnrlP = new Image;
-	this.GnrlP.src = "Images/Persian_General.png";
+	this.GnrlP.src = "Images/Units/Persian_General.png";
 	
 	this.update = function()
 	{
@@ -43,7 +43,7 @@ function GnrlsG(GnrlG_x, GnrlG_y, GnrlG_w, GnrlG_h, GnrlG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.GnrlG = new Image;
-	this.GnrlG.src = "Images/Greek_General.png";	
+	this.GnrlG.src = "Images/Units/Greek_General.png";	
 	
 	this.update = function()
 	{

@@ -10,11 +10,11 @@ function GVictory()
 {
 	if(PTBR)
 	{
-		V_greek_background_image.src = "Images/Greek_Victory.png"
+		V_greek_background_image.src = "Images/Background/Greek_Victory.png"
 	}
 	else
 	{
-		V_greek_background_image.src = "Images/Vitoria_Grega.png"
+		V_greek_background_image.src = "Images/Background/Vitoria_Grega.png"
 	}
 	context.drawImage(V_greek_background_image,0,0);
 	if(fadeOut)

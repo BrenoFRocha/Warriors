@@ -14,7 +14,7 @@ function LancersP(LancerP_x, LancerP_y, LancerP_w, LancerP_h, LancerP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.LancersP = new Image;
-	this.LancersP.src = "Images/Persian_Lancer.png";	
+	this.LancersP.src = "Images/Units/Persian_Lancer.png";	
 	this.update = function()
 	{
 		
@@ -43,7 +43,7 @@ function LancersG(LancerG_x, LancerG_y, LancerG_w, LancerG_h, LancerG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.LancersG = new Image;
-	this.LancersG.src = "Images/Greek_Lancer.png";
+	this.LancersG.src = "Images/Units/Greek_Lancer.png";
 	
 	this.update = function()
 	{

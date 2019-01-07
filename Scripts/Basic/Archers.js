@@ -14,7 +14,7 @@ function ArchersP(ArcherP_x, ArcherP_y, ArcherP_w, ArcherP_h, ArcherP_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.ArcsP = new Image;	
-	this.ArcsP.src = "Images/Persian_Archer.png";	
+	this.ArcsP.src = "Images/Units/Persian_Archer.png";	
 	
 	this.update = function()
 	{
@@ -45,7 +45,7 @@ function ArchersG(ArcherG_x, ArcherG_y, ArcherG_w, ArcherG_h, ArcherG_l)
 	this.dead = false;
 	this.onClicked = false;;
 	this.ArcsG = new Image;
-	this.ArcsG.src = "Images/Greek_Archer.png";	
+	this.ArcsG.src = "Images/Units/Greek_Archer.png";	
 	
 	this.update = function()
 	{

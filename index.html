@@ -5,7 +5,7 @@
 	<style type="text/css">
 		@font-face {
 			font-family: 'Dirty_War';
-			src: url("Images/Dirty_War.otf");
+			src: url("Font/Dirty_War.otf");
 		}
 	</style>
 </head>
@@ -87,7 +87,7 @@
 	var M_settings_image = new Image();
 	M_settings_image.src = "Images/Settings_Button.png";
 	var M_background_image = new Image();
-	M_background_image.src = "Images/Menu_Background.png";
+	M_background_image.src = "Images/Background/Menu_Background.png";
 	var CT_background_image = new Image();
 	var CT_persian_button = {x: 175, y: 110, w: 64, h:64};
 	var CT_persian_button_image = new Image();
@@ -117,6 +117,10 @@
 	Greek_s_Turn_image.src = "Images/Greek_s_Turn.png";
 	var Persian_s_Turn_image = new Image();
 	Persian_s_Turn_image.src = "Images/Persian_s_Turn.png";
+	var Turno_dos_Gregos_image = new Image();
+	Turno_dos_Gregos_image.src = "Images/Turno_dos_Gregos.png";
+	var Turno_dos_Persas_image = new Image();
+	Turno_dos_Persas_image.src = "Images/Turno_dos_Persas.png";
 	var M_settings = {x:canvas.width - 80,y:16 ,w: 64, h: 64};
 
 	//RandomAIG
@@ -144,8 +148,6 @@
 	var keyboard = new Keyboard();
 	document.addEventListener("keydown", keyboard.keydown, true);
 	{//Variaveis
-			var Pass = new Image();
-			Pass.src = "Images/pass.png";
 		switch(Scene)
 		{
 			case "Jogo":
@@ -257,9 +259,9 @@
 					var save = 0;
 					
 					var music1 = new Audio();
-					music1.src = "Audio/AudioDeBatalha1.mp3";
+					music1.src = "Audio/BattleSound_1.mp3";
 					var music2 = new Audio();
-					music2.src = "Audio/AudioDeBatalha2.mp3";
+					music2.src = "Audio/BattleSound_2.mp3";
 				}
 			break;
 		}
@@ -342,7 +344,7 @@
 				else
 				{
 					music1.play("Music1Game");
-					if(music1.currentTime >= 157)
+					if(music1.currentTime >= 354)
 					{
 						stop1 = false;
 						music1.pause("Music1Game");
@@ -360,7 +362,7 @@
 				else
 				{
 					music2.play("Music2Game");
-					if(music2.currentTime >= 179)
+					if(music2.currentTime >= 152)
 					{
 						stop2 = false;
 						music2.pause("Music2Game");
@@ -616,11 +618,11 @@
 			//Background
 			if(PTBR)
 			{
-				CT_background_image.src = "Images/Menu_Team.png";
+				CT_background_image.src = "Images/Background/Menu_Team.png";
 			}
 			else
 			{
-				CT_background_image.src = "Images/Menu_Time.png";
+				CT_background_image.src = "Images/Background/Menu_Time.png";
 			}
 			context.drawImage(CT_background_image, 0, 0);
 
@@ -820,11 +822,11 @@
 			}
 			if(PTBR)
 			{
-				C_background_image.src = "Images/credits.png";
+				C_background_image.src = "Images/Background/credits.png";
 			}
 			else
 			{
-				C_background_image.src = "Images/creditos.png";
+				C_background_image.src = "Images/Background/creditos.png";
 			}
 			context.drawImage(C_background_image,0,0);
 			context.drawImage(exit_button_image, C_exit_button.x, C_exit_button.y, C_exit_button.w, C_exit_button.h);
@@ -1345,18 +1347,18 @@
 					PossibilitiesAICG();
 					if(WallP_life <= 0)
 					{
+						fadeOut = true;
 						WallP_life = 0;
 						GT = false;
 						PT = false;
-						fadeOut = true;
 						auxScene = "WinG";
 					}
 					if(WallG_life <= 0)
 					{
+						fadeOut = true;
 						WallG_life = 0;
 						GT = false;
 						PT = false;
-						fadeOut = true;
 						auxScene = "WinP";
 					}
 					if(LancerG[0].dead && LancersGCChoosed == 0)
@@ -2050,11 +2052,11 @@
 				{//Draws ded info
 					if(PTBR)
 					{
-						GI_background_image.src = "Images/GI_background_EN.png";
+						GI_background_image.src = "Images/Background/GI_background_EN.png";
 					}
 					else 
 					{
-						GI_background_image.src = "Images/GI_background_PT.png";
+						GI_background_image.src = "Images/Background/GI_background_PT.png";
 					}
 					context.drawImage(GI_background_image,600,0,200,600);
 					/*context.fillStyle = "#FFFFFF";
@@ -2215,8 +2217,6 @@
 				}
 				if(GT && PT)
 				{
-					
-					context.drawImage(Pass,canvas.width/2 + canvas/4 + 125,425,250,50);
 					if(mouse.press && mouse.x > 560 && mouse.x < 810 && mouse.y > 325 && mouse.y < 375)
 					{
 						mouse.press = false;

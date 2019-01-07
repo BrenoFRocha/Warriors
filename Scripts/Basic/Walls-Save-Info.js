@@ -15,19 +15,19 @@ var WallP_h = 100;
 var WallP_life = 100;
 
 var WallG = new Image();
-WallG.src = "Images/Greek_Wall.png";
+WallG.src = "Images/Units/Greek_Wall.png";
 
 var WallP = new Image();
-WallP.src = "Images/Persian_Wall.png";
+WallP.src = "Images/Units/Persian_Wall.png";
 
 var Alert = false;
 var Mouseoff = false;
 var InfoWallG = false;
 var InfoWallP = false;
 var SWG = new Image();
-SWG.src = "Images/MS_G.png";
+SWG.src = "Images/Preview/MS_G.png";
 var SWP = new Image();
-SWP.src = "Images/MS_P.png";
+SWP.src = "Images/Preview/MS_P.png";
 function StatsWalls()
 {
 	if(WallP_life <= 0)
@@ -85,53 +85,53 @@ function StatsWalls()
 
 
 var ArcGM = new Image();
-ArcGM.src = "Images/ArcGM.png"
+ArcGM.src = "Images/Preview/ArcGM.png"
 var ArcGA = new Image();
-ArcGA.src = "Images/ArcGA.png"
+ArcGA.src = "Images/Preview/ArcGA.png"
 var ArcPA = new Image();
-ArcPA.src = "Images/ArcPA.png"
+ArcPA.src = "Images/Preview/ArcPA.png"
 var ArcPM = new Image();
-ArcPM.src = "Images/ArcPM.png"
+ArcPM.src = "Images/Preview/ArcPM.png"
 var GnrlGM = new Image();
-GnrlGM.src = "Images/GnrlGM.png"
+GnrlGM.src = "Images/Preview/GnrlGM.png"
 var GnrlGA = new Image();
-GnrlGA.src = "Images/GnrlGA.png"
+GnrlGA.src = "Images/Preview/GnrlGA.png"
 var GnrlPM = new Image();
-GnrlPM.src = "Images/GnrlPM.png"
+GnrlPM.src = "Images/Preview/GnrlPM.png"
 var GnrlPA = new Image();
-GnrlPA.src = "Images/GnrlPA.png"
+GnrlPA.src = "Images/Preview/GnrlPA.png"
 var LancPM = new Image();
-LancPM.src = "Images/LancPM.png"
+LancPM.src = "Images/Preview/LancPM.png"
 var LancPA = new Image();
-LancPA.src = "Images/LancPA.png"
+LancPA.src = "Images/Preview/LancPA.png"
 var LancGM = new Image();
-LancGM.src = "Images/LancGM.png"
+LancGM.src = "Images/Preview/LancGM.png"
 var LancGA = new Image();
-LancGA.src = "Images/LancGA.png"
+LancGA.src = "Images/Preview/LancGA.png"
 var KntGM = new Image();
-KntGM.src = "Images/KntGM.png"
+KntGM.src = "Images/Preview/KntGM.png"
 var KntGA = new Image();
-KntGA.src = "Images/KntGA.png"
+KntGA.src = "Images/Preview/KntGA.png"
 var KntPM = new Image();
-KntPM.src = "Images/KntPM.png"
+KntPM.src = "Images/Preview/KntPM.png"
 var KntPA = new Image();
-KntPA.src = "Images/KntPA.png"
+KntPA.src = "Images/Preview/KntPA.png"
 var ReiPM = new Image();
-ReiPM.src = "Images/ReiPM.png"
+ReiPM.src = "Images/Preview/ReiPM.png"
 var ReiPA = new Image();
-ReiPA.src = "Images/ReiPA.png"
+ReiPA.src = "Images/Preview/ReiPA.png"
 var ReiGM = new Image();
-ReiGM.src = "Images/ReiGM.png"
+ReiGM.src = "Images/Preview/ReiGM.png"
 var ReiGA = new Image();
-ReiGA.src = "Images/ReiGA.png"
+ReiGA.src = "Images/Preview/ReiGA.png"
 var TorGM = new Image();
-TorGM.src = "Images/TorGM.png"
+TorGM.src = "Images/Preview/TorGM.png"
 var TorGA = new Image();
-TorGA.src = "Images/TorGA.png"
+TorGA.src = "Images/Preview/TorGA.png"
 var TorPM = new Image();
-TorPM.src = "Images/TorPM.png"
+TorPM.src = "Images/Preview/TorPM.png"
 var TorPA = new Image();
-TorPA.src = "Images/TorPA.png"
+TorPA.src = "Images/Preview/TorPA.png"
 var GnrlsGS = new Image();
 var GnrlsPS = new Image();
 var KingsGS = new Image();
@@ -145,18 +145,18 @@ var TorsPS = new Image();
 var LancersGS = new Image();
 var LancersPS = new Image();
 
-GnrlsGS.src = "Images/Greek_General.png";
-GnrlsPS.src = "Images/Persian_General_Info.png";
-KingsGS.src = "Images/Greek_King.png";
-KingsPS.src = "Images/Persian_King_Info.png";
-KntsGS.src = "Images/Greek_Knight.png";
-KntsPS.src = "Images/Persian_Knight_Info.png";
-ArcsGS.src = "Images/Greek_Archer.png";
-ArcsPS.src = "Images/Persian_Archer_Info.png";
-TorsGS.src = "Images/Greek_Tower.png";
-TorsPS.src = "Images/Persian_Tower.png";
-LancersGS.src = "Images/Greek_Lancer.png";
-LancersPS.src = "Images/Persian_Lancer_Info.png";
+GnrlsGS.src = "Images/Units/Greek_General.png";
+GnrlsPS.src = "Images/Units/Preview/Persian_General_Info.png";
+KingsGS.src = "Images/Units/Greek_King.png";
+KingsPS.src = "Images/Units/Preview/Persian_King_Info.png";
+KntsGS.src = "Images/Units/Greek_Knight.png";
+KntsPS.src = "Images/Units/Preview/Persian_Knight_Info.png";
+ArcsGS.src = "Images/Units/Greek_Archer.png";
+ArcsPS.src = "Images/Units/Preview/Persian_Archer_Info.png";
+TorsGS.src = "Images/Units/Greek_Tower.png";
+TorsPS.src = "Images/Units/Persian_Tower.png";
+LancersGS.src = "Images/Units/Greek_Lancer.png";
+LancersPS.src = "Images/Units/Preview/Persian_Lancer_Info.png";
 
 function DrawInfos()
 {
@@ -228,7 +228,7 @@ function DrawInfos()
 	if(InfoWallG)
 		{
 			context.drawImage(SWG,InfoUG_x,InfoUG_y,InfoUG_w,InfoUG_h)
-			TextLife(WallG_life,InfoVG_x,InfoVG_y)
+			TextLifeG(WallG_life,InfoVG_x,InfoVG_y)
 		}
 }
 var InfoArcG = false;
