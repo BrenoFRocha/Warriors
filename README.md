@@ -15,6 +15,6 @@ Warrios is a game made for WEB browsers for you that wants to experience some of
 
 ### Important
 
-Author: [Breno Rocha](https://github.com/BrenoFerreiraRocha)
+Author: [Breno Rocha](https://github.com/BrenoFRocha)
 
 Support or Contact: Having trouble with this repository? Contact me at brenoferreirarocha@gmail.com and I will help you sort it out.
