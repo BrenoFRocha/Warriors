@@ -10,8 +10,8 @@ Warrios is a game made for WEB browsers for you that wants to experience some of
 
  - [Adobe Illustrator CC](https://www.adobe.com/br/products/illustrator.html)
  - [Adobe Photoshop CC](https://www.adobe.com/br/products/photoshop.html)
- - [HTML5](https://www.w3.org/TR/html5/);
- - [JavaScript](https://en.wikipedia.org/wiki/JavaScript).
+ - [HTML5](https://www.w3.org/TR/html5/)
+ - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Important
 
