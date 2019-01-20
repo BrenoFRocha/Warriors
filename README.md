@@ -1,6 +1,6 @@
 # Warriors
 
-In this repository, you can know my first project.
+In this repository, you can know my first project. This is a nonprofit project.
 
 ### About
 
